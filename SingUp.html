@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="singIn.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>ورود به حساب کاربری</h2>
+                <p>اطلاعات خود را وارد کنید تا به حساب کاربریتان دسترسی پیدا کنید</p>
+            </div>
+    <form class="SingUp-form" id="SingUPForm" novalidate>
+
+    <!-- نام و نام خانوادگی -->
+    <div class="form-group">
+        <div class="input-wrapper">
+            <input type="text" id="fullname" name="fullname" required autocomplete="name">
+            <label for="fullname">نام و نام خانوادگی</label>
+        </div>
+        <span class="error-message" id="fullnameError"></span>
+    </div>
+
+    <!-- نام کاربری -->
+    <div class="form-group">
+        <div class="input-wrapper">
+            <input type="text" id="username" name="username" required autocomplete="username">
+            <label for="username">نام کاربری</label>
+        </div>
+        <span class="error-message" id="usernameError"></span>
+    </div>
+
+    <!-- ایمیل (بدون تغییر) -->
+    <div class="form-group">
+        <div class="input-wrapper">
+            <input type="email" id="email" name="email" required autocomplete="email">
+            <label for="email">آدرس ایمیل</label>
+        </div>
+        <span class="error-message" id="emailError"></span>
+    </div>
+
+    <!-- رمز عبور (بدون تغییر) -->
+    <div class="form-group">
+        <div class="input-wrapper password-wrapper">
+            <input type="password" id="password" name="password" required autocomplete="new-password">
+            <label for="password">رمز عبور</label>
+            <button type="button" class="password-toggle" id="passwordToggle">
+                <span class="eye-icon"></span>
+            </button>
+        </div>
+        <span class="error-message" id="passwordError"></span>
+    </div>
+
+    <!-- تکرار رمز عبور -->
+    <div class="form-group">
+        <div class="input-wrapper password-wrapper">
+            <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password">
+            <label for="confirmPassword">تکرار رمز عبور</label>
+        </div>
+        <span class="error-message" id="confirmPasswordError"></span>
+    </div>
+
+    <button type="submit" class="login-btn">
+        <span class="btn-text">ثبت نام</span>
+        <span class="btn-loader"></span>
+    </button>
+
+</form>
+</div>
+</body>
+</html>
