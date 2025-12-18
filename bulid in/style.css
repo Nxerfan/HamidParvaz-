@@ -1,0 +1,136 @@
+.sidebarFilters {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  direction: rtl;
+
+  .filterHeader {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .filterContentArea {
+    .resultsCount {
+      display: block;
+      font-size: 12px;
+      color: #757575;
+      margin-bottom: 15px;
+    }
+
+    .filterDropdown {
+      .dropdownTrigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: bold;
+
+        i {
+          transition: 0.3s;
+        }
+
+        &.active {
+          i {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .dropdownPanel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+
+        &.open {
+          max-height: 250px;
+          padding-bottom: 10px;
+        }
+
+        .priceSliderBox {
+          .priceLabels {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            margin-bottom: 25px;
+
+            .labelGroup {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            }
+
+            .labelSeparator {
+              color: #ddd;
+            }
+          }
+
+          .rangeSliderContainer {
+            position: relative;
+            width: 100%;
+            height: 5px;
+
+            .sliderTrack {
+              position: absolute;
+              width: 100%;
+              height: 5px;
+              background: #ddd;
+              border-radius: 5px;
+            }
+
+            .sliderProgress {
+              position: absolute;
+              height: 5px;
+              background: #ffcb11;
+              border-radius: 5px;
+            }
+
+            .rangeInputs {
+              position: relative;
+
+              input {
+                position: absolute;
+                width: 100%;
+                height: 5px;
+                top: -5px;
+                background: none;
+                pointer-events: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+
+                &[type="range"] {
+                  &::-webkit-slider-thumb {
+                    height: 18px;
+                    width: 18px;
+                    border-radius: 50%;
+                    background: #fff;
+                    border: 2px solid #ffcb11;
+                    pointer-events: auto;
+                    -webkit-appearance: none;
+                    cursor: pointer;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+                  }
+
+                  &::-moz-range-thumb {
+                    height: 18px;
+                    width: 18px;
+                    border-radius: 50%;
+                    background: #fff;
+                    border: 2px solid #ffcb11;
+                    pointer-events: auto;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

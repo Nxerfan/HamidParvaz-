@@ -13,8 +13,22 @@
   --fontSize: 15px;
   --boxShadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   --borderLight: 1px solid #00000030;
+  --Font: "IranianSans", sans-serif;
 }
-
+/* ================= Font ================= */
+@font-face {
+  font-family: "IranianSans";
+  src: url("/Media/IranianSansRegular.ttf") format("truetype"),
+    url("/Media/IRANSans-web.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IranianSansBold";
+  src: url("/Media/") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 /* ================= Reset ================= */
 * {
   margin: 0;
@@ -23,166 +37,180 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--Font);
   background: var(--bgLight);
-}
-
-/* ================= Layout ================= */
-.Container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
 }
 
 /* ================= Header ================= */
 header {
   background: transparent;
   position: relative;
-}
 
-.HeaderTop {
-  background: transparent;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-}
+  .HeaderTop,
+  .HeaderTop2 {
+    background: transparent;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    .Container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      color: var(--textDark);
+      .Logo {
+        img {
+          width: 45px;
+          height: auto;
+          transition: transform 0.3s ease;
+        }
 
-/* Logo*/
-.Logo {
-  img {
-    width: 45px;
-    height: auto;
-    transition: transform 0.3s ease;
-  }
+        &:hover img {
+          transform: scale(1.05);
+        }
+      }
+      nav {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        .NavItem {
+          position: relative;
+          padding: 12px 20px;
+          color: var(--textDark);
+          border-radius: 8px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          transition: var(--transition);
+          z-index: 30;
 
-  &:hover img {
-    transform: scale(1.05);
-  }
-}
+          &:hover {
+            background: rgba(0, 0, 0, 0.12);
+            color: #fff;
+            transform: translateY(-2px);
 
-/* Navigation  */
-nav {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
+            .Arrow {
+              transform: rotate(180deg);
+            }
 
-.NavItem {
-  position: relative;
-  padding: 12px 20px;
-  color: var(--textDark);
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: var(--transition);
-  z-index: 30;
+            .Dropdown {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
+          }
+          .Arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+          }
+          .Dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            min-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            margin-top: 8px;
+            z-index: 1000;
 
-  &:hover {
-    background: rgba(0, 0, 0, 0.12);
-    color: #fff;
-    transform: translateY(-2px);
+            .DropdownItem {
+              display: block;
+              padding: 12px 20px;
+              color: var(--textDark);
+              text-decoration: none;
+              border-bottom: 1px solid #f0f0f0;
+              transition: var(--transition);
 
-    .Arrow {
-      transform: rotate(180deg);
+              &:hover {
+                background: #f8f8f8;
+                color: var(--gold);
+                padding-right: 25px;
+              }
+
+              &:last-child {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+      }
     }
-
-    .Dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
+    .Items {
+      width: 1200px;
+      justify-self: center;
+      display: flex;
+      padding: 8px;
+      justify-content: start;
+      gap: 40px;
+      color: var(--textDark);
+      .content {
+        color: var(--textDark);
+        opacity: 0.5;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
     }
   }
-}
-
-.Arrow {
-  font-size: 12px;
-  transition: transform 0.3s ease;
-}
-
-.Dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  min-width: 200px;
-  border-radius: 8px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: var(--transition);
-  margin-top: 8px;
-  z-index: 1000;
-
-  .DropdownItem {
+  .HeaderTop2 {
     display: block;
-    padding: 12px 20px;
-    color: var(--textDark);
-    text-decoration: none;
-    border-bottom: 1px solid #f0f0f0;
-    transition: var(--transition);
-
-    &:hover {
-      background: #f8f8f8;
-      color: var(--gold);
-      padding-right: 25px;
-    }
-
-    &:last-child {
-      border-bottom: none;
-    }
+    position: relative;
+    background-color: #ffcd11;
   }
 }
 
 .AuthButtons {
   display: flex;
   gap: 10px;
-}
+  .Btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 30;
+    font-family: var(--Font);
+  }
+  .BtnOutline {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
 
-.Btn {
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  z-index: 30;
-}
-
-.BtnOutline {
-  background: transparent;
-  border: 2px solid var(--gold);
-  color: var(--gold);
-
-  &:hover {
+    &:hover {
+      background: var(--gold);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+  .BtnPrimary {
     background: var(--gold);
     color: #fff;
-    transform: translateY(-2px);
-  }
-}
 
-.BtnPrimary {
-  background: var(--gold);
-  color: #fff;
-
-  &:hover {
-    background: var(--goldDark);
-    transform: translateY(-2px);
+    &:hover {
+      background: var(--goldDark);
+      transform: translateY(-2px);
+    }
   }
 }
 
 /* ================= Hero ================= */
 .Hero {
   height: 350px;
-  background: url("./Pics/Untitled.png") center / cover no-repeat;
+  background: url("./Media/Untitled.png") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,11 +236,6 @@ nav {
 }
 
 /* ================= Travel Cards ================= */
-.TravelCards {
-  margin-top: -80px;
-  position: relative;
-  z-index: 100;
-}
 
 .CardsContainer {
   max-width: 900px;
@@ -223,6 +246,9 @@ nav {
 }
 
 .TravelCard {
+  margin-top: -80px;
+  position: relative;
+  z-index: 100;
   background: #fff;
   padding: 25px 40px;
   border-radius: 15px;
@@ -281,7 +307,8 @@ nav {
   color: var(--textDark);
 }
 /* ================= ّForm ================= */
-.List {
+.List,
+.List2 {
   background-color: var(--bgWhite);
   border-radius: 5px;
   box-shadow: var(--boxShadow);
@@ -510,6 +537,19 @@ nav {
         }
       }
     }
+  }
+}
+.List2 {
+  background-color: var(--bgWhite);
+  border-radius: 0;
+  box-shadow: var(--boxShadow);
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 0;
+  .Form {
+    width: 1200px;
+    justify-self: center;
   }
 }
 /* ================= discription ================= */
@@ -959,7 +999,7 @@ Footer {
     }
   }
 }
-
+/* ================= Offers ================= */
 .offers {
   .top {
     h4 {
@@ -1031,4 +1071,498 @@ Footer {
       }
     }
   }
+}
+/* ================= ListAvaible ================= */
+.Countainer {
+  width: 1200px;
+  justify-self: center;
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  .Left {
+    width: 888px;
+    display: grid;
+    grid: 120px;
+
+    .Top {
+      background-color: var(--bgWhite);
+      width: 100%;
+      display: grid;
+      box-shadow: var(--boxShadow);
+      padding: 8px 8px 0;
+
+      height: 100px;
+      border-radius: 12px;
+      justify-content: space-between;
+      .Title {
+        font-size: 14px;
+        color: var(--textDark);
+      }
+      .Price {
+        display: flex;
+        gap: 20px;
+        scroll-behavior: smooth;
+        position: relative;
+        anchor-name: --Price;
+        scroll-snap-type: x mandatory;
+        margin: 0 45px;
+        overflow-x: auto;
+        .Cards {
+          display: grid;
+          justify-content: space-between;
+          scroll-snap-align: start;
+          flex: 0 0 88px;
+          text-align: Right;
+          span {
+            font-size: 12px;
+            color: var(--textGray);
+          }
+          p {
+            font-size: 14.5px;
+            font-weight: bold;
+            color: var(--textDark);
+          }
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        &::scroll-button(left) {
+          content: "<";
+          width: 48px;
+          height: 48px;
+          font-size: 48px;
+          background: none;
+          border: none;
+          color: var(--gold);
+          position: fixed;
+          position-anchor: --Price;
+          position-area: right center;
+          translate: 10%;
+        }
+        &::scroll-button(right) {
+          content: ">";
+          width: 48px;
+          height: 48px;
+          font-size: 48px;
+          background: none;
+          border: none;
+          color: var(--gold);
+          position: fixed;
+          position-anchor: --Price;
+          position-area: left center;
+          translate: -10%;
+        }
+        &::scroll-button(right):disabled,
+        &::scroll-button(left):disabled {
+          opacity: 0.5;
+        }
+      }
+    }
+    .Bottom {
+      display: grid;
+      margin-top: 20px;
+      gap: 10px;
+      .Cards {
+        background-color: var(--bgWhite);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: var(--boxShadow);
+        .RightCard {
+          height: 100%;
+          width: 100%;
+          display: grid;
+          gap: 10px;
+          .About {
+            width: 100%;
+            height: 92px;
+            display: flex;
+            gap: 30px;
+            .Icon {
+              display: grid;
+              justify-content: center;
+              align-items: center;
+              width: 96px;
+
+              img {
+                width: 40px;
+              }
+              span {
+                font-size: 14px;
+                color: var(--textGray);
+              }
+            }
+            .Time {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              width: 300px;
+              .Form {
+                display: grid;
+                justify-content: start;
+                span {
+                  font-size: 24px;
+                }
+                p {
+                  font-size: var(--fontSize);
+                  color: var(--textGray);
+                  text-align: center;
+                }
+              }
+              .i {
+                align-items: center;
+                display: flex;
+                margin: 8px;
+                color: var(--textGray);
+                opacity: 0.4;
+                i {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+          .discriptions {
+            height: auto;
+            width: 100%;
+            display: flex;
+            gap: 40px;
+            padding: 0 0 10px 20px;
+            .More {
+              display: flex;
+              width: 18%;
+              text-align: center;
+              align-items: center;
+              span {
+                width: 100%;
+                font-size: 14px;
+              }
+            }
+            .Avablity {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              span {
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                height: 28px;
+                padding: 2px 8px;
+                background-color: #ffcb1151;
+                border-radius: 8px;
+              }
+              p {
+                font-size: 14px;
+                color: tomato;
+              }
+            }
+          }
+        }
+        .LeftCard {
+          width: 30%;
+          border-right: var(--borderLight);
+          padding: 0 12px 0 0;
+          .Top {
+            height: 45%;
+            background-color: none;
+            box-shadow: none;
+            justify-content: end;
+            display: flex;
+            i {
+              font-size: 21px;
+              color: var(--gold);
+            }
+          }
+          .Bottom {
+            display: grid;
+            margin: 0;
+            gap: 5px;
+            p {
+              font-size: 17px;
+              display: flex;
+              gap: 5px;
+              span {
+                color: var(--goldDark);
+              }
+            }
+            button {
+              background-color: var(--gold);
+              border-radius: 8px;
+              border: none;
+              font-family: var(--Font);
+              font-size: 15px;
+              font-weight: bold;
+              height: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .Right {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .Title {
+      display: flex;
+      width: 100%;
+      background-color: var(--bgWhite);
+      height: 72px;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: var(--boxShadow);
+      align-items: center;
+      span {
+        color: var(--goldText);
+        font-size: var(--fontSize);
+        font-weight: bold;
+      }
+    }
+    .Avable {
+      display: flex;
+      width: 100%;
+      background-color: var(--bgWhite);
+      height: 52px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      box-shadow: var(--boxShadow);
+      align-items: center;
+      gap: 10px;
+      span {
+        color: var(--goldDark);
+        font-size: 14px;
+        font-weight: bold;
+        width: 100%;
+      }
+      form {
+        position: relative;
+        width: 65px;
+        height: 25px;
+
+        input[type="checkbox"] {
+          position: absolute;
+          width: 45px;
+          height: 25px;
+          opacity: 0;
+          z-index: 2;
+          cursor: pointer;
+
+          &:checked + label {
+            background-color: var(--gold);
+          }
+          &:hover + label {
+            background-color: var(--gold);
+          }
+
+          &:checked + label::after {
+            transform: translateX(22px);
+          }
+        }
+
+        label {
+          position: absolute;
+          inset: 0;
+          border-radius: 12px;
+          background: #ffcb1154;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+    .Sort {
+      display: grid;
+      width: 100%;
+      background-color: var(--bgWhite);
+      height: 130px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      box-shadow: var(--boxShadow);
+      gap: 10px;
+      .Choosen {
+        display: grid;
+        gap: 2px;
+        label {
+          text-align: center;
+          display: flex;
+          align-items: center;
+          color: var(--goldDark);
+          gap: 5px;
+          font-size: 14px;
+          input[type="radio"] {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #555;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 15px;
+            &:hover {
+              border-color: #000;
+              background-color: #e6b8005e;
+              transition: 0.5s;
+            }
+            &:checked {
+              background-color: var(--gold);
+              border: 2px solid #555;
+              transition: 0.8s;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sidebarFilters {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  direction: rtl;
+
+  .filterHeader {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .filterContentArea {
+    .resultsCount {
+      display: block;
+      font-size: 12px;
+      color: #757575;
+      margin-bottom: 15px;
+    }
+
+    .filterDropdown {
+      .dropdownTrigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: bold;
+
+        i {
+          transition: 0.3s;
+        }
+
+        &.active {
+          i {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .dropdownPanel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+
+        &.open {
+          max-height: 250px;
+          padding-bottom: 10px;
+        }
+
+        .priceSliderBox {
+          .priceLabels {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            margin-bottom: 25px;
+
+            .labelGroup {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            }
+
+            .labelSeparator {
+              color: #ddd;
+            }
+          }
+
+          .rangeSliderContainer {
+            position: relative;
+            width: 100%;
+            height: 5px;
+
+            .sliderTrack {
+              position: absolute;
+              width: 100%;
+              height: 5px;
+              background: #ddd;
+              border-radius: 5px;
+            }
+
+            .sliderProgress {
+              position: absolute;
+              height: 5px;
+              background: #ffcb11;
+              border-radius: 5px;
+            }
+
+            .rangeInputs {
+              position: relative;
+
+              input {
+                position: absolute;
+                width: 100%;
+                height: 5px;
+                top: -5px;
+                background: none;
+                pointer-events: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+
+                &[type="range"] {
+                  &::-webkit-slider-thumb {
+                    height: 18px;
+                    width: 18px;
+                    border-radius: 50%;
+                    background: #fff;
+                    border: 2px solid #ffcb11;
+                    pointer-events: auto;
+                    -webkit-appearance: none;
+                    cursor: pointer;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+                  }
+
+                  &::-moz-range-thumb {
+                    height: 18px;
+                    width: 18px;
+                    border-radius: 50%;
+                    background: #fff;
+                    border: 2px solid #ffcb11;
+                    pointer-events: auto;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 }

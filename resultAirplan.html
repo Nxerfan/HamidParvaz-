@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ================= Header ================= -->
+    <header>
+      <div class="HeaderTop2">
+        <div class="Container">
+          <a href="#" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Logo" />
+          </a>
+
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="#">رزرو هتل</a>
+                <a class="DropdownItem" href="#">رزرو پرواز</a>
+                <a class="DropdownItem" href="#">رزرو اتوبوس</a>
+                <a class="DropdownItem" href="#">تور مسافرتی</a>
+                <a class="DropdownItem" href="#">ویزا</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="#">تماس با ما</a>
+                <a class="DropdownItem" href="#">همکاری با ما</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="#">سوالات متداول</a>
+                <a class="DropdownItem" href="#">راهنمای رزرو</a>
+                <a class="DropdownItem" href="#">قوانین و مقررات</a>
+              </div>
+            </div>
+
+            <a href="#" class="NavItem">بلاگ</a>
+            <a href="#" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <button class="Btn BtnPrimary">ورود</button>
+            <button class="Btn BtnPrimary">ثبت نام</button>
+          </div>
+        </div>
+
+        <div class="Items">
+          <div class="content">
+            <i class="fa-solid fa-plane"></i>
+            <span>هواپیما</span>
+          </div>
+          <div class="content">
+            <i class="fa-solid fa-hotel"></i>
+            <span>هتل</span>
+          </div>
+          <div class="content">
+            <i class="fas fa-globe-asia"></i>
+            <span>تور</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= Search Section ================= -->
+    <section>
+      <div class="List2">
+        <div class="Form">
+          <div class="Bottom">
+            <div class="LocationPicker">
+              <input type="text" placeholder="فرودگاه مبدا" />
+              <!-- SVG -->
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 91 91"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path class="st0" d="M8.4,31.9c4-0.8..." />
+                  <path class="st0" d="M80.8,58.4c-3.6,0.8..." />
+                </g>
+              </svg>
+              <input type="text" placeholder="فرودگاه مقصد" />
+            </div>
+
+            <div class="DatePicker">
+              <input type="text" placeholder="تاریخ رفت" />
+              <input type="text" placeholder="تاریخ برگشت" />
+            </div>
+
+            <div class="PaxPicker">
+              <input type="text" placeholder="تعداد مسافرین" />
+            </div>
+
+            <div class="Submit">
+              <button>جستجو</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Result Section ================= -->
+    <section>
+      <div class="Countainer">
+        <div class="Left">
+          <div class="Top">
+            <div class="Title">ارزان‌ترین قیمت در هر روز</div>
+            <div class="Price">
+              <div class="Cards">
+                <span>سه‌شنبه 10/2</span>
+                <p>1082 تومان</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- کارت پرواز -->
+          <div class="Bottom">
+            <div class="Cards">
+              <div class="RightCard">
+                <div class="About">
+                  <div class="Icon">
+                    <img
+                      src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU"
+                      alt=""
+                    />
+                    <span>چابهار</span>
+                  </div>
+
+                  <div class="Time">
+                    <div class="Form">
+                      <span>6:00</span>
+                      <p>تهران</p>
+                    </div>
+
+                    <div class="i">
+                      <i class="fa-regular fa-circle-dot"></i>
+                      <i class="fas fa-plane fa-flip-horizontal"></i>
+                    </div>
+
+                    <div class="Form">
+                      <span>7:00</span>
+                      <p>تهران</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="discriptions">
+                  <div class="More">
+                    <span>جزئیات <i class="fa-solid fa-angle-down"></i></span>
+                  </div>
+                  <div class="Avablity">
+                    <span>اکونومی</span>
+                    <p>6 صندلی</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="LeftCard">
+                <div class="Top">
+                  <i class="fa-solid fa-bell"></i>
+                </div>
+                <div class="Bottom">
+                  <p><span>1,802,400</span> تومان</p>
+                  <button>
+                    رزرو آنلاین <i class="fa-solid fa-arrow-left"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Right">
+          <div class="Title">
+            <span>بلیط هواپیما تهران به کیش</span>
+          </div>
+
+          <div class="Sort">
+            <span>مرتب‌سازی بر اساس</span>
+            <div class="Choosen">
+              <label>
+                <input type="radio" name="Radio" />
+                زود‌ترین زمان
+              </label>
+              <label>
+                <input type="radio" name="Radio" />
+                کمترین قیمت
+              </label>
+            </div>
+          </div>
+<div class="sidebarFilters">
+  <div class="filterHeader">
+    <span>فیلترها</span>
+  </div>
+  
+  <div class="filterContentArea">
+    <span class="resultsCount">نمایش ۵۰ از ۵۰ نتیجه</span>
+    
+    <div class="filterDropdown">
+      <div class="dropdownTrigger" id="filterBtn">
+        <span>قیمت</span>
+        <i class="fa-solid fa-angle-down"></i>
+      </div>
+      
+      <div class="dropdownPanel" id="filterContent">
+        <div class="priceSliderBox">
+          
+          <div class="priceLabels">
+            <div class="labelGroup">
+              <span>از</span>
+              <span class="displayMin">۰</span>
+              <span>تومان</span>
+            </div>
+            <span class="labelSeparator">-</span>
+            <div class="labelGroup">
+              <span>تا</span>
+              <span class="displayMax">۱,۰۰۰,۰۰۰</span>
+              <span>تومان</span>
+            </div>
+          </div>
+          
+          <div class="rangeSliderContainer">
+            <div class="sliderTrack"></div>
+            <div class="sliderProgress"></div>
+            <div class="rangeInputs">
+              <input type="range" class="rangeMin" min="0" max="1000000" value="0" step="1000">
+              <input type="range" class="rangeMax" min="0" max="1000000" value="1000000" step="1000">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <script src="/Header.js"></script>
+    <script src="/Result.js"></script>
+  </body>
+</html>
