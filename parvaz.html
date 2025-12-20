@@ -8,63 +8,103 @@
 </head>
 <body>
 
-<header>
-  <div class="HeaderTop">
-    <div class="Container">
+    <header>
+      <div class="HeaderTop">
+        <div class="Container">
+          <a href="#" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Niksa Logo" />
+          </a>
 
-      <a href="#" class="Logo">
-        <img src="pics/logo.png" alt="Niksa Logo">
-      </a>
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/Hotel.Html">رزرو هتل</a>
+                <a class="DropdownItem" href="/parvaz.html">رزرو پرواز</a>
+                <a class="DropdownItem" href="#">تور مسافرتی</a>
+              </div>
+            </div>
 
-      <nav>
-        <div class="NavItem">
-          خدمات مسافرتی <span class="Arrow">▾</span>
-          <div class="Dropdown">
-            <a class="DropdownItem" href="#">رزرو هتل</a>
-            <a class="DropdownItem" href="#">رزرو پرواز</a>
-            <a class="DropdownItem" href="#">رزرو اتوبوس</a>
-            <a class="DropdownItem" href="#">تور مسافرتی</a>
-            <a class="DropdownItem" href="#">ویزا</a>
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="#">تماس با ما</a>
+                <a class="DropdownItem" href="#">همکاری با ما</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="#">سوالات متداول</a>
+                <a class="DropdownItem" href="#">راهنمای رزرو</a>
+                <a class="DropdownItem" href="#">قوانین و مقررات</a>
+              </div>
+            </div>
+
+            <a href="#" class="NavItem">بلاگ</a>
+            <a href="#" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <a href="/singIn.html">
+              <button class="Btn BtnOutline">ورود</button>
+            </a>
+            <a href="/SingUp.html">
+                <button class="Btn BtnPrimary">ثبت نام</button>
+            </a>
+
           </div>
         </div>
-
-        <div class="NavItem">
-          درباره ما <span class="Arrow">▾</span>
-          <div class="Dropdown">
-            <a class="DropdownItem" href="#">تماس با ما</a>
-            <a class="DropdownItem" href="#">همکاری با ما</a>
-          </div>
-        </div>
-
-        <div class="NavItem">
-          پشتیبانی <span class="Arrow">▾</span>
-          <div class="Dropdown">
-            <a class="DropdownItem" href="#">سوالات متداول</a>
-            <a class="DropdownItem" href="#">راهنمای رزرو</a>
-            <a class="DropdownItem" href="#">قوانین و مقررات</a>
-          </div>
-        </div>
-
-        <a href="#" class="NavItem">بلاگ</a>
-        <a href="#" class="NavItem">تماس با ما</a>
-      </nav>
-
-      <div class="AuthButtons">
-        <button class="Btn BtnOutline">ورود</button>
-        <button class="Btn BtnPrimary">ثبت نام</button>
       </div>
 
-    </div>
-  </div>
+      <div class="Hero">
+        <div class="HeroContent"></div>
+      </div>
+    </header>
+    <section class="TravelCards">
+      <div class="CardsContainer">
+        <a href="/parvaz.html">
+          <div class="TravelCard Active" data-type="plane">
+            <div class="CardIcon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
+                />
+              </svg>
+            </div>
+            <div class="CardText">هواپیما</div>
+          </div>
+        </a>
 
-  <div class="Hero">
-    <div class="HeroContent">
-      <h1>فروش بلیط</h1>
-      <p>هواپیما، قطار و اتوبوس</p>
-    </div>
-  </div>
-</header>
+        <a href="Hotel.Html">
+          <div class="TravelCard" data-type="hotel">
+            <div class="CardIcon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V6H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"
+                />
+              </svg>
+            </div>
+            <div class="CardText">هتل</div>
+        </div>
+        </a>
 
+        <a href="">
+          <div class="TravelCard" data-type="bus">
+            <div class="CardIcon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"
+                />
+              </svg>
+            </div>
+            <div class="CardText">تور</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
 <section>
     <div class="List">
         <div class="Form">
@@ -103,16 +143,17 @@
     </div>
 </section>
 
-<div class="container">
+<div class="containerPart1">
+<div class="containerPart2">
 
   <section>
-    <div class="offers">
+    <div class="ImgForOfer">
       <div class="top">
         <h4>بلیط هواپیما</h4>
       </div>
       <div class="bottom">
-        <img src="./Pics/hotel.png" alt="">
-        <img src="./Pics/sazmani.png" alt="">
+        <img src="./Media/sazmani.png" alt="">
+        <img src="./Media/hotel.png " alt="">
       </div>
     </div>
   </section>
@@ -149,16 +190,21 @@
           <img src="http://mrbilit.com/_ipx/f_webp/https://content.mrbilit.ir/uploads/mashhad_7e9127554b.webp" alt="">
           <span>بلیط هواپیما مشهد</span>
         </div>
+          <div class="Items">
+            <img src="http://mrbilit.com/_ipx/f_webp/https://content.mrbilit.ir/uploads/mashhad_7e9127554b.webp" alt="">
+            <span>بلیط هواپیما مشهد</span>
+          </div>
+          <div class="Items">
+            <img src="http://mrbilit.com/_ipx/f_webp/https://content.mrbilit.ir/uploads/mashhad_7e9127554b.webp" alt="">
+            <span>بلیط هواپیما مشهد</span>
+          </div>
         <div class="overlay"></div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="discription">
-        <div class="title">
-            <span>شرکت حمید پرواز سامانه خرید بلیط سفر و اقامتگاه</span>
-        </div>
+    <div class="discription" style="background: none;box-shadow: none;">
         <div class="cards">
             
             <div class="itmes">
@@ -279,6 +325,7 @@
         </div>
       </section>
 
+</div>
 </div>
 <section>
     <div class="useFullWays">
@@ -410,5 +457,7 @@
 </footer>
 
 <script src="./FAQ.js"></script>
+<script src="main.js"></script>
+
 </body>
 </html>
