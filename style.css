@@ -18,8 +18,7 @@
 /* ================= Font ================= */
 @font-face {
   font-family: "IranianSans";
-  src: url("/Media/IranianSansRegular.ttf") format("truetype"),
-    url("/Media/IRANSans-web.woff") format("woff");
+  src: url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap");
   font-weight: normal;
   font-style: normal;
 }
@@ -45,7 +44,7 @@ body {
 header {
   background: transparent;
   position: relative;
-  a{
+  a {
     text-decoration: none;
   }
   .HeaderTop,
@@ -259,7 +258,9 @@ header {
   }
 }
 .Hero2 {
-  background: url("./Media/back\ \(1\).svg") center / cover no-repeat;
+  background: url("./Media/Gemini_Generated_Image_g4jgxtg4jgxtg4jg.png") center /
+    cover no-repeat;
+  height: 270px;
 }
 /* ================= Travel Cards ================= */
 .TravelCards {
@@ -394,9 +395,11 @@ header {
           width: 180px;
           border: none;
           border-radius: 8px;
-          font-size: 18px;
+          font-size: 15px;
+          font-weight: bold;
           padding: 0 10px;
           color: var(--textGray);
+          font-family: var(--Font);
           cursor: pointer;
           &:focus {
             outline: none;
@@ -422,9 +425,11 @@ header {
           width: 188px;
           border: none;
           border-radius: 8px 0 0 8px;
-          font-size: 18px;
+          font-size: 15px;
           padding: 0 10px;
           color: var(--textGray);
+          font-weight: bold;
+          font-family: var(--Font);
           cursor: pointer;
           &:focus {
             outline: none;
@@ -453,10 +458,13 @@ header {
           width: 180px;
           border: none;
           border-radius: 8px;
-          font-size: 18px;
+          font-size: 15px;
           padding: 0 10px;
           color: var(--textGray);
           cursor: pointer;
+          font-weight: bold;
+          font-family: var(--Font);
+
           &:focus {
             outline: none;
             background-color: var(--grayBgHover);
@@ -479,11 +487,11 @@ header {
           width: 188px;
           height: 50px;
           border: none;
-          background-color: var(--goldDark);
+          background-color: var(--gold);
           border-radius: 8px;
           font-size: 18px;
           &:hover {
-            background-color: var(--gold);
+            background-color: var(--goldDark);
             box-shadow: 0 0 10px var(--gold);
           }
         }
@@ -601,13 +609,16 @@ header {
     height: 40px;
     color: var(--textGray);
     text-align: center;
-    font-size: 24px;
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+    }
   }
   .cards {
     display: flex;
     width: 1200px;
-    height: 220px;
-    padding: 20 0;
+    height: max-content;
+    padding: 20px 0 32px;
     justify-content: space-between;
     align-items: center;
     .itmes {
@@ -630,7 +641,7 @@ header {
 .Text {
   width: 1200px;
   justify-self: center;
-  margin-top: 20px;
+  padding: 40px 0;
   text-align: center;
   span {
     font-size: 12px;
@@ -642,7 +653,7 @@ header {
   display: grid;
   width: 1200px;
   justify-self: center;
-  margin-top: 20px;
+  padding: 40px 0;
   gap: 20px;
   .title {
     text-align: center;
@@ -676,150 +687,209 @@ header {
 /* ================= footer ================= */
 
 Footer {
-  margin-top: 100px;
+  margin-top: 32px;
   padding: 40px 0 20px;
   box-shadow: var(--boxShadow);
   color: var(--textDark);
   background-color: var(--bgWhite);
   .Container {
     display: grid;
-    justify-content: space-around;
     width: 1200px;
-    height: auto;
-    margin: 0 auto;
-
+    justify-self: center;
     .TopRow {
       display: flex;
       justify-content: space-between;
+      width: 100%;
       gap: 40px;
       .Contact {
+        width: 100%;
         display: grid;
-        width: auto;
         height: auto;
         gap: 10px;
         .Top {
-          height: 70px;
           display: flex;
           gap: 5px;
-          border-bottom: var(--borderL);
+          border-bottom: var(--borderLight);
           span {
             display: flex;
+            cursor: pointer;
             align-items: center;
-            background: var(--bgLight);
+            background: var(--grayBg);
             height: 50px;
             padding: 0 12px;
             border-radius: 5px;
             color: var(--goldDark);
             text-align: center;
+            font-size: var(--fontSize);
+            font-weight: bold;
+            &:hover {
+              background-color: var(--grayBgHover);
+            }
           }
         }
         .buttom {
           display: flex;
           gap: 10px;
-          font-size: 14px;
+          font-size: var(--fontSize);
+          font-weight: bold;
           a {
+            display: flex;
+            padding: 0 10px;
             text-decoration: none;
+            height: 100%;
+            align-items: center;
+            border-radius: 8px;
+            transition: 0.3s;
             p {
               color: var(--goldDark);
+            }
+            &:hover {
+              background: var(--grayBgHover);
             }
           }
         }
         .canccel {
           display: flex;
           gap: 10px;
-          font-size: 14px;
+          font-size: var(--fontSize);
           justify-content: center;
+          font-weight: bold;
           a {
+            display: flex;
             text-decoration: none;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: 0.3s;
             p {
               color: var(--goldDark);
+            }
+            &:hover {
+              background: var(--grayBgHover);
             }
           }
         }
       }
       .OrgBox {
-        background: #f7f7f7;
-        border-radius: 14px;
-        padding: 24px 28px;
-        max-width: 420px;
-        text-align: center;
-
+        background: var(--grayBg);
+        border-radius: var(--fontSize);
+        padding: 24px;
+        width: 100%;
+        text-align: right;
         h3 {
           margin: 0 0 8px;
           font-size: 18px;
         }
 
         p {
-          margin: 0 0 16px;
-          font-size: 14px;
-          color: #666666;
+          padding: 0 0 16px;
+          font-size: var(--fontSize);
+          color: var(--textGray);
           line-height: 1.8;
         }
 
         button {
-          background: #0066ff;
-          border: none;
-          color: #ffffff;
-          padding: 10px 22px;
+          background: none;
+          border: 1px solid var(--goldDark);
+          color: var(--goldDark);
+          font-family: var(--Font);
+          font-size: var(--fontSize);
+          font-weight: bold;
+          padding: 10px 8px;
+          height: 48px;
           border-radius: 8px;
-          font-size: 14px;
           cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            background: var(--grayBgHover);
+          }
         }
       }
     }
     .LinksRow {
       display: flex;
       justify-content: space-between;
-      margin-top: 40px;
+      padding: 40px 0 30px;
       gap: 40px;
       .Links {
+        display: grid;
+        height: max-content;
+        width: max-content;
+        gap: 16px;
         h4 {
-          margin-bottom: 12px;
-          font-size: 15px;
+          font-size: 16px;
+          font-weight: bold;
         }
 
         ul {
           list-style: none;
-
           padding: 0;
           margin: 0;
           display: grid;
           grid-template-columns: repeat(2, 1fr);
+          gap: 8px;
+          justify-content: start;
+          width: max-content;
         }
-
-        li {
-          margin-bottom: 8px;
-          font-size: 14px;
-          color: #555555;
+        a {
+          width: max-content;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+            color: var(--textDark);
+          }
+          li {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--textGray);
+          }
         }
       }
       .Description {
-        max-width: 520px;
+        width: 100%;
         font-size: 13px;
         line-height: 2;
         color: #666666;
+        .Text {
+          padding: 0;
+          width: 100%;
+          text-align: right;
+          display: grid;
+          gap: 20px;
+          h4 {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--textDark);
+          }
+          p {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--textGray);
+          }
+        }
         .Logos {
           display: flex;
           gap: 18px;
-          margin: 30px 0 20px;
+          padding: 30px 0 20px;
           flex-wrap: wrap;
           img {
-            width: 70px;
-            height: 70px;
-            border: 1px solid #dddddd;
+            width: 80px;
+            height: 80px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
-            color: #999999;
+            font-size: 15px;
+            color: var(--textGray);
           }
         }
       }
     }
+
     .Bottom {
       border-top: 1px solid #eeeeee;
-      margin-top: 30px;
       padding-top: 16px;
       display: flex;
       justify-content: space-between;
@@ -829,12 +899,9 @@ Footer {
       .Social {
         display: flex;
         gap: 12px;
-
-        div {
+        img {
           width: 32px;
           height: 32px;
-          border-radius: 50%;
-          border: 1px solid #cccccc;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1100,27 +1167,27 @@ Footer {
               margin-left: 15px;
               color: var(--textDark);
             }
-            p{
+            p {
               font-size: 12px;
               font-weight: bold;
               margin-left: 5px;
               color: var(--textGray);
               display: flex;
-              i{
+              i {
                 padding: 0;
               }
             }
           }
-        .SmilyFace{
-          display: flex;
-          p{
-            font-size: 12px;
-            color: var(--textGray);
-            i{
-              font-size: 16px;
+          .SmilyFace {
+            display: flex;
+            p {
+              font-size: 12px;
+              color: var(--textGray);
+              i {
+                font-size: 16px;
+              }
             }
           }
-        }
           border-bottom: var(--borderLight);
         }
         .price {
@@ -2099,6 +2166,7 @@ Footer {
   width: 1200px;
   justify-self: center;
   display: flex;
+  padding: 15px 0;
   .right {
     width: 288px;
     background: var(--bgWhite);
@@ -2114,10 +2182,13 @@ Footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      cursor: pointer;
+      img {
+        width: 24px;
+      }
       .Username {
-        font-weight: 600;
-        font-size: 16px;
+        font-weight: bold;
+        font-size: 14px;
       }
 
       .EditBtn {
@@ -2177,7 +2248,8 @@ Footer {
           align-items: center;
           gap: 16px;
           padding: 10px 8px;
-          font-size: 16px;
+          font-size: 14px;
+          font-weight: bold;
           color: var(--textDark);
           text-decoration: none;
           cursor: pointer;
@@ -2237,13 +2309,37 @@ Footer {
   .left {
     display: flex;
     width: auto;
-    .Card {
+    .Card,
+    .Card2 {
       width: 888px;
       background: #fff;
       border-radius: 16px;
       padding: 32px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-
+      .Title {
+        h1 {
+          font-size: 20px;
+          font-weight: bold;
+          color: var(--textDark);
+        }
+        padding: 0 0 12px;
+        border-bottom: var(--borderLight);
+      }
+      .Body {
+        padding: 10px;
+        display: grid;
+        gap: 14px;
+        h2 {
+          font-size: 20px;
+          font-weight: bold;
+          color: var(--goldDark);
+          padding: 5px 0;
+        }
+        p {
+          font-size: 14px;
+          color: var(--textDark);
+        }
+      }
       /* Layout */
       .Grid2 {
         display: grid;
@@ -2314,7 +2410,6 @@ Footer {
         align-items: flex-end;
         border-bottom: var(--borderLight);
         padding-bottom: 8px;
-        margin-bottom: 20px;
 
         &.Mt30 {
           margin-top: 30px;
@@ -2406,6 +2501,10 @@ Footer {
         }
       }
     }
+    .Card2 {
+      display: grid;
+      gap: 24px;
+    }
     .submit {
       display: flex;
       justify-content: end;
@@ -2427,344 +2526,1188 @@ Footer {
 }
 /* ================= LoginPage ================= */
 .login-container {
-    width: 100%;
-    max-width: 400px;
-    justify-self: center;
-    align-self: center;
-    margin-top: 10%;
-    .login-card {
-      background: white;
-      border-radius: 12px;
-      padding: 32px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  justify-self: center;
+  align-self: center;
+  margin-top: 10%;
+  .login-card {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
-      .login-header {
-        text-align: center;
-        margin-bottom: 32px;
+    .login-header {
+      text-align: center;
+      margin-bottom: 32px;
 
-        h2 {
-          font-size: 1.875rem;
-          font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 8px;
+      h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: var(--textGray);
+        font-size: 0.875rem;
+      }
+    }
+
+    .login-form {
+      .form-group {
+        .input-wrapper {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+
+          input {
+            background: white;
+            border: 2px solid var(--bgLight);
+            border-radius: 8px;
+            padding: 12px 16px 8px 16px;
+            color: #1e293b;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            width: 100%;
+            outline: none;
+
+            &::placeholder {
+              color: transparent;
+            }
+
+            &:focus,
+            &:valid,
+            &.has-value {
+              border-color: var(--goldDark);
+            }
+
+            &:focus + label,
+            &:valid + label,
+            &.has-value + label {
+              transform: translateY(-8px) scale(0.875);
+              color: var(--goldDark);
+              font-weight: 500;
+            }
+          }
+
+          label {
+            position: absolute;
+            left: 16px;
+            top: 12px;
+            color: var(--textGray);
+            font-size: 16px;
+            transition: all 0.2s ease;
+            pointer-events: none;
+            transform-origin: left top;
+          }
+
+          &.password-wrapper {
+            position: relative;
+
+            input {
+              padding-right: 48px;
+            }
+
+            .password-toggle {
+              position: absolute;
+              right: 12px;
+              top: 50%;
+              transform: translateY(-50%);
+              background: none;
+              border: none;
+              cursor: pointer;
+              padding: 8px;
+              color: var(--textGray);
+              transition: color 0.2s ease;
+
+              &:hover {
+                color: var(--textDark);
+              }
+
+              .eye-icon {
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: background-image 0.2s ease;
+
+                &.show-password {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='1.5'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 11-4.243-4.243m4.242 4.242L9.88 9.88'/%3e%3c/svg%3e");
+                }
+              }
+            }
+          }
         }
 
-        p {
-          color: var(--textGray);
-          font-size: 0.875rem;
+        .error-message {
+          display: block;
+          color: #ef4444;
+          font-size: 0.75rem;
+          font-weight: 500;
+          margin-top: 4px;
+          margin-left: 4px;
+          opacity: 0;
+          transform: translateY(-4px);
+          transition: all 0.2s ease;
+
+          &.show {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        &.error {
+          .input-wrapper input {
+            border-color: #ef4444;
+          }
         }
       }
 
-      .login-form {
-        .form-group {
-          margin-bottom: 20px;
+      .form-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 12px;
 
-          .input-wrapper {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-
-            input {
-              background: white;
-              border: 2px solid var(--bgLight);
-              border-radius: 8px;
-              padding: 12px 16px 8px 16px;
-              color: #1e293b;
-              font-size: 16px;
-              transition: all 0.2s ease;
-              width: 100%;
-              outline: none;
-
-              &::placeholder {
-                color: transparent;
-              }
-
-              &:focus,
-              &:valid,
-              &.has-value {
-                border-color: var(--goldDark);
-              }
-
-              &:focus + label,
-              &:valid + label,
-              &.has-value + label {
-                transform: translateY(-8px) scale(0.875);
-                color: var(--goldDark);
-                font-weight: 500;
-              }
-            }
-
-            label {
-              position: absolute;
-              left: 16px;
-              top: 12px;
-              color: var(--textGray);
-              font-size: 16px;
-              transition: all 0.2s ease;
-              pointer-events: none;
-              transform-origin: left top;
-            }
-
-            &.password-wrapper {
-              position: relative;
-
-              input {
-                padding-right: 48px;
-              }
-
-              .password-toggle {
-                position: absolute;
-                right: 12px;
-                top: 50%;
-                transform: translateY(-50%);
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 8px;
-                color: var(--textGray);
-                transition: color 0.2s ease;
-
-                &:hover {
-                  color: var(--textDark);
-                }
-
-                .eye-icon {
-                  display: block;
-                  width: 20px;
-                  height: 20px;
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  background-position: center;
-                  transition: background-image 0.2s ease;
-
-                  &.show-password {
-                   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='1.5'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 11-4.243-4.243m4.242 4.242L9.88 9.88'/%3e%3c/svg%3e");
-                  }
-                }
-              }
-            }
-          }
-
-          .error-message {
-            display: block;
-            color: #ef4444;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-top: 4px;
-            margin-left: 4px;
-            opacity: 0;
-            transform: translateY(-4px);
-            transition: all 0.2s ease;
-
-            &.show {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          &.error {
-            .input-wrapper input {
-              border-color: #ef4444;
-            }
-          }
-        }
-
-        .form-options {
+        .remember-wrapper {
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          margin-bottom: 24px;
-          flex-wrap: wrap;
-          gap: 12px;
+          gap: 8px;
+          cursor: pointer;
 
-          .remember-wrapper {
+          input[type="checkbox"] {
+            display: none;
+
+            &:checked ~ .checkbox-label {
+              .checkmark {
+                background: var(--gold);
+                border-color: var(--gold);
+
+                &::after {
+                  content: "✓";
+                  color: black;
+                  font-size: 10px;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+
+          .checkbox-label {
+            color: var(--textGray);
+            font-size: 0.875rem;
+            cursor: pointer;
+            user-select: none;
             display: flex;
             align-items: center;
             gap: 8px;
-            cursor: pointer;
 
-            input[type="checkbox"] {
-              display: none;
-
-              &:checked ~ .checkbox-label {
-                .checkmark {
-                  background: var(--gold);
-                  border-color: var(--gold);
-
-                  &::after {
-                    content: '✓';
-                    color: black;
-                    font-size: 10px;
-                    font-weight: bold;
-                  }
-                }
-              }
-            }
-
-            .checkbox-label {
-              color: var(--textGray);
-              font-size: 0.875rem;
-              cursor: pointer;
-              user-select: none;
+            .checkmark {
+              width: 16px;
+              height: 16px;
+              border: 2px solid var(--textGray);
+              border-radius: 4px;
               display: flex;
               align-items: center;
-              gap: 8px;
-
-              .checkmark {
-                width: 16px;
-                height: 16px;
-                border: 2px solid var(--textGray);
-                border-radius: 4px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.2s ease;
-                flex-shrink: 0;
-                background: white;
-              }
-            }
-          }
-
-          .forgot-password {
-            color: var(--goldDark);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-
-            &:hover {
-              color: var(--goldText);
+              justify-content: center;
+              transition: all 0.2s ease;
+              flex-shrink: 0;
+              background: white;
             }
           }
         }
 
-        .login-btn {
-          width: 100%;
-          background: var(--gold);
-          border: none;
-          border-radius: 8px;
-          padding: 12px 24px;
-          color: white;
-          font-size: 16px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          position: relative;
-          margin-bottom: 24px;
+        .forgot-password {
+          color: var(--goldDark);
+          text-decoration: none;
+          font-size: 0.875rem;
+          font-weight: 500;
+          transition: color 0.2s ease;
 
           &:hover {
-            background: var(--goldDark);
+            color: var(--goldText);
           }
+        }
+      }
 
-          &:active {
-            transform: translateY(1px);
-          }
+      .login-btn {
+        width: 100%;
+        background: var(--gold);
+        border: none;
+        border-radius: 8px;
+        padding: 12px 24px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+        margin-bottom: 24px;
 
-          &.loading {
-            pointer-events: none;
-            background: #a5a6f6;
+        &:hover {
+          background: var(--goldDark);
+        }
 
-            .btn-text {
-              opacity: 0;
-            }
+        &:active {
+          transform: translateY(1px);
+        }
 
-            .btn-loader {
-              opacity: 1;
-            }
-          }
+        &.loading {
+          pointer-events: none;
+          background: #a5a6f6;
 
           .btn-text {
-            transition: opacity 0.2s ease;
+            opacity: 0;
           }
 
           .btn-loader {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 16px;
-            height: 16px;
-            border: 2px solid transparent;
-            border-top: 2px solid white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: spin 1s linear infinite;
-            transition: opacity 0.2s ease;
+            opacity: 1;
           }
         }
-      }
 
-      .signup-link {
-        text-align: center;
-
-        p {
-          color: var(--textGray);
-          font-size: 0.875rem;
-
-          a {
-            color: var(--goldDark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-
-            &:hover {
-              color: var(--goldText);
-            }
-          }
-        }
-      }
-
-      .success-message {
-        display: none;
-        text-align: center;
-        padding: 32px 20px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-
-        &.show {
-          display: block;
-          opacity: 1;
-          transform: translateY(0);
+        .btn-text {
+          transition: opacity 0.2s ease;
         }
 
-        .success-icon {
-          width: 48px;
-          height: 48px;
-          background: #22c55e;
+        .btn-loader {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 16px;
+          height: 16px;
+          border: 2px solid transparent;
+          border-top: 2px solid white;
           border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          color: white;
-          margin: 0 auto 16px;
-          animation: successPulse 0.5s ease;
+          opacity: 0;
+          animation: spin 1s linear infinite;
+          transition: opacity 0.2s ease;
         }
+      }
+    }
 
+    .signup-link {
+      text-align: center;
+
+      p {
+        color: var(--textGray);
+        font-size: 0.875rem;
+
+        a {
+          color: var(--goldDark);
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: var(--goldText);
+          }
+        }
+      }
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 32px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+
+      &.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .success-icon {
+        width: 48px;
+        height: 48px;
+        background: #22c55e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: white;
+        margin: 0 auto 16px;
+        animation: successPulse 0.5s ease;
+      }
+
+      h3 {
+        color: #1e293b;
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: var(--textGray);
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* ================= cooperation ================= */
+
+.MainContent {
+  padding: 20px 0 0;
+  width: 1200px;
+  justify-self: center;
+  display: grid;
+  font-family: var(--Font);
+  gap: 40px;
+  .CoopHero {
+    padding: 20px 0;
+    text-align: center;
+    background: var(--bgWhite);
+    border-radius: 12px;
+    cursor: default;
+    h1 {
+      color: var(--textDark);
+      margin-bottom: 10px;
+      font-size: 28px;
+      font-family: var(--Font);
+    }
+
+    p {
+      color: var(--textGray);
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-family: var(--Font);
+    }
+  }
+
+  /* Benefits */
+  .BenefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    .BenefitCard {
+      background: var(--bgWhite);
+      padding: 30px 20px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--boxShadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid transparent;
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: var(--gold);
+      }
+
+      .BenefitIcon {
+        font-size: 32px;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .BenefitTitle {
+        font-weight: bold;
+        color: var(--textDark);
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .BenefitDesc {
+        font-size: 13px;
+        color: var(--textGray);
+        line-height: 1.6;
+      }
+    }
+  }
+
+  /* Jobs */
+  .SectionTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--textDark);
+    border-right: 4px solid var(--gold);
+    padding-right: 15px;
+  }
+
+  .JobsList {
+    display: grid;
+    gap: 15px;
+
+    .JobItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 20px 25px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: var(--gold);
+        box-shadow: var(--boxShadow);
+        background-color: var(--grayBgHover);
+      }
+
+      .JobInfo {
         h3 {
-          color: #1e293b;
-          font-size: 1.25rem;
-          margin-bottom: 8px;
+          margin: 0 0 5px;
+          font-size: 16px;
+          color: var(--textDark);
         }
 
-        p {
+        .JobMeta {
+          font-size: 13px;
           color: var(--textGray);
-          font-size: 0.875rem;
+        }
+      }
+
+      .ApplyLink {
+        text-decoration: none;
+        color: var(--goldDark);
+        font-weight: bold;
+        font-size: 14px;
+        transition: padding-right 0.2s;
+
+        &:hover {
+          padding-right: 5px;
         }
       }
     }
   }
 
-/* Animations */
-@keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
+  /* Form */
+  .FormCard {
+    background: var(--bgWhite);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--boxShadow);
+    border: 1px solid var(--borderLight);
 
-@keyframes successPulse {
-  0% { transform: scale(0); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+    form {
+      .Grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .Field {
+        margin-bottom: 15px;
+
+        label {
+          display: block;
+          margin-bottom: 8px;
+          color: var(--textDark);
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        input,
+        select,
+        textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid var(--borderLight);
+          border-radius: 8px;
+          background: var(--grayBg);
+          font-family: var(--Font);
+          box-sizing: border-box;
+          transition: border 0.3s;
+
+          &:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--grayBgHover);
+          }
+        }
+
+        .FileUpload {
+          display: block;
+          border: 2px dashed #ddd;
+          padding: 30px;
+          text-align: center;
+          border-radius: 12px;
+          cursor: pointer;
+          background: var(--bgLight);
+          color: var(--textGray);
+          transition: 0.3s;
+          font-size: 14px;
+
+          &:hover {
+            border-color: var(--gold);
+            color: var(--goldDark);
+            background-color: #fff;
+          }
+        }
+      }
+
+      .SubmitArea {
+        text-align: left;
+        margin-top: 30px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+
+        .SubmitBtn {
+          background-color: var(--gold);
+          color: #fff;
+          border: none;
+          padding: 12px 40px;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;
+          font-weight: bold;
+          font-family: var(--Font);
+          transition: background 0.3s;
+
+          &:hover {
+            background-color: var(--goldDark);
+          }
+        }
+      }
+    }
+  }
+}
+/* ================= FAQ ================= */
+.FAQContainer {
+  max-width: 1200px;
+  justify-self: center;
+  padding: 40px 0;
+  font-family: var(--Font);
+  display: grid;
+  gap: 50px;
+  .right {
+    width: 288px;
+    background: var(--bgWhite);
+    border-radius: 16px;
+    box-shadow: var(--boxShadow);
+    overflow: hidden;
+    font-family: var(--Font);
+    height: fit-content;
+    .MenuHeader {
+      background-color: var(--gold);
+      color: var(--textDark);
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      img {
+        width: 24px;
+      }
+      .Username {
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .EditBtn {
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    }
+
+    .MenuBody {
+      padding: 12px;
+
+      .ClubCard {
+        display: flex;
+        align-items: center;
+        background-color: var(--goldDark);
+        padding: 12px;
+        border-radius: 12px;
+        text-decoration: none;
+        margin-bottom: 8px;
+
+        .Chevron {
+          font-size: 20px;
+          color: var(--textDark);
+        }
+
+        .ClubInfo {
+          flex-grow: 1;
+          margin-right: 10px;
+
+          .ClubName {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--textDark);
+          }
+
+          .ClubStats {
+            font-size: 11px;
+            color: var(--textGray);
+          }
+        }
+
+        .Badge {
+          font-size: 20px;
+        }
+      }
+
+      .Nav {
+        display: flex;
+        flex-direction: column;
+
+        .Item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 10px 8px;
+          font-size: 14px;
+          font-weight: bold;
+          color: var(--textDark);
+          text-decoration: none;
+          cursor: pointer;
+          transition: background 0.2s;
+
+          &:hover {
+            background-color: var(--bgLight);
+          }
+
+          .Icon {
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+          }
+
+          &.Logout {
+            color: #ff5252 !important;
+            margin-top: 5px;
+          }
+        }
+
+        .Dropdown {
+          summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &::after {
+              content: "⌄";
+              font-size: 21px;
+              color: #888;
+              margin-right: auto;
+              transition: transform 0.2s;
+            }
+          }
+
+          &[open] summary::after {
+            transform: rotate(180deg);
+          }
+
+          .Content {
+            padding-right: 36px;
+
+            a {
+              display: block;
+              padding: 8px 0;
+              font-size: 13px;
+              color: var(--textDark);
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  /* Header & Search */
+  .FAQHeader {
+    text-align: center;
+    display: grid;
+    gap: 25px;
+    h1 {
+      font-size: 28px;
+      color: var(--textDark);
+    }
+
+    .SearchBox {
+      display: flex;
+      max-width: 600px;
+      justify-self: center;
+      gap: 10px;
+      width: 100%;
+      input {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid var(--borderLight);
+        border-radius: 12px;
+        box-shadow: var(--boxShadow);
+        font-family: var(--Font);
+      }
+
+      button {
+        background: var(--gold);
+        border: none;
+        padding: 0 30px;
+        border-radius: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        font-family: var(--Font);
+        transition: 0.3s;
+        &:hover {
+          transform: translateY(-5px);
+          background: var(--goldDark);
+        }
+      }
+    }
+  }
+
+  /* Layout */
+  .FAQContent {
+    display: flex;
+    gap: 30px;
+
+    .FAQMain {
+      display: grid;
+      gap: 30px;
+      /* FAQ Section */
+      .FAQSection {
+        display: grid;
+        gap: 20px;
+        .SectionTitle {
+          font-size: 20px;
+          font-weight: bold;
+          color: var(--textDark);
+        }
+
+        .FAQWrapper {
+          background: var(--bgWhite);
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: var(--boxShadow);
+
+          .FAQItem {
+            border-bottom: 1px solid #f1f1f1;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &.active {
+              .FAQAnswer {
+                max-height: 200px;
+              }
+
+              .Icon {
+                transform: rotate(45deg);
+              }
+            }
+
+            .FAQButton {
+              width: 100%;
+              padding: 20px;
+              background: none;
+              border: none;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              cursor: pointer;
+              text-align: right;
+              font-size: 16px;
+              color: var(--textDark);
+              font-family: inherit;
+              transition: background 0.3s;
+
+              &:hover {
+                background: var(--grayBgHover);
+              }
+
+              .Icon {
+                font-size: 22px;
+                color: var(--goldDark);
+                transition: transform 0.3s;
+              }
+            }
+
+            .FAQAnswer {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease-out;
+              background: var(--bgWhite);
+
+              p {
+                padding: 0 20px 20px;
+                color: var(--textGray);
+                line-height: 1.8;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+
+      /* Support Card */
+      .SupportCard {
+        background: linear-gradient(135deg, var(--goldDark), var(--gold));
+        padding: 30px;
+        border-radius: 16px;
+        text-align: center;
+        color: var(--textDark);
+
+        h3 {
+          margin-bottom: 10px;
+        }
+
+        .SupportButtons {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          margin-top: 20px;
+
+          button {
+            padding: 10px 25px;
+            border-radius: 8px;
+            border: none;
+            font-family: inherit;
+            cursor: pointer;
+            font-weight: bold;
+          }
+
+          .BtnContact {
+            background: var(--bgWhite);
+            color: var(--textDark);
+            transition: 0.3s;
+            &:hover {
+              box-shadow: var(--boxShadow);
+              background-color: var(--textGray);
+              color: var(--grayBgHover);
+            }
+          }
+
+          .BtnCall {
+            background: var(--textDark);
+            color: var(--bgWhite);
+            transition: 0.3s;
+            &:hover {
+              box-shadow: var(--boxShadow);
+              background-color: var(--grayBgHover);
+              color: var(--textDark);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* ================= cancellation ================= */
+.TrackContainer {
+  width: 1200px;
+  justify-self: center;
+  padding: 40px 0;
+  font-family: var(--Font);
+  direction: rtl;
+  display: grid;
+  gap: 20px;
+  /* Hero */
+  .TrackHero {
+    text-align: center;
+    display: grid;
+    gap: 10px;
+    h1 {
+      font-size: 26px;
+      color: var(--textDark);
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--textGray);
+    }
+  }
+
+  /* Common */
+  .Secti {
+    onTitle {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--textDark);
+      border-right: 4px solid var(--gold);
+      padding-right: 12px;
+    }
+  }
+  .Grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .Field {
+    display: grid;
+    gap: 8px;
+    label {
+      display: block;
+      font-size: 14px;
+      color: var(--textDark);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: var(--borderLight);
+      background: var(--bgLight);
+      font-family: var(--Font);
+      &:focus {
+        outline: none;
+        border-color: var(--gold);
+        background: var(--grayBgHover);
+      }
+    }
+  }
+
+  .SubmitArea {
+    text-align: left;
+
+    .SubmitBtn {
+      width: 100%;
+      padding: 12px;
+      background: var(--gold);
+      color: var(--textDark);
+      font-family: var(--Font);
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--goldDark);
+      }
+    }
+  }
+
+  /* Search */
+  .SearchCard {
+    background: var(--bgWhite);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--boxShadow);
+    display: grid;
+    gap: 15px;
+    border: 1px solid var(--gold);
+  }
+
+  /* Result */
+  .BookingResultCard {
+    background: var(--bgWhite);
+    border-radius: 16px;
+    box-shadow: var(--boxShadow);
+    overflow: hidden;
+
+    .ResultHeader {
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: var(--bgLight);
+
+      .TypeBadge {
+        background: var(--bgLight);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+      }
+
+      .BookingID span {
+        font-weight: bold;
+      }
+
+      .StatusBadge.success {
+        color: var(--success);
+        font-weight: bold;
+      }
+    }
+
+    .ResultBody {
+      padding: 25px;
+      .TravelInfo {
+        display: grid;
+        gap: 15px;
+        .Route {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          text-align: center;
+
+          .Point {
+            strong {
+              display: block;
+              font-size: 18px;
+            }
+
+            span {
+              font-size: 13px;
+              color: var(--textGray);
+            }
+          }
+
+          .Line {
+            flex-grow: 1;
+            border-bottom: 2px dotted var(--textGray);
+            margin: 0 20px;
+          }
+        }
+        .PassengerInfo {
+          background: var(--bgLight);
+          padding: 12px;
+          border-radius: 8px;
+          display: flex;
+          gap: 30px;
+          font-size: 14px;
+        }
+      }
+
+      .ActionButtons {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+
+        button {
+          flex: 1;
+          padding: 12px;
+          border-radius: 8px;
+          border: none;
+          font-weight: bold;
+          cursor: pointer;
+          font-family: var(--Font);
+        }
+
+        .BtnSecondary {
+          background: var(--grayBg);
+          transition: 0.3s;
+          &:hover {
+            transform: translateY(-5px);
+            background-color: var(--grayBgHover);
+          }
+        }
+
+        .BtnDanger {
+          background: tomato;
+          color: var(--danger);
+          border: 1px solid var(--danger);
+          transition: 0.3s;
+          &:hover {
+            background: rgb(255, 66, 33);
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+
+  /* Policy */
+  .PolicyCard {
+    background: var(--grayBgHover);
+    padding: 25px;
+    border-radius: 16px;
+    border-right: 5px solid var(--gold);
+      font-size: 16px;
+      font-weight: bold;
+      display: grid;
+      gap: 10px;
+    ul {
+      padding-right: 20px;
+
+
+      li {
+        font-size: 13px;
+        line-height: 1.6;
+
+      }
+    }
+  }
+}
+/* ================= Tour Search ================= */
+
+.List {
+  margin-bottom: 40px;
+
+  .Form {
+    background: var(--bgWhite);
+    border-radius: 16px;
+    box-shadow: var(--boxShadow);
+
+    .Top {
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      font-weight: bold;
+    }
+
+    .TourSearchGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      align-items: flex-end;
+
+      .InputWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        label {
+          font-size: 13px;
+          color: var(--textGray);
+        }
+
+        input {
+          height: 45px;
+          border-radius: 8px;
+          border: none;
+          background: var(--grayBg);
+          padding: 0 15px;
+          font-family: var(--Font);
+        }
+      }
+
+      .Submit {
+        button {
+          width: 100%;
+          height: 45px;
+          border-radius: 8px;
+          border: none;
+          background: var(--gold);
+          color: #fff;
+          font-weight: bold;
+          cursor: pointer;
+
+          &:hover {
+            background: var(--goldDark);
+          }
+        }
+      }
+    }
+  }
 }

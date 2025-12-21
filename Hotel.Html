@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hotell</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
               خدمات مسافرتی <span class="Arrow">▾</span>
               <div class="Dropdown">
                 <a class="DropdownItem" href="/Hotel.Html">رزرو هتل</a>
-                <a class="DropdownItem" href="/parvaz.html">رزرو پرواز</a>
+                <a class="DropdownItem" href="/Flight.html">رزرو پرواز</a>
                 <a class="DropdownItem" href="#">تور مسافرتی</a>
               </div>
             </div>
@@ -29,22 +29,23 @@
             <div class="NavItem">
               درباره ما <span class="Arrow">▾</span>
               <div class="Dropdown">
-                <a class="DropdownItem" href="#">تماس با ما</a>
-                <a class="DropdownItem" href="#">همکاری با ما</a>
+                <a class="DropdownItem" href="AboutUs.html">تماس با ما</a>
+                <a class="DropdownItem" href="/cooperation.html">همکاری با ما</a>
               </div>
             </div>
 
             <div class="NavItem">
               پشتیبانی <span class="Arrow">▾</span>
               <div class="Dropdown">
-                <a class="DropdownItem" href="#">سوالات متداول</a>
-                <a class="DropdownItem" href="#">راهنمای رزرو</a>
-                <a class="DropdownItem" href="#">قوانین و مقررات</a>
+                <a class="DropdownItem" href="/FAQ.html">سوالات متداول</a>
+                <a class="DropdownItem" href="/HowToBuyTicket.html">راهنمای رزرو</a>
+                <a class="DropdownItem" href="./rules.html">قوانین و مقررات</a>
+                <a class="DropdownItem" href="/cancellation.html"> پیگیری خرید و کنسلی </a>
               </div>
             </div>
 
             <a href="#" class="NavItem">بلاگ</a>
-            <a href="#" class="NavItem">تماس با ما</a>
+            <a href="/AboutUs.html" class="NavItem">تماس با ما</a>
           </nav>
 
           <div class="AuthButtons">
@@ -63,48 +64,41 @@
         <div class="HeroContent"></div>
       </div>
     </header>
+
     <section class="TravelCards">
-      <div class="CardsContainer">
-        <a href="/parvaz.html">
-          <div class="TravelCard Active" data-type="plane">
-            <div class="CardIcon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
-                />
-              </svg>
-            </div>
-            <div class="CardText">هواپیما</div>
-          </div>
-        </a>
-        
-        <a href="Hotel.Html">
-          <div class="TravelCard" data-type="hotel">
-            <div class="CardIcon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V6H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"
-                />
-              </svg>
-            </div>
-            <div class="CardText">هتل</div>
+  <div class="CardsContainer">
+
+    <a href="Flight.html" data-page="Flight.html">
+      <div class="TravelCard" data-page="Flight.html" data-type="plane">
+        <div class="CardIcon">             
+           <svg viewBox="0 0 24 24">
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+              </svg></div>
+        <div class="CardText">هواپیما</div>
+      </div>
+    </a>
+
+    <a href="Hotel.html" data-page="Hotel.html">
+      <div class="TravelCard" data-page="Hotel.html" data-type="hotel">
+        <div class="CardIcon">
+          <svg viewBox="0 0 24 24"> <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V6H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" /> </svg>
         </div>
-        </a>
+        <div class="CardText">هتل</div>
+      </div>
+    </a>
 
-        <a href="">
-          <div class="TravelCard" data-type="bus">
-            <div class="CardIcon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"
-                />
-              </svg>
-            </div>
-            <div class="CardText">تور</div>
-          </div>
-        </a>
+    <a href="Tour.html" data-page="Tour.html">
+      <div class="TravelCard" data-page="Tour.html" data-type="bus">
+        <div class="CardIcon">
+        <svg viewBox="0 0 24 24"><path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/> </svg>
+        </div>
+        <div class="CardText">تور</div>
+      </div>
+    </a>
 
-    </section>
+  </div>
+</section>
+
 
 <section>
     <div class="List">
@@ -834,74 +828,73 @@
 
     </div>
 </section>
-<footer>
-  <div class="Container">
-    <div class="TopRow">
-      <div class="Contact">
-        <div class="Top">
-          <span>تلفن پشتیبانی: ۰۲۱-۹۱۰۰۹۰۰۰</span>
-          <span>ایمیل: salam@example.com</span>
+
+    <footer>
+      <div class="Container">
+        <div class="TopRow">
+          <div class="Contact">
+            <div class="Top">
+              <span>تلفن پشتیبانی 24 ساعته: 2911321-021</span>
+              <span>ایمیل پشتیبانی: salam@example.com</span>
+            </div>
+
+            <div class="buttom">
+              <a href="/Flight.html"><p>بلیط هواپیما</p></a>
+              <a href="/Hotel.Html"><p>رزرو هتل</p></a>
+              <a href=""><p>مشاهده ی تورها</p></a>
+            </div>
+
+            <div class="canccel">
+              <a href=""><p> پیگیری و کنسلی بلیط </p></a>
+            </div>
+          </div>
+
+          <div class="OrgBox">
+            <h3>راهکارهای سازمانی</h3>
+            <p>
+              خدمات اختصاصی برای سازمان‌ها و شرکت‌ها جهت مدیریت سفرهای کاری.
+            </p>
+            <button>فعال‌سازی پنل سازمانی</button>
+          </div>
         </div>
 
-        <div class="buttom">
-          <a href=""><p>my text 1</p></a>
-          <a href=""><p>my text 1</p></a>
-          <a href=""><p>my text 1</p></a>
-          <a href=""><p>my text 1</p></a>
-          <a href=""><p>my text 1</p></a>
+        <div class="LinksRow">
+          <div class="Links">
+            <h4>راهنمایی و پشتیبانی</h4>
+            <ul>
+              <a href=""><li>پرسش‌های متداول</li></a>
+              <a href=""><li>پیشنهادها و شکایات</li></a>
+              <a href=""><li>شرایط و مقررات</li></a>
+              <a href=""><li>مجله مستر بلیط</li></a>
+              <a href=""><li>مجله مستر بلیط</li></a>
+            </ul>
+          </div>
+
+          <div class="Description">
+            <div class="Text">
+              <h4> لبخند بزن و سفر کن! </h4>
+              <p>حمید پرواز سامانه آنلاین خرید بلیط هواپیما، چارتری و رزرو هتل و تور است؛ راهی سریع و آسان برای برنامه‌ریزی سفرهایتان! تنها با چند کلیک می‌توانید بلیط خود را به هر مقصدی که بخواهید تهیه کرده، صورتحسابتان را آنلاین پرداخت کنید و بی‌دغدغه آماده سفر خود باشید.</p>
+            </div>
+            <div class="Logos">
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+            </div>
+          </div>
         </div>
 
-        <div class="canccel">
-          <a href=""><p>my text 1</p></a>
+        <div class="Bottom">
+          <p>تمامی حقوق این وب‌سایت محفوظ است.</p>
+          <div class="Social">
+              <img src="/Media/instagram-svgrepo-com.svg" alt="لوگو های شما" />
+              <img src="/Media/telegram-svgrepo-com.svg" alt="لوگو های شما" />
+              <img src="/Media/gmail-svgrepo-com.svg" alt="لوگو های شما" />
+          </div>
         </div>
       </div>
-
-      <div class="OrgBox">
-        <h3>راهکارهای سازمانی</h3>
-        <p>
-          خدمات اختصاصی برای سازمان‌ها و شرکت‌ها جهت مدیریت سفرهای کاری.
-        </p>
-        <button>فعال‌سازی پنل سازمانی</button>
-      </div>
-    </div>
-
-    <div class="LinksRow">
-      <div class="Links">
-        <h4>راهنمایی و پشتیبانی</h4>
-        <ul>
-          <a href=""><li>پرسش‌های متداول</li></a>
-          <a href=""><li>پیشنهادها و شکایات</li></a>
-          <a href=""><li>شرایط و مقررات</li></a>
-          <a href=""><li>مجله مستر بلیط</li></a>
-          <a href=""><li>مجله مستر بلیط</li></a>
-        </ul>
-      </div>
-
-      <div class="Description">
-        <div class="Text">سامانه آنلاین خرید بلیط هواپیما، قطار و اتوبوس با امکان مقایسه قیمت‌ها و خرید سریع و آسان.</div>
-        <div class="Logos">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="Bottom">
-      <div class="Social">
-        <div>Image</div>
-        <div>Image</div>
-        <div>Image</div>
-      </div>
-      <div>تمامی حقوق این وب‌سایت محفوظ است.</div>
-    </div>
-
-  </div>
-</footer>
+    </footer>
 
 <script src="./FAQ.js"></script>
 <script src="main.js"></script>
