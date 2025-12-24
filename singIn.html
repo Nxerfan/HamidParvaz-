@@ -1,66 +1,62 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فرم ورود</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فرم ورود</title>
+  <link rel="stylesheet" href="style.css" />
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <h2>ورود به حساب کاربری</h2>
-                <p>اطلاعات خود را وارد کنید تا به حساب کاربریتان دسترسی پیدا کنید</p>
-            </div>
-            
-            <form class="login-form" id="loginForm" novalidate>
-                <div class="form-group">
-                    <div class="input-wrapper">
-                        <input type="email" id="email" name="email" required autocomplete="email">
-                        <label for="email">آدرس ایمیل</label>
-                    </div>
-                    <span class="error-message" id="emailError"></span>
-                </div>
 
-                <div class="form-group">
-                    <div class="input-wrapper password-wrapper">
-                        <input type="password" id="password" name="password" required autocomplete="current-password">
-                        <label for="password">رمز عبور</label>
-                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="نمایش یا پنهان کردن رمز عبور">
-                            <span class="eye-icon"></span>
-                        </button>
-                    </div>
-                    <span class="error-message" id="passwordError"></span>
-                </div>
+<div class="LoginContainer">
+  <div class="LoginCard">
 
-                <div class="form-options">
-                    <label class="remember-wrapper">
-                        <input type="checkbox" id="remember" name="remember">
-                        <span class="checkbox-label">
-                            <span class="checkmark"></span>
-                            مرا به خاطر بسپار
-                        </span>
-                    </label>
-                    <a href="#" class="forgot-password">رمز عبور خود را فراموش کرده‌اید؟</a>
-                </div>
-
-                <button type="submit" class="login-btn">
-                    <span class="btn-text">ورود</span>
-                    <span class="btn-loader"></span>
-                </button>
-            </form>
-
-            <div class="signup-link">
-                <p>حساب کاربری ندارید؟ <a href="#">ایجاد حساب</a></p>
-            </div>
-
-            <div class="success-message" id="successMessage">
-                <div class="success-icon">✓</div>
-                <h3>ورود با موفقیت انجام شد!</h3>
-                <p>در حال انتقال به داشبورد...</p>
-            </div>
-        </div>
+    <div class="LoginHeader">
+      <h2>خوش آمدید</h2>
+      <p>وارد حساب کاربری خود شوید</p>
     </div>
+
+    <form class="LoginForm" novalidate>
+
+      <div class="FormGroup">
+        <div class="InputWrapper">
+          <input type="email" required />
+          <label>ایمیل</label>
+        </div>
+      </div>
+
+      <div class="FormGroup">
+        <div class="InputWrapper PasswordWrapper">
+          <input type="password" class="PasswordInput" required />
+          <label>رمز عبور</label>
+
+          <button type="button" class="PasswordToggle">
+            <i class="fa-solid fa-eye EyeIcon" ></i>
+          </button>
+        </div>
+      </div>
+
+      <button class="Btn">ورود به حساب</button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.querySelector(".PasswordToggle");
+  const passwordInput = document.querySelector(".PasswordInput");
+
+  toggleBtn.addEventListener("click", () => {
+    const isPassword = passwordInput.type === "password";
+    passwordInput.type = isPassword ? "text" : "password";
+    toggleBtn.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>

@@ -1169,12 +1169,12 @@ Footer {
           padding-bottom: 15px;
           .Stars {
             display: flex;
-
             i {
               padding: 0 3px;
               display: flex;
               width: auto;
               font-size: 14px;
+              color: var(--gold);
             }
             span {
               font-size: 14px;
@@ -1658,6 +1658,7 @@ Footer {
               display: flex;
               width: auto;
               font-size: 14px;
+              color: var(--gold);
             }
             span {
               font-size: 14px;
@@ -2484,11 +2485,13 @@ Footer {
   }
 }
 /* ================= UserPannel ================= */
-.container {
+.containerr {
   width: 1200px;
+  height: fit-content;
   justify-self: center;
   display: flex;
   padding: 15px 0;
+  gap: 15px;
   .right {
     width: 288px;
     background: var(--bgWhite);
@@ -2630,13 +2633,14 @@ Footer {
   }
   .left {
     display: flex;
-    width: auto;
+    width: calc(100% - 20%);
     .Card,
     .Card2 {
-      width: 888px;
-      background: #fff;
+      width: 100%;
+      background: var(--bgWhite);
       border-radius: 16px;
       padding: 32px;
+      height: max-content;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
       .Title {
         h1 {
@@ -2847,356 +2851,110 @@ Footer {
   }
 }
 /* ================= LoginPage ================= */
-.login-container {
+.LoginContainer {
+  max-width: 420px;
+  margin: 200px auto;
+}
+
+.LoginCard {
+  background: var(--bgWhite);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--boxShadow);
+}
+
+.LoginHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.LoginHeader h2 {
+  color: var(--goldText);
+}
+
+.LoginHeader p {
+  color: var(--textGray);
+}
+
+.FormGroup {
+  margin-bottom: 22px;
+}
+
+.InputWrapper {
+  position: relative;
+}
+
+.InputWrapper input {
   width: 100%;
-  max-width: 400px;
-  justify-self: center;
-  align-self: center;
-  margin-top: 10%;
-  .login-card {
-    background: white;
-    border-radius: 12px;
-    padding: 32px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height: 48px;
+  padding: 14px 14px 14px 44px; /* فضای چشم */
+  border-radius: 12px;
+  border: var(--borderLight);
+  font-size: 14px;
+}
 
-    .login-header {
-      text-align: center;
-      margin-bottom: 32px;
+.InputWrapper label {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  color: var(--textGray);
+  pointer-events: none;
+  background: white;
+  padding: 0 6px;
+  transition: 0.3s;
+}
 
-      h2 {
-        font-size: 1.875rem;
-        font-weight: 700;
-        color: #1e293b;
-        margin-bottom: 8px;
-      }
+.InputWrapper input:focus + label,
+.InputWrapper input:valid + label {
+  top: -8px;
+  font-size: 12px;
+  color: var(--goldDark);
+}
 
-      p {
-        color: var(--textGray);
-        font-size: 0.875rem;
-      }
-    }
+/* ===== Password eye ===== */
 
-    .login-form {
-      .form-group {
-        .input-wrapper {
-          position: relative;
-          display: flex;
-          flex-direction: column;
+.PasswordToggle {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+}
+i {
+  color: var(--goldDark);
+  opacity: 0.4;
+  transition: 0.3s;
+  .EyeIcon {
+    align-items: center;
+    display: block;
+    width: 20px;
+    height: 20px;
 
-          input {
-            background: white;
-            border: 2px solid var(--bgLight);
-            border-radius: 8px;
-            padding: 12px 16px 8px 16px;
-            color: #1e293b;
-            font-size: 16px;
-            transition: all 0.2s ease;
-            width: 100%;
-            outline: none;
-
-            &::placeholder {
-              color: transparent;
-            }
-
-            &:focus,
-            &:valid,
-            &.has-value {
-              border-color: var(--goldDark);
-            }
-
-            &:focus + label,
-            &:valid + label,
-            &.has-value + label {
-              transform: translateY(-8px) scale(0.875);
-              color: var(--goldDark);
-              font-weight: 500;
-            }
-          }
-
-          label {
-            position: absolute;
-            left: 16px;
-            top: 12px;
-            color: var(--textGray);
-            font-size: 16px;
-            transition: all 0.2s ease;
-            pointer-events: none;
-            transform-origin: left top;
-          }
-
-          &.password-wrapper {
-            position: relative;
-
-            input {
-              padding-right: 48px;
-            }
-
-            .password-toggle {
-              position: absolute;
-              right: 12px;
-              top: 50%;
-              transform: translateY(-50%);
-              background: none;
-              border: none;
-              cursor: pointer;
-              padding: 8px;
-              color: var(--textGray);
-              transition: color 0.2s ease;
-
-              &:hover {
-                color: var(--textDark);
-              }
-
-              .eye-icon {
-                display: block;
-                width: 20px;
-                height: 20px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                transition: background-image 0.2s ease;
-
-                &.show-password {
-                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='1.5'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 11-4.243-4.243m4.242 4.242L9.88 9.88'/%3e%3c/svg%3e");
-                }
-              }
-            }
-          }
-        }
-
-        .error-message {
-          display: block;
-          color: #ef4444;
-          font-size: 0.75rem;
-          font-weight: 500;
-          margin-top: 4px;
-          margin-left: 4px;
-          opacity: 0;
-          transform: translateY(-4px);
-          transition: all 0.2s ease;
-
-          &.show {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        &.error {
-          .input-wrapper input {
-            border-color: #ef4444;
-          }
-        }
-      }
-
-      .form-options {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 24px;
-        flex-wrap: wrap;
-        gap: 12px;
-
-        .remember-wrapper {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          cursor: pointer;
-
-          input[type="checkbox"] {
-            display: none;
-
-            &:checked ~ .checkbox-label {
-              .checkmark {
-                background: var(--gold);
-                border-color: var(--gold);
-
-                &::after {
-                  content: "✓";
-                  color: black;
-                  font-size: 10px;
-                  font-weight: bold;
-                }
-              }
-            }
-          }
-
-          .checkbox-label {
-            color: var(--textGray);
-            font-size: 0.875rem;
-            cursor: pointer;
-            user-select: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            .checkmark {
-              width: 16px;
-              height: 16px;
-              border: 2px solid var(--textGray);
-              border-radius: 4px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              transition: all 0.2s ease;
-              flex-shrink: 0;
-              background: white;
-            }
-          }
-        }
-
-        .forgot-password {
-          color: var(--goldDark);
-          text-decoration: none;
-          font-size: 0.875rem;
-          font-weight: 500;
-          transition: color 0.2s ease;
-
-          &:hover {
-            color: var(--goldText);
-          }
-        }
-      }
-
-      .login-btn {
-        width: 100%;
-        background: var(--gold);
-        border: none;
-        border-radius: 8px;
-        padding: 12px 24px;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        position: relative;
-        margin-bottom: 24px;
-
-        &:hover {
-          background: var(--goldDark);
-        }
-
-        &:active {
-          transform: translateY(1px);
-        }
-
-        &.loading {
-          pointer-events: none;
-          background: #a5a6f6;
-
-          .btn-text {
-            opacity: 0;
-          }
-
-          .btn-loader {
-            opacity: 1;
-          }
-        }
-
-        .btn-text {
-          transition: opacity 0.2s ease;
-        }
-
-        .btn-loader {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 16px;
-          height: 16px;
-          border: 2px solid transparent;
-          border-top: 2px solid white;
-          border-radius: 50%;
-          opacity: 0;
-          animation: spin 1s linear infinite;
-          transition: opacity 0.2s ease;
-        }
-      }
-    }
-
-    .signup-link {
-      text-align: center;
-
-      p {
-        color: var(--textGray);
-        font-size: 0.875rem;
-
-        a {
-          color: var(--goldDark);
-          text-decoration: none;
-          font-weight: 500;
-          transition: color 0.2s ease;
-
-          &:hover {
-            color: var(--goldText);
-          }
-        }
-      }
-    }
-
-    .success-message {
-      display: none;
-      text-align: center;
-      padding: 32px 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
-
-      &.show {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .success-icon {
-        width: 48px;
-        height: 48px;
-        background: #22c55e;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        color: white;
-        margin: 0 auto 16px;
-        animation: successPulse 0.5s ease;
-      }
-
-      h3 {
-        color: #1e293b;
-        font-size: 1.25rem;
-        margin-bottom: 8px;
-      }
-
-      p {
-        color: var(--textGray);
-        font-size: 0.875rem;
-      }
-    }
+    align-items: center;
   }
 }
 
-/* Animations */
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+.PasswordToggle.active .EyeIcon {
+  opacity: 1;
 }
 
-@keyframes successPulse {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+/* ===== Button ===== */
+
+.Btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--gold), var(--goldDark));
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
+
 /* ================= cooperation ================= */
 
 .MainContent {
@@ -4123,7 +3881,7 @@ Footer {
         height: 100%;
         object-fit: cover;
         background: var(--gold);
-        border-radius: 12px 12px 0 0 ;
+        border-radius: 12px 12px 0 0;
       }
       .Down {
         display: grid;
@@ -4143,6 +3901,8 @@ Footer {
               display: flex;
               width: auto;
               font-size: 14px;
+              color: var(--gold);
+              opacity: 1;
             }
             span {
               font-size: 14px;
@@ -4158,6 +3918,7 @@ Footer {
               display: flex;
               i {
                 padding: 0;
+                opacity: 1;
               }
             }
           }
@@ -4176,6 +3937,7 @@ Footer {
               color: var(--textGray);
               i {
                 font-size: 16px;
+                opacity: 1;
               }
             }
           }
@@ -4200,7 +3962,7 @@ Footer {
           display: flex;
           p {
             display: flex;
-          align-items: center;
+            align-items: center;
 
             gap: 5px;
             font-size: 12px;
@@ -4216,3 +3978,543 @@ Footer {
     }
   }
 }
+/* ================= choosedHotel ================= */
+.container26 {
+  padding: 40px 0 0 0;
+  width: 1200px;
+  justify-self: center;
+  display: flex;
+  gap: 20px;
+  p {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--goldDark);
+    padding: 0 0 30px 0;
+  }
+  .right {
+    width: calc(100% - 30%);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .Card {
+      background-color: var(--bgWhite);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: var(--boxShadow);
+      width: 100%;
+      height: max-content;
+      display: grid;
+      gap: 20px;
+      .MainImg {
+        width: 100%;
+        max-height: 430px;
+        position: relative;
+        border-radius: 8px;
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+          border-radius: 4px;
+        }
+      }
+      .MoreImg {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        max-height: 150px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+      }
+    }
+    .Options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .Card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        p {
+          font-size: 17px;
+          font-weight: bold;
+          color: var(--textDark);
+        }
+        .Option {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          i {
+            color: var(--textDark);
+            opacity: 1;
+            height: fit-content;
+            font-size: 16px;
+          }
+          p {
+            font-size: 14px;
+            font-weight: normal;
+            padding: 0;
+          }
+        }
+      }
+    }
+    .Rooms {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .Top {
+        display: grid;
+        gap: 20px;
+        .Title {
+          display: flex;
+          justify-content: space-between;
+          i {
+            color: var(--gold);
+            opacity: 1;
+            font-size: 18px;
+          }
+          p {
+            padding: 0;
+            font-size: 17px;
+          }
+          span {
+            color: var(--textGray);
+            font-size: 14px;
+          }
+        }
+        .AboutRoom {
+          display: flex;
+          gap: 10px;
+
+          .Caption {
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 230px);
+            align-items: center;
+            p {
+              padding: 0;
+              font-size: 15px;
+              color: var(--textGray);
+              span {
+                font-size: 20px;
+                color: var(--goldDark);
+              }
+            }
+          }
+          button {
+            width: 220px;
+            padding: 14px 8px;
+            background: var(--gold);
+            font-family: var(--Font);
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--textDark);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            i {
+              color: var(--textDark);
+              opacity: 1;
+            }
+            &:hover {
+              background: var(--goldDark);
+            }
+          }
+        }
+      }
+      .RoomOption {
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        .content {
+          display: flex;
+          flex-wrap: wrap;
+          max-height: 20px;
+          transition: max-height 0.3s ease;
+          p {
+            font-size: 12px;
+            color: var(--textGray);
+            padding: 0 10px;
+            border-left: var(--borderLight);
+          }
+
+          &.expanded {
+            max-height: 500px;
+          }
+        }
+        .toggle-btn {
+          background: none;
+          border: none;
+          color: var(--goldText);
+          cursor: pointer;
+          font-size: 12px;
+          font-family: var(--Font);
+          align-self: flex-start;
+          width: 30%;
+        }
+      }
+    }
+    .HotelInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .content {
+        overflow: hidden;
+        max-height: 125px;
+        transition: max-height 0.3s ease;
+        p {
+          font-size: 14px;
+          font-weight: normal;
+          color: var(--textDark);
+          padding: 0;
+        }
+        h4 {
+          font-size: 20px;
+          font-weight: bold;
+          color: var(--goldDark);
+        }
+        &.expanded {
+          max-height: 500px;
+        }
+      }
+      .toggle-btn {
+        background: none;
+        border: none;
+        color: var(--goldDark);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: var(--Font);
+        margin-top: 6px;
+        align-self: flex-start;
+        width: max-content;
+      }
+    }
+    .Distance {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .Card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .Option {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          justify-content: space-between;
+          i {
+            color: var(--textDark);
+            opacity: 1;
+            height: fit-content;
+            font-size: 16px;
+          }
+          p {
+            font-size: 14px;
+            font-weight: normal;
+            color: var(--textDark);
+            padding: 0;
+            &:last-of-type{
+            color: var(--goldDark);
+          }
+          }
+
+        }
+      }
+    }
+    .Rules{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .Card{
+        display: flex;
+        .Time{
+          display: flex;
+          gap: 10px;
+          .Value{
+            display: grid;
+            height: fit-content;
+            gap: 10px;
+            p{
+              padding: 0;
+              font-size: 14px;
+              color: var(--textDark);
+              height: fit-content;
+            }
+            span{
+              background: var(--grayBg);
+              padding: 10px;
+              border-radius: 12px;
+              i{
+                opacity: 1;
+                color: var(--textDark);
+              }
+            }
+          }
+        }
+        .rule{
+          p{
+            font-size: 14px;
+            color: var(--textDark);
+            padding: 0;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
+.left {
+  width: max-content;
+  display: grid;
+  gap: 40px;
+  height: max-content;
+  .Card {
+    background-color: var(--bgWhite);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--boxShadow);
+    width: 100%;
+    max-width: 350px;
+    display: grid;
+    gap: 20px;
+    .rating {
+      width: 100%;
+      height: max-content;
+      display: grid;
+      gap: 10px;
+      p {
+        padding: 0;
+      }
+      .Stars {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .Wth {
+          display: flex;
+          height: fit-content;
+          gap: 2px;
+          font-size: 14px;
+          color: var(--textDark);
+          i {
+            display: flex;
+            align-items: center;
+            color: var(--gold);
+            opacity: 1;
+            font-size: 18px;
+          }
+        }
+        .Rate {
+          p {
+            display: flex;
+            height: fit-content;
+            gap: 5px;
+            align-items: center;
+            font-size: 12px;
+            color: green;
+            i {
+              display: flex;
+              align-items: center;
+              color: var(--gold);
+              opacity: 1;
+              color: green;
+
+              height: fit-content;
+            }
+          }
+        }
+      }
+      p {
+        font-size: 17px;
+        color: var(--textDark);
+        font-weight: bold;
+      }
+      .titel {
+        display: inline-flex;
+        width: 100%;
+        justify-content: start;
+        align-items: center;
+
+        p {
+          font-size: 15px;
+          font-weight: 100;
+          color: var(--textGray);
+          text-align: center;
+          span {
+            color: var(--goldText);
+            font-size: 20px;
+            padding: 0 8.5px;
+          }
+          &:last-of-type {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .price {
+      display: grid;
+      padding-top: 20px;
+      border-top: var(--borderLight);
+      gap: 15px;
+      .text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        i {
+          font-size: 20px;
+          color: var(--textGray);
+          opacity: 1;
+        }
+        p {
+          font-size: var(--fontSize);
+          color: var(--textGray);
+          line-height: 30px;
+        }
+      }
+      button {
+        background: none;
+        font-family: var(--Font);
+        font-size: 15px;
+        font-weight: bold;
+        padding: 10px 0;
+        border-radius: 8px;
+        border: 2px solid var(--gold);
+        color: var(--goldDark);
+        cursor: pointer;
+        &:hover {
+          background: var(--grayBgHover);
+        }
+      }
+    }
+    .filters {
+      display: grid;
+      width: 100%;
+      p {
+        padding: 0;
+      }
+      input[type="text"] {
+        width: 100%;
+        background: var(--grayBg);
+        color: black;
+        padding: 14px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #bd-root-dateIn,
+      #bd-root-dateOut {
+        font-family: var(--Font) !important;
+        color: var(--textDark);
+      }
+      #bd-root-dateIn *,
+      #bd-root-dateOut * {
+        font-family: var(--Font) !important;
+      }
+      button {
+        background: none;
+        font-family: var(--Font);
+        font-size: 15px;
+        font-weight: bold;
+        padding: 10px 0;
+        border-radius: 8px;
+        border: none;
+        color: var(--textDark);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          border: 1px solid black;
+          background: none;
+        }
+      }
+    }
+    button {
+      background: var(--gold);
+      font-family: var(--Font);
+      font-size: 15px;
+      font-weight: bold;
+      padding: 10px 0;
+      border-radius: 8px;
+      border: none;
+      color: var(--textDark);
+      cursor: pointer;
+      &:hover {
+        background: var(--goldDark);
+      }
+    }
+  }
+}
+    .FAQSection {
+      width: 1200px;
+      justify-self: center;
+      display: grid;
+      gap: 20px;
+      font-family: var(--Font);
+      padding-top: 30px;
+      .top {
+        text-align: right;
+        span {
+          font-size: 1.5rem;
+          color: var(--textDark);
+        }
+      }
+      .bottom {
+      background: var(--bgWhite);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: var(--boxShadow);
+        display: grid;
+        .FAQ {
+          border-bottom: var(--borderLight);
+          padding: 10px 0;
+          .question {
+            button {
+              background: none;
+              border: none;
+              width: 100%;
+              text-align: left;
+              font-size: 1.2rem;
+              color: var(--textDark);
+              font-family: var(--Font);
+              cursor: pointer;
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              span {
+                color: var(--goldDark);
+                font-size: 1.5rem;
+              }
+              &:focus {
+                outline: none;
+              }
+            }
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+          .ansure {
+            height: auto;
+            padding: 10px;
+            font-size: 1rem;
+            max-height: auto;
+            display: none;
+            p {
+              color: var(--textDark);
+            }
+          }
+          &:last-child {
+            border-bottom: none;
+            padding: 10px 0 5px 0;
+          }
+        }
+      }
+    }
