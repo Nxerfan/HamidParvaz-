@@ -13,7 +13,7 @@
   --fontSize: 15px;
   --boxShadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   --borderLight: 1px solid #00000030;
-  --Font: "IranianSans", sans-serif;
+  --Font: "Sahel", sans-serif;
 }
 /* ================= Font ================= */
 @font-face {
@@ -23,8 +23,8 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "IranianSansBold";
-  src: url("/Media/") format("truetype");
+  font-family: "Sahel";
+  src: url("/Media/sahel-font-v1.0.0-alpha9/Sahel.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -354,6 +354,7 @@ header {
     display: grid;
     padding: 24px;
     gap: 25px;
+
     .Top {
       display: flex;
       font-size: var(--fontSize);
@@ -490,6 +491,7 @@ header {
           background-color: var(--gold);
           border-radius: 8px;
           font-size: 18px;
+          font-family: var(--Font);
           &:hover {
             background-color: var(--goldDark);
             box-shadow: 0 0 10px var(--gold);
@@ -504,7 +506,7 @@ header {
       .LocationPicker {
         max-width: 375px;
         align-items: center;
-        height: 50px;
+        height: 100%;
         display: flex;
         input[type="Text"] {
           background-color: var(--grayBg);
@@ -515,6 +517,7 @@ header {
           font-size: 18px;
           padding: 0 10px;
           color: var(--textGray);
+          font-family: var(--Font);
           cursor: pointer;
           &:focus {
             outline: none;
@@ -543,6 +546,7 @@ header {
           font-size: 18px;
           padding: 0 10px;
           color: var(--textGray);
+          font-family: var(--Font);
           cursor: pointer;
           &:focus {
             outline: none;
@@ -567,11 +571,13 @@ header {
           width: 188px;
           height: 50px;
           border: none;
-          background-color: var(--goldDark);
+          background-color: var(--gold);
           border-radius: 8px;
+          cursor: pointer;
           font-size: 18px;
+          font-family: var(--Font);
           &:hover {
-            background-color: var(--gold);
+            background-color: var(--goldDark);
             box-shadow: 0 0 10px var(--gold);
           }
         }
@@ -587,9 +593,13 @@ header {
   height: auto;
   position: relative;
   margin-top: 0;
+  box-shadow: none;
+  font-family: var(--Font);
   .Form {
     width: 1200px;
     justify-self: center;
+    gap: 5px;
+    padding: 10px 24px;
   }
 }
 /* ================= discription ================= */
@@ -926,6 +936,7 @@ Footer {
     .FAQSection {
       display: grid;
       gap: 20px;
+      font-family: var(--Font);
       .top {
         text-align: right;
         span {
@@ -946,6 +957,7 @@ Footer {
               text-align: left;
               font-size: 1.2rem;
               color: var(--textDark);
+              font-family: var(--Font);
               cursor: pointer;
               padding: 10px;
               display: flex;
@@ -1012,6 +1024,7 @@ Footer {
         img {
           justify-self: center;
           max-width: 122px;
+          max-height: 122px;
           width: 100%;
           object-fit: cover;
           background: var(--gold);
@@ -1028,8 +1041,8 @@ Footer {
       gap: 20px;
       .Top {
         h5 {
-          font-size: var(--fontSize);
-          color: #000;
+          font-size: 24px;
+          color: var(--textDark);
           font-weight: bold;
         }
       }
@@ -1043,6 +1056,8 @@ Footer {
           height: auto;
           border-radius: 20px;
           position: relative;
+          max-height: 220px;
+          max-width: 140px;
           &::after {
             content: "";
             position: absolute;
@@ -1062,8 +1077,8 @@ Footer {
             text-align: center;
             left: 22px;
             bottom: 30px;
-            color: #fff;
-            font-size: 12px;
+            color: var(--bgWhite);
+            font-size: 15px;
             font-weight: bold;
           }
         }
@@ -1305,142 +1320,295 @@ Footer {
       gap: 10px;
       .Cards,
       .CardsOfline {
-        background-color: var(--bgWhite);
-        width: 100%;
         display: flex;
-        justify-content: space-between;
-        padding: 12px;
+        flex-wrap: wrap;
+        background-color: var(--bgWhite);
+        padding: 15px;
         border-radius: 12px;
         box-shadow: var(--boxShadow);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        direction: rtl;
+
+        &.CardsOfline {
+          opacity: 0.7;
+          filter: grayscale(0.5);
+        }
+
         .RightCard {
-          height: 100%;
-          width: 100%;
-          display: grid;
-          gap: 10px;
+          width: 70%;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
           .About {
-            width: 100%;
-            height: 92px;
             display: flex;
+            align-items: center;
             gap: 30px;
+
             .Icon {
-              display: grid;
-              justify-content: center;
+              display: flex;
+              flex-direction: column;
               align-items: center;
               width: 96px;
 
               img {
-                width: 40px;
+                width: 45px;
+                height: auto;
               }
               span {
-                font-size: 14px;
+                font-size: 13px;
                 color: var(--textGray);
               }
             }
+
             .Time {
-              width: 100%;
               display: flex;
               align-items: center;
-              width: 300px;
+              gap: 15px;
+
               .Form {
-                display: grid;
-                justify-content: start;
+                text-align: center;
                 span {
                   font-size: 24px;
+                  font-weight: bold;
                 }
                 p {
-                  font-size: var(--fontSize);
+                  font-size: 14px;
                   color: var(--textGray);
-                  text-align: center;
+                  margin: 0;
                 }
               }
+
               .i {
-                align-items: center;
                 display: flex;
-                margin: 8px;
-                color: var(--textGray);
-                opacity: 0.4;
-                i {
-                  font-size: 12px;
+                align-items: center;
+                gap: 5px;
+                opacity: 0.5;
+                hr {
+                  width: 40px;
+                  border: 0.5px solid var(--textGray);
                 }
               }
             }
           }
+
           .discriptions {
-            height: auto;
-            width: 100%;
             display: flex;
-            gap: 40px;
-            padding: 0 0 10px 20px;
+            gap: 20px;
+            align-items: center;
+
             .More {
-              display: flex;
-              width: 18%;
-              text-align: center;
-              align-items: center;
-              span {
-                width: 100%;
-                font-size: 14px;
-              }
-            }
-            .Avablity {
-              display: flex;
-              justify-content: space-between;
-              width: 100%;
+              cursor: pointer;
+              color: var(--goldDark);
+              font-size: 14px;
+
               span {
                 display: flex;
+                width: max-content;
                 align-items: center;
-                font-size: 12px;
-                height: 28px;
+                gap: 5px;
+              }
+              i {
+                transition: transform 0.3s ease;
+              }
+              &.active i {
+                transform: rotate(180deg);
+              }
+            }
+
+            .Avablity {
+              display: flex;
+              gap: 15px;
+              width: 100%;
+              justify-content: space-between;
+              padding-left: 5px;
+              span {
+                background: #f5f5f5;
                 padding: 2px 8px;
-                background-color: #ffcb1151;
-                border-radius: 8px;
+                border-radius: 5px;
+                font-size: 12px;
               }
               p {
-                font-size: 14px;
                 color: tomato;
+                font-size: 13px;
+                margin: 0;
+                font-weight: bold;
               }
             }
           }
         }
+
         .LeftCard {
           width: 30%;
           border-right: var(--borderLight);
-          padding: 0 12px 0 0;
+          padding-right: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
           .Top {
-            height: 45%;
-            background-color: none;
-            box-shadow: none;
             justify-content: end;
-            display: flex;
-            background: none;
+            box-shadow: none;
+            height: 100%;
             i {
-              font-size: 21px;
               color: var(--gold);
-            }
-          }
-          .Bottom {
-            display: grid;
-            margin: 0;
-            gap: 5px;
-            p {
-              font-size: 17px;
-              display: flex;
-              gap: 5px;
-              span {
+              font-size: 21px;
+              cursor: pointer;
+
+              &:hover {
                 color: var(--goldDark);
               }
             }
+          }
+
+          .Bottom {
+            text-align: center;
+            p {
+              font-size: 18px;
+              span {
+                color: var(--goldDark);
+                font-weight: bold;
+              }
+            }
             button {
-              background-color: var(--gold);
-              border-radius: 8px;
+              background: var(--gold);
               border: none;
-              font-family: var(--Font);
-              font-size: 15px;
+              padding: 12px;
+              border-radius: 8px;
+              width: 100%;
               font-weight: bold;
-              height: 50px;
+              font-family: var(--Font);
+              cursor: pointer;
+              &:hover {
+                background: var(--goldDark);
+              }
+            }
+          }
+        }
+
+        .FlightDetails {
+          flex-basis: 100%;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 0.4s ease;
+
+          &.active {
+            max-height: max-content;
+            opacity: 1;
+          }
+
+          .DetailsContent {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: #fcfcfc;
+            border-radius: 8px;
+            .row {
+              background: var(--bgLight);
+              padding: px;
+              display: flex;
+              flex-direction: column;
+              border-radius: 9px;
+              font-size: 13px;
+              width: calc(100% - 30%);
+              .title {
+                background: var(--grayBgHover);
+                padding: 8px 12px;
+                border-radius: 8px;
+                p {
+                  font-size: 14px;
+                }
+                span {
+                  border-right: var(--borderLight);
+                  margin: 0 8px;
+                }
+              }
+              .contet {
+                padding: 20px 0;
+                display: flex;
+                gap: 40px;
+                .right {
+                  p {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: var(--textDark);
+                  }
+                  span {
+                    font-size: 14px;
+                    font-weight: 100;
+                    color: var(--textGray);
+                  }
+                }
+                .left {
+                  p {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: var(--textDark);
+                  }
+                  span {
+                    font-size: 14px;
+                    font-weight: 100;
+                    color: var(--textGray);
+                  }
+                }
+              }
+            }
+            .orw {
+              border-right: var(--borderLight);
+              padding: 15px;
+              display: flex;
+              flex-direction: column;
+              width: 30%;
+              justify-content: space-between;
+              .top {
+                display: grid;
+                gap: 5px;
+                p {
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 14px;
+                  font-weight: 100;
+                  color: var(--textGray);
+                  span {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: var(--goldText);
+                  }
+                }
+              }
+              .bottom {
+                display: grid;
+                gap: 5px;
+
+                button {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background: none;
+                  border: none;
+                  font-family: var(--Font);
+                  font-size: 12px;
+                  color: var(--goldText);
+                  width: 100%;
+                  height: 30px;
+                  transition: 0.3s;
+                  cursor: pointer;
+                  &:hover {
+                    background-color: var(--grayBgHover);
+                    border-radius: 8px;
+                  }
+                }
+              }
             }
           }
         }
       }
+
       .CardsOfline {
         background-color: #e0e7ed;
         width: 100%;
@@ -1449,6 +1617,133 @@ Footer {
         padding: 12px;
         border-radius: 12px;
         box-shadow: var(--boxShadow);
+      }
+    }
+
+    .MediaElementHotel {
+      display: flex;
+      gap: 15px;
+      background: var(--bgWhite);
+      border-radius: 12px;
+      text-align: right;
+      cursor: pointer;
+      p {
+        font-weight: bold;
+        color: var(--textDark);
+      }
+      img {
+        width: 240px;
+        height: 100%;
+        object-fit: cover;
+        background: var(--gold);
+        border-radius: 0 12px 12px 0;
+      }
+      .Down {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: calc(75% - 25%);
+        padding: 10px;
+
+        .rating {
+          display: grid;
+          gap: 10px;
+          padding-right: 10px;
+          padding-bottom: 15px;
+          .Stars {
+            display: flex;
+
+            i {
+              padding: 0 3px;
+              display: flex;
+              width: auto;
+              font-size: 14px;
+            }
+            span {
+              font-size: 14px;
+              font-weight: bold;
+              margin-left: 15px;
+              color: var(--textDark);
+            }
+            p {
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 5px;
+              color: var(--textGray);
+              display: flex;
+              i {
+                padding: 0;
+              }
+            }
+          }
+          .AdditionalOptions {
+            span {
+              font-size: 12px;
+              padding: 2px 5px;
+              background-color: var(--grayBgHover);
+              border-radius: 8px;
+            }
+          }
+          .SmilyFace {
+            display: flex;
+            p {
+              font-size: 12px;
+              color: var(--textGray);
+              i {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+      .price {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: center;
+        width: 25%;
+        cursor: default;
+        border-right: var(--borderLight);
+
+        .titel {
+          p {
+            font-size: 12px;
+            color: var(--textGray);
+          }
+        }
+        .Choose {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          p {
+            display: flex;
+            gap: 5px;
+            font-size: 12px;
+            color: var(--textGray);
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            span {
+              color: var(--goldText);
+              font-size: 20px;
+            }
+          }
+          button {
+            background: var(--gold);
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            font-weight: bold;
+            font-family: var(--Font);
+            cursor: pointer;
+            &:hover {
+              background: var(--goldDark);
+            }
+          }
+        }
       }
     }
   }
@@ -1462,24 +1757,51 @@ Footer {
     gap: 10px;
     .Title {
       display: flex;
+      flex-direction: column;
       width: 100%;
       background-color: var(--bgWhite);
-      height: 72px;
+      height: max-content;
       padding: 16px;
       border-radius: 12px;
       box-shadow: var(--boxShadow);
       align-items: center;
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        max-height: 80px;
+      }
+      .cover {
+        object-fit: cover;
+      }
       span {
         color: var(--goldText);
         font-size: var(--fontSize);
         font-weight: bold;
+        cursor: pointer;
+        padding: 10px;
+      }
+      a {
+        text-decoration: none;
+        padding: 10px;
+
+        span {
+          color: var(--goldText);
+          font-size: var(--fontSize);
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+
+      &:first-child {
+        padding: 0;
       }
     }
     .NotifMe {
       display: flex;
       width: 100%;
       background-color: var(--bgWhite);
-      height: 50px;
+      height: max-content;
       padding: 16px;
       border-radius: 12px;
       box-shadow: var(--boxShadow);
@@ -1541,7 +1863,7 @@ Footer {
       display: flex;
       width: 100%;
       background-color: var(--bgWhite);
-      height: 52px;
+      height: max-content;
       padding: 12px 16px;
       border-radius: 12px;
       box-shadow: var(--boxShadow);
@@ -1605,7 +1927,7 @@ Footer {
       display: grid;
       width: 100%;
       background-color: var(--bgWhite);
-      height: 130px;
+      height: max-content;
       padding: 12px 16px;
       border-radius: 12px;
       box-shadow: var(--boxShadow);
@@ -1649,7 +1971,7 @@ Footer {
       padding: 16px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       direction: rtl;
-
+      height: max-content;
       .filterHeader {
         border-bottom: 1px solid #f0f0f0;
         padding-bottom: 10px;
@@ -3243,7 +3565,7 @@ Footer {
       }
     }
   }
-  /* Header & Search */
+
   .FAQHeader {
     text-align: center;
     display: grid;
@@ -3285,7 +3607,6 @@ Footer {
     }
   }
 
-  /* Layout */
   .FAQContent {
     display: flex;
     gap: 30px;
@@ -3293,7 +3614,7 @@ Footer {
     .FAQMain {
       display: grid;
       gap: 30px;
-      /* FAQ Section */
+
       .FAQSection {
         display: grid;
         gap: 20px;
@@ -3369,7 +3690,6 @@ Footer {
         }
       }
 
-      /* Support Card */
       .SupportCard {
         background: linear-gradient(135deg, var(--goldDark), var(--gold));
         padding: 30px;
@@ -3632,79 +3952,264 @@ Footer {
     padding: 25px;
     border-radius: 16px;
     border-right: 5px solid var(--gold);
-      font-size: 16px;
-      font-weight: bold;
-      display: grid;
-      gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    display: grid;
+    gap: 10px;
     ul {
       padding-right: 20px;
-
 
       li {
         font-size: 13px;
         line-height: 1.6;
-
       }
     }
   }
 }
 /* ================= Tour Search ================= */
 
-.List {
-  margin-bottom: 40px;
+.TourList {
+  display: grid;
+  gap: 25px;
 
-  .Form {
+  .TourCard {
     background: var(--bgWhite);
-    border-radius: 16px;
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
     box-shadow: var(--boxShadow);
-
-    .Top {
-      padding: 20px;
-      display: flex;
-      gap: 20px;
-      font-weight: bold;
+    position: relative;
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(-5px);
     }
 
-    .TourSearchGrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
+    img {
+      width: 280px;
+      object-fit: cover;
+    }
+
+    .TourInfo {
       padding: 20px;
-      align-items: flex-end;
+      display: grid;
+      gap: 8px;
+      flex: 1;
 
-      .InputWrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+      h3 {
+        color: var(--textDark);
+        font-size: 18px;
+      }
 
-        label {
-          font-size: 13px;
-          color: var(--textGray);
-        }
-
-        input {
-          height: 45px;
-          border-radius: 8px;
-          border: none;
-          background: var(--grayBg);
-          padding: 0 15px;
-          font-family: var(--Font);
+      p {
+        i {
+          margin-left: 5px;
         }
       }
 
-      .Submit {
-        button {
-          width: 100%;
-          height: 45px;
+      .TourDetails {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 13px;
+        color: var(--textGray);
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          i {
+            color: var(--goldDark);
+          }
+        }
+      }
+
+      .desc {
+        color: var(--textGray);
+        font-size: 14px;
+      }
+
+      .TourFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .price {
+          span {
+            color: var(--goldDark);
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+        .Btn {
+          padding: 10px 20px;
           border-radius: 8px;
           border: none;
-          background: var(--gold);
-          color: #fff;
-          font-weight: bold;
           cursor: pointer;
+          transition: var(--transition);
+          z-index: 30;
+          font-family: var(--Font);
+          color: var(--textDark);
+          cursor: pointer;
+        }
+        .BtnPrimary {
+          background: var(--gold);
+          color: var(--textDark);
+          border: 2px solid var(--goldDark);
 
           &:hover {
             background: var(--goldDark);
+            color: #fff;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+
+    .Badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--gold);
+      color: var(--textDark);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: bold;
+
+      &.lastminute {
+        background: tomato;
+        color: #fff;
+      }
+
+      &.foreign {
+        background: #4b7bec;
+        color: #fff;
+      }
+    }
+  }
+}
+/* ================= mapHotel ================= */
+.container {
+  width: 1200px;
+  justify-self: center;
+  height: 800px;
+  padding: 24px;
+  background: var(--bgLight);
+  #googleMap {
+    width: calc(100% - 30%);
+    height: 100%;
+    border-radius: 12px;
+    position: sticky;
+  }
+  .Hotels {
+    display: grid;
+    gap: 15px;
+    .MediaElementHotel {
+      display: grid;
+      gap: 15px;
+      background: var(--bgWhite);
+      border-radius: 12px;
+      text-align: right;
+      cursor: pointer;
+      position: relative;
+      p {
+        font-weight: bold;
+        color: var(--textDark);
+      }
+      img {
+        width: 260px;
+        height: 100%;
+        object-fit: cover;
+        background: var(--gold);
+        border-radius: 12px 12px 0 0 ;
+      }
+      .Down {
+        display: grid;
+        gap: 10px;
+        padding: 10px;
+
+        .rating {
+          display: grid;
+          gap: 10px;
+          padding-right: 10px;
+          padding-bottom: 15px;
+          .Stars {
+            display: flex;
+
+            i {
+              padding: 0 3px;
+              display: flex;
+              width: auto;
+              font-size: 14px;
+            }
+            span {
+              font-size: 14px;
+              font-weight: bold;
+              margin-left: 15px;
+              color: var(--textDark);
+            }
+            p {
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 5px;
+              color: var(--textGray);
+              display: flex;
+              i {
+                padding: 0;
+              }
+            }
+          }
+          .AdditionalOptions {
+            span {
+              font-size: 12px;
+              padding: 2px 5px;
+              background-color: var(--grayBgHover);
+              border-radius: 8px;
+            }
+          }
+          .SmilyFace {
+            display: flex;
+            p {
+              font-size: 12px;
+              color: var(--textGray);
+              i {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+      .price {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px 5px;
+        cursor: default;
+        border-top: var(--borderLight);
+        justify-content: space-between;
+        .titel {
+          width: max-content;
+          p {
+            font-size: 12px;
+            color: var(--textGray);
+          }
+        }
+        .Choose {
+          display: flex;
+          p {
+            display: flex;
+          align-items: center;
+
+            gap: 5px;
+            font-size: 12px;
+            color: var(--textGray);
+            width: max-content;
+            span {
+              color: var(--goldText);
+              font-size: 20px;
+            }
           }
         }
       }

@@ -3,73 +3,62 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>نمایش نتایج پرواز</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 
 <body>
     <header>
-        <div class="HeaderTop2">
-            <div class="Container">
-                <a href="#" class="Logo">
-                    <img src="Media/لوگو حمید پرواز (2).png" alt="Logo" />
-                </a>
+      <div class="HeaderTop2">
+        <div class="Container">
+          <a href="#" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Niksa Logo" />
+          </a>
 
-                <nav>
-                    <div class="NavItem">
-                        خدمات مسافرتی <span class="Arrow">▾</span>
-                        <div class="Dropdown">
-                            <a class="DropdownItem" href="#">رزرو هتل</a>
-                            <a class="DropdownItem" href="#">رزرو پرواز</a>
-                            <a class="DropdownItem" href="#">رزرو اتوبوس</a>
-                            <a class="DropdownItem" href="#">تور مسافرتی</a>
-                            <a class="DropdownItem" href="#">ویزا</a>
-                        </div>
-                    </div>
-
-                    <div class="NavItem">
-                        درباره ما <span class="Arrow">▾</span>
-                        <div class="Dropdown">
-                            <a class="DropdownItem" href="#">تماس با ما</a>
-                            <a class="DropdownItem" href="#">همکاری با ما</a>
-                        </div>
-                    </div>
-
-                    <div class="NavItem">
-                        پشتیبانی <span class="Arrow">▾</span>
-                        <div class="Dropdown">
-                            <a class="DropdownItem" href="#">سوالات متداول</a>
-                            <a class="DropdownItem" href="#">راهنمای رزرو</a>
-                            <a class="DropdownItem" href="#">قوانین و مقررات</a>
-                        </div>
-                    </div>
-
-                    <a href="#" class="NavItem">بلاگ</a>
-                    <a href="#" class="NavItem">تماس با ما</a>
-                </nav>
-
-                <div class="AuthButtons">
-                    <button class="Btn BtnPrimary">ورود</button>
-                    <button class="Btn BtnPrimary">ثبت نام</button>
-                </div>
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/Hotel.Html">رزرو هتل</a>
+                <a class="DropdownItem" href="/Flight.html">رزرو پرواز</a>
+                <a class="DropdownItem" href="#">تور مسافرتی</a>
+              </div>
             </div>
 
-            <div class="Items">
-                <div class="content">
-                    <i class="fa-solid fa-plane"></i>
-                    <span>هواپیما</span>
-                </div>
-                <div class="content">
-                    <i class="fa-solid fa-hotel"></i>
-                    <span>هتل</span>
-                </div>
-                <div class="content">
-                    <i class="fas fa-globe-asia"></i>
-                    <span>تور</span>
-                </div>
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/AboutUs.html">تماس با ما</a>
+                <a class="DropdownItem" href="./cooperation.html">همکاری با ما</a>
+              </div>
             </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/FAQ.html">سوالات متداول</a>
+                <a class="DropdownItem" href="/HowToBuyTicket.html">راهنمای رزرو</a>
+                <a class="DropdownItem" href="/rules.html">قوانین و مقررات</a>
+                <a class="DropdownItem" href="/cancellation.html"> پیگیری خرید و کنسلی</a>
+              </div>
+            </div>
+
+            <a href="#" class="NavItem">بلاگ</a>
+            <a href="/AboutUs.html" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <a href="/singIn.html">
+              <button class="Btn BtnOutline">ورود</button>
+            </a>
+            <a href="/SingUp.html">
+              <button class="Btn BtnPrimary">ثبت نام</button>
+            </a>
+          </div>
         </div>
+      </div>
+
     </header>
 
     <section>
@@ -411,7 +400,7 @@
                         <div class="RightCard">
                             <div class="About">
                                 <div class="Icon">
-                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="" />
+                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="Airline" />
                                     <span>چابهار</span>
                                 </div>
 
@@ -420,15 +409,13 @@
                                         <span>6:00</span>
                                         <p>تهران</p>
                                     </div>
-
                                     <div class="i">
-                                        <i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i><i class="fa-regular fa-circle-dot"></i>
-                                        <i class="fas fa-plane fa-flip-horizontal"></i>
+                                        <i class="fa-regular fa-circle-dot"></i>
+                                        <hr class="line-divider"> <i class="fas fa-plane fa-flip-horizontal"></i>
                                     </div>
-
                                     <div class="Form">
                                         <span>7:00</span>
-                                        <p>تهران</p>
+                                        <p>کیش</p>
                                     </div>
                                 </div>
                             </div>
@@ -450,16 +437,47 @@
                             </div>
                             <div class="Bottom">
                                 <p><span>1,802,400</span> تومان</p>
-                                <button>رزرو آنلاین <i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="BtnPrimary">رزرو آنلاین</button>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="FlightDetails">
+                            <div class="DetailsContent">
+                                <div class="row">
+                                    <div class="title">
+                                        <p>سه‌شنبه 2 دی ← چهارشنبه 3 دی <span></span> کلاس نرخی Y</p>
+                                    </div>
+                                    <div class="contet">
+                                        <div class="right">
+                                            <p>ساعت ورود به فرودگاه: </p>
+                                            <span>ساعت حرکت <i class="fa-regular fa-clock"></i>:</span>
+                                            <p>ساعت رسیدن به مقصد:</p>
+                                        </div>
+                                        <div class="left">
+                                            <p>تهران، فرودگاه مهرآباد (THR) - ترمینال 1</p>
+                                            <span>هواپیمای شما</span>
+                                            <p>کیش، فرودگاه کیش (KIH)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orw">
+                                    <div class="top">
+                                        <p>بزرگسال × 1 <span>3,161,600 تومانء</span></p>
+                                        <p>مجموع <span>3,161,600 تومانء</span></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <button><i class="fa-solid fa-bell"></i>ارزان شد خبرم کن</button>
+                                        <button><i class="fas fa-bolt"></i> ارزان شد رزرو کن  </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
                     <div class="Cards">
                         <div class="RightCard">
                             <div class="About">
                                 <div class="Icon">
-                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="" />
+                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="Airline" />
                                     <span>چابهار</span>
                                 </div>
 
@@ -468,15 +486,13 @@
                                         <span>6:00</span>
                                         <p>تهران</p>
                                     </div>
-
                                     <div class="i">
                                         <i class="fa-regular fa-circle-dot"></i>
-                                        <i class="fas fa-plane fa-flip-horizontal"></i>
+                                        <hr class="line-divider"> <i class="fas fa-plane fa-flip-horizontal"></i>
                                     </div>
-
                                     <div class="Form">
                                         <span>7:00</span>
-                                        <p>تهران</p>
+                                        <p>کیش</p>
                                     </div>
                                 </div>
                             </div>
@@ -498,15 +514,47 @@
                             </div>
                             <div class="Bottom">
                                 <p><span>1,802,400</span> تومان</p>
-                                <button>رزرو آنلاین <i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="BtnPrimary">رزرو آنلاین</button>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="FlightDetails">
+                            <div class="DetailsContent">
+                                <div class="row">
+                                    <div class="title">
+                                        <p>سه‌شنبه 2 دی ← چهارشنبه 3 دی <span></span> کلاس نرخی Y</p>
+                                    </div>
+                                    <div class="contet">
+                                        <div class="right">
+                                            <p>ساعت ورود به فرودگاه: </p>
+                                            <span>ساعت حرکت <i class="fa-regular fa-clock"></i>:</span>
+                                            <p>ساعت رسیدن به مقصد:</p>
+                                        </div>
+                                        <div class="left">
+                                            <p>تهران، فرودگاه مهرآباد (THR) - ترمینال 1</p>
+                                            <span>هواپیمای شما</span>
+                                            <p>کیش، فرودگاه کیش (KIH)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orw">
+                                    <div class="top">
+                                        <p>بزرگسال × 1 <span>3,161,600 تومانء</span></p>
+                                        <p>مجموع <span>3,161,600 تومانء</span></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <button><i class="fa-solid fa-bell"></i>ارزان شد خبرم کن</button>
+                                        <button><i class="fas fa-bolt"></i> ارزان شد رزرو کن  </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
                     <div class="Cards">
                         <div class="RightCard">
                             <div class="About">
                                 <div class="Icon">
-                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="" />
+                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="Airline" />
                                     <span>چابهار</span>
                                 </div>
 
@@ -515,15 +563,13 @@
                                         <span>6:00</span>
                                         <p>تهران</p>
                                     </div>
-
                                     <div class="i">
                                         <i class="fa-regular fa-circle-dot"></i>
-                                        <i class="fas fa-plane fa-flip-horizontal"></i>
+                                        <hr class="line-divider"> <i class="fas fa-plane fa-flip-horizontal"></i>
                                     </div>
-
                                     <div class="Form">
                                         <span>7:00</span>
-                                        <p>تهران</p>
+                                        <p>کیش</p>
                                     </div>
                                 </div>
                             </div>
@@ -545,15 +591,47 @@
                             </div>
                             <div class="Bottom">
                                 <p><span>1,802,400</span> تومان</p>
-                                <button>رزرو آنلاین <i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="BtnPrimary">رزرو آنلاین</button>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="FlightDetails">
+                            <div class="DetailsContent">
+                                <div class="row">
+                                    <div class="title">
+                                        <p>سه‌شنبه 2 دی ← چهارشنبه 3 دی <span></span> کلاس نرخی Y</p>
+                                    </div>
+                                    <div class="contet">
+                                        <div class="right">
+                                            <p>ساعت ورود به فرودگاه: </p>
+                                            <span>ساعت حرکت <i class="fa-regular fa-clock"></i>:</span>
+                                            <p>ساعت رسیدن به مقصد:</p>
+                                        </div>
+                                        <div class="left">
+                                            <p>تهران، فرودگاه مهرآباد (THR) - ترمینال 1</p>
+                                            <span>هواپیمای شما</span>
+                                            <p>کیش، فرودگاه کیش (KIH)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orw">
+                                    <div class="top">
+                                        <p>بزرگسال × 1 <span>3,161,600 تومانء</span></p>
+                                        <p>مجموع <span>3,161,600 تومانء</span></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <button><i class="fa-solid fa-bell"></i>ارزان شد خبرم کن</button>
+                                        <button><i class="fas fa-bolt"></i> ارزان شد رزرو کن  </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
                     <div class="Cards">
                         <div class="RightCard">
                             <div class="About">
                                 <div class="Icon">
-                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="" />
+                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="Airline" />
                                     <span>چابهار</span>
                                 </div>
 
@@ -562,15 +640,13 @@
                                         <span>6:00</span>
                                         <p>تهران</p>
                                     </div>
-
                                     <div class="i">
                                         <i class="fa-regular fa-circle-dot"></i>
-                                        <i class="fas fa-plane fa-flip-horizontal"></i>
+                                        <hr class="line-divider"> <i class="fas fa-plane fa-flip-horizontal"></i>
                                     </div>
-
                                     <div class="Form">
                                         <span>7:00</span>
-                                        <p>تهران</p>
+                                        <p>کیش</p>
                                     </div>
                                 </div>
                             </div>
@@ -592,15 +668,47 @@
                             </div>
                             <div class="Bottom">
                                 <p><span>1,802,400</span> تومان</p>
-                                <button>رزرو آنلاین <i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="BtnPrimary">رزرو آنلاین</button>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="FlightDetails">
+                            <div class="DetailsContent">
+                                <div class="row">
+                                    <div class="title">
+                                        <p>سه‌شنبه 2 دی ← چهارشنبه 3 دی <span></span> کلاس نرخی Y</p>
+                                    </div>
+                                    <div class="contet">
+                                        <div class="right">
+                                            <p>ساعت ورود به فرودگاه: </p>
+                                            <span>ساعت حرکت <i class="fa-regular fa-clock"></i>:</span>
+                                            <p>ساعت رسیدن به مقصد:</p>
+                                        </div>
+                                        <div class="left">
+                                            <p>تهران، فرودگاه مهرآباد (THR) - ترمینال 1</p>
+                                            <span>هواپیمای شما</span>
+                                            <p>کیش، فرودگاه کیش (KIH)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orw">
+                                    <div class="top">
+                                        <p>بزرگسال × 1 <span>3,161,600 تومانء</span></p>
+                                        <p>مجموع <span>3,161,600 تومانء</span></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <button><i class="fa-solid fa-bell"></i>ارزان شد خبرم کن</button>
+                                        <button><i class="fas fa-bolt"></i> ارزان شد رزرو کن  </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
                     <div class="Cards">
                         <div class="RightCard">
                             <div class="About">
                                 <div class="Icon">
-                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="" />
+                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="Airline" />
                                     <span>چابهار</span>
                                 </div>
 
@@ -609,15 +717,13 @@
                                         <span>6:00</span>
                                         <p>تهران</p>
                                     </div>
-
                                     <div class="i">
                                         <i class="fa-regular fa-circle-dot"></i>
-                                        <i class="fas fa-plane fa-flip-horizontal"></i>
+                                        <hr class="line-divider"> <i class="fas fa-plane fa-flip-horizontal"></i>
                                     </div>
-
                                     <div class="Form">
                                         <span>7:00</span>
-                                        <p>تهران</p>
+                                        <p>کیش</p>
                                     </div>
                                 </div>
                             </div>
@@ -639,15 +745,47 @@
                             </div>
                             <div class="Bottom">
                                 <p><span>1,802,400</span> تومان</p>
-                                <button>رزرو آنلاین <i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="BtnPrimary">رزرو آنلاین</button>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="FlightDetails">
+                            <div class="DetailsContent">
+                                <div class="row">
+                                    <div class="title">
+                                        <p>سه‌شنبه 2 دی ← چهارشنبه 3 دی <span></span> کلاس نرخی Y</p>
+                                    </div>
+                                    <div class="contet">
+                                        <div class="right">
+                                            <p>ساعت ورود به فرودگاه: </p>
+                                            <span>ساعت حرکت <i class="fa-regular fa-clock"></i>:</span>
+                                            <p>ساعت رسیدن به مقصد:</p>
+                                        </div>
+                                        <div class="left">
+                                            <p>تهران، فرودگاه مهرآباد (THR) - ترمینال 1</p>
+                                            <span>هواپیمای شما</span>
+                                            <p>کیش، فرودگاه کیش (KIH)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orw">
+                                    <div class="top">
+                                        <p>بزرگسال × 1 <span>3,161,600 تومانء</span></p>
+                                        <p>مجموع <span>3,161,600 تومانء</span></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <button><i class="fa-solid fa-bell"></i>ارزان شد خبرم کن</button>
+                                        <button><i class="fas fa-bolt"></i> ارزان شد رزرو کن  </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
                     <div class="Cards">
                         <div class="RightCard">
                             <div class="About">
                                 <div class="Icon">
-                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="" />
+                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="Airline" />
                                     <span>چابهار</span>
                                 </div>
 
@@ -656,15 +794,13 @@
                                         <span>6:00</span>
                                         <p>تهران</p>
                                     </div>
-
                                     <div class="i">
                                         <i class="fa-regular fa-circle-dot"></i>
-                                        <i class="fas fa-plane fa-flip-horizontal"></i>
+                                        <hr class="line-divider"> <i class="fas fa-plane fa-flip-horizontal"></i>
                                     </div>
-
                                     <div class="Form">
                                         <span>7:00</span>
-                                        <p>تهران</p>
+                                        <p>کیش</p>
                                     </div>
                                 </div>
                             </div>
@@ -686,17 +822,47 @@
                             </div>
                             <div class="Bottom">
                                 <p><span>1,802,400</span> تومان</p>
-                                <button>رزرو آنلاین <i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="BtnPrimary">رزرو آنلاین</button>
                             </div>
                         </div>
-                      </div>
 
-                      <span>کارت های فروخته شده </span>
-                    <div class="CardsOfline">
+                        <div class="FlightDetails">
+                            <div class="DetailsContent">
+                                <div class="row">
+                                    <div class="title">
+                                        <p>سه‌شنبه 2 دی ← چهارشنبه 3 دی <span></span> کلاس نرخی Y</p>
+                                    </div>
+                                    <div class="contet">
+                                        <div class="right">
+                                            <p>ساعت ورود به فرودگاه: </p>
+                                            <span>ساعت حرکت <i class="fa-regular fa-clock"></i>:</span>
+                                            <p>ساعت رسیدن به مقصد:</p>
+                                        </div>
+                                        <div class="left">
+                                            <p>تهران، فرودگاه مهرآباد (THR) - ترمینال 1</p>
+                                            <span>هواپیمای شما</span>
+                                            <p>کیش، فرودگاه کیش (KIH)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orw">
+                                    <div class="top">
+                                        <p>بزرگسال × 1 <span>3,161,600 تومانء</span></p>
+                                        <p>مجموع <span>3,161,600 تومانء</span></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <button><i class="fa-solid fa-bell"></i>ارزان شد خبرم کن</button>
+                                        <button><i class="fas fa-bolt"></i> ارزان شد رزرو کن  </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                    <div class="Cards">
                         <div class="RightCard">
                             <div class="About">
                                 <div class="Icon">
-                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="" />
+                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="Airline" />
                                     <span>چابهار</span>
                                 </div>
 
@@ -705,15 +871,13 @@
                                         <span>6:00</span>
                                         <p>تهران</p>
                                     </div>
-
                                     <div class="i">
                                         <i class="fa-regular fa-circle-dot"></i>
-                                        <i class="fas fa-plane fa-flip-horizontal"></i>
+                                        <hr class="line-divider"> <i class="fas fa-plane fa-flip-horizontal"></i>
                                     </div>
-
                                     <div class="Form">
                                         <span>7:00</span>
-                                        <p>تهران</p>
+                                        <p>کیش</p>
                                     </div>
                                 </div>
                             </div>
@@ -722,46 +886,73 @@
                                 <div class="More">
                                     <span>جزئیات <i class="fa-solid fa-angle-down"></i></span>
                                 </div>
-                            </div>
-                        </div>
-                      </div>
-
-                    <div class="CardsOfline">
-                        <div class="RightCard">
-                            <div class="About">
-                                <div class="Icon">
-                                    <img src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU" alt="" />
-                                    <span>چابهار</span>
-                                </div>
-
-                                <div class="Time">
-                                    <div class="Form">
-                                        <span>6:00</span>
-                                        <p>تهران</p>
-                                    </div>
-
-                                    <div class="i">
-                                        <i class="fa-regular fa-circle-dot"></i>
-                                        <i class="fas fa-plane fa-flip-horizontal"></i>
-                                    </div>
-
-                                    <div class="Form">
-                                        <span>7:00</span>
-                                        <p>تهران</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="discriptions">
-                                <div class="More">
-                                    <span>جزئیات <i class="fa-solid fa-angle-down"></i></span>
+                                <div class="Avablity">
+                                    <span>اکونومی</span>
+                                    <p>6 صندلی</p>
                                 </div>
                             </div>
                         </div>
-                      </div>
+
+                        <div class="LeftCard">
+                            <div class="Top">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <div class="Bottom">
+                                <p><span>1,802,400</span> تومان</p>
+                                <button class="BtnPrimary">رزرو آنلاین</button>
+                            </div>
+                        </div>
+
+                        <div class="FlightDetails">
+                            <div class="DetailsContent">
+                                <div class="row">
+                                    <div class="title">
+                                        <p>سه‌شنبه 2 دی ← چهارشنبه 3 دی <span></span> کلاس نرخی Y</p>
+                                    </div>
+                                    <div class="contet">
+                                        <div class="right">
+                                            <p>ساعت ورود به فرودگاه: </p>
+                                            <span>ساعت حرکت <i class="fa-regular fa-clock"></i>:</span>
+                                            <p>ساعت رسیدن به مقصد:</p>
+                                        </div>
+                                        <div class="left">
+                                            <p>تهران، فرودگاه مهرآباد (THR) - ترمینال 1</p>
+                                            <span>هواپیمای شما</span>
+                                            <p>کیش، فرودگاه کیش (KIH)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orw">
+                                    <div class="top">
+                                        <p>بزرگسال × 1 <span>3,161,600 تومانء</span></p>
+                                        <p>مجموع <span>3,161,600 تومانء</span></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <button><i class="fa-solid fa-bell"></i>ارزان شد خبرم کن</button>
+                                        <button><i class="fas fa-bolt"></i> ارزان شد رزرو کن  </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                   </div>
               </div>
   </section>
+
+
+<script>
+document.querySelectorAll(".More").forEach(btn => {
+    btn.addEventListener("click", function(e) {
+        // پیدا کردن کارتی که روی آن کلیک شده
+        const card = this.closest(".Cards");
+        const details = card.querySelector(".FlightDetails");
+
+        // باز و بسته کردن
+        details.classList.toggle("active");
+        this.classList.toggle("active"); // برای چرخاندن آیکون فلش
+    });
+});
+</script>
+
 
     <script src="/Header.js"></script>
     <script src="/Result.js"></script>
