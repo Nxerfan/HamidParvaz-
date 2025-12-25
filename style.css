@@ -146,6 +146,10 @@ header {
             }
           }
         }
+        i{
+          color: var(--textDark);
+          opacity: 1;
+        }
       }
     }
     .Items {
