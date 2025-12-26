@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نقشه 3 بعدی </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+  </head>
+  <body>
+    <header>
+      <div class="HeaderTop2">
+        <div
+          class="Container"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <a href="#" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Niksa Logo" />
+          </a>
+
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/Hotel.Html">رزرو هتل</a>
+                <a class="DropdownItem" href="/Flight.html">رزرو پرواز</a>
+                <a class="DropdownItem" href="#">تور مسافرتی</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/AboutUs.html">تماس با ما</a>
+                <a class="DropdownItem" href="./cooperation.html"
+                  >همکاری با ما</a
+                >
+              </div>
+            </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/FAQ.html">سوالات متداول</a>
+                <a class="DropdownItem" href="/HowToBuyTicket.html"
+                  >راهنمای رزرو</a
+                >
+                <a class="DropdownItem" href="/rules.html">قوانین و مقررات</a>
+                <a class="DropdownItem" href="/cancellation.html"
+                  >پیگیری خرید و کنسلی</a
+                >
+              </div>
+            </div>
+
+            <a href="#" class="NavItem">بلاگ</a>
+            <a href="/AboutUs.html" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <a href="/singIn.html">
+              <button class="Btn BtnOutline">ورود</button>
+            </a>
+            <a href="/SingUp.html">
+              <button class="Btn BtnPrimary">ثبت نام</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="VirtualContentBox">
+      <div class="VisualStage">
+        
+
+        <div class="PanoramaContainer" id="MapContainer">
+
+          <div id="panorama" style="width: 100%; height: 100%; border-radius: 12px;"></div>
+          
+
+          <div class="CustomMapControls">
+            <div class="HintIcon">
+                <i class="fa-solid fa-arrows-spin"></i>
+            </div>
+            <span>برای چرخش تصویر، موس را بکشید</span>
+          </div>
+        </div>
+
+
+        <div class="DestinationInfo">
+          <div class="BadgeCategory">نمای ۳۶۰ درجه تعاملی</div>
+
+          <h2 id="InfoTitle">تور مجازی خیابان</h2>
+
+          <p id="InfoDesc">
+            به دلیل محدودیت‌های گوگل، این بخش با استفاده از تکنولوژی تصویر پانوراما (Pannellum) بارگذاری شده است. شما می‌توانید با دراگ کردن موس روی تصویر، ۳۶۰ درجه دور خود بچرخید و محیط را بررسی کنید.
+          </p>
+
+          <div class="InfoStats">
+            <div class="StatItem">
+              <i class="fa-solid fa-eye"></i>
+              <span>مشاهده کامل</span>
+            </div>
+
+            <div class="StatItem">
+              <i class="fa-solid fa-rotate"></i>
+              <span>قابلیت چرخش</span>
+            </div>
+
+            <div class="StatItem">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <span>دستگاه‌های لمسی</span>
+            </div>
+          </div>
+
+          <div class="MapButtons">
+              <a href="https://www.google.com/maps/@35.741942,51.421414,17z" target="_blank" class="ExternalMapBtn">
+                  باز کردن در گوگل مپ
+              </a>
+          </div>
+
+          <button class="BackToSearch">بستن نما</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="Container">
+        <div class="TopRow">
+          <div class="Contact">
+            <div class="Top">
+              <span>تلفن پشتیبانی 24 ساعته: 2911321-021</span>
+              <span>ایمیل پشتیبانی: salam@example.com</span>
+            </div>
+
+            <div class="buttom">
+              <a href="/Flight.html"><p>بلیط هواپیما</p></a>
+              <a href="/Hotel.Html"><p>رزرو هتل</p></a>
+              <a href=""><p>مشاهده ی تورها</p></a>
+            </div>
+
+            <div class="canccel">
+              <a href=""><p>پیگیری و کنسلی بلیط</p></a>
+            </div>
+          </div>
+
+          <div class="OrgBox">
+            <h3>راهکارهای سازمانی</h3>
+            <p>
+              خدمات اختصاصی برای سازمان‌ها و شرکت‌ها جهت مدیریت سفرهای کاری.
+            </p>
+            <button>فعال‌سازی پنل سازمانی</button>
+          </div>
+        </div>
+
+        <div class="LinksRow">
+          <div class="Links">
+            <h4>راهنمایی و پشتیبانی</h4>
+            <ul>
+              <a href=""><li>پرسش‌های متداول</li></a>
+              <a href=""><li>پیشنهادها و شکایات</li></a>
+              <a href=""><li>شرایط و مقررات</li></a>
+              <a href=""><li>مجله مستر بلیط</li></a>
+              <a href=""><li>مجله مستر بلیط</li></a>
+            </ul>
+          </div>
+
+          <div class="Description">
+            <div class="Text">
+              <h4>لبخند بزن و سفر کن!</h4>
+              <p>
+                حمید پرواز سامانه آنلاین خرید بلیط هواپیما، چارتری و رزرو هتل و
+                تور است؛ راهی سریع و آسان برای برنامه‌ریزی سفرهایتان! تنها با
+                چند کلیک می‌توانید بلیط خود را به هر مقصدی که بخواهید تهیه کرده،
+                صورتحسابتان را آنلاین پرداخت کنید و بی‌دغدغه آماده سفر خود
+                باشید.
+              </p>
+            </div>
+            <div class="Logos">
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+            </div>
+          </div>
+        </div>
+
+        <div class="Bottom">
+          <p>تمامی حقوق این وب‌سایت محفوظ است.</p>
+          <div class="Social">
+            <img src="/Media/instagram-svgrepo-com.svg" alt="لوگو های شما" />
+            <img src="/Media/telegram-svgrepo-com.svg" alt="لوگو های شما" />
+            <img src="/Media/gmail-svgrepo-com.svg" alt="لوگو های شما" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+<script>
+
+  const modal = document.querySelector('.VirtualContentBox');
+  
+  function checkHash() {
+    if (window.location.hash === '#virtual-tour') {
+      modal.classList.add('active');
+
+      if(panorama) {
+
+          document.getElementById('panorama').innerHTML = '';
+          initPanorama();
+      }
+    } else {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+  window.addEventListener('hashchange', checkHash);
+  window.addEventListener('load', checkHash);
+
+  function closeFunction() {
+    if (window.location.hash === '#virtual-tour') history.pushState("", document.title, window.location.pathname);
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+  
+  const closeBtn = document.querySelector('.BackToSearch');
+  if(closeBtn) {
+      closeBtn.addEventListener('click', closeFunction);
+  }
+
+
+  let panorama;
+  
+panorama = pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    // لینک مستقیم فایل عکس اینجاست:
+    "panorama": "https://images.unsplash.com/photo-1718059173558-4de2fef41354?q=80&w=2108&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    "autoLoad": true,
+    "showControls": false, 
+    "hfov": 110,
+    "minHfov": 50,
+    "maxHfov": 120,
+    "mouseZoom": true
+});
+
+  initPanorama();
+
+</script>
+
+  </body>
+</html>
