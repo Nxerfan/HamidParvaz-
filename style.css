@@ -2921,10 +2921,18 @@ Footer {
         font-family: var(--Font);
         padding: 10px 8px;
         border: var(--borderLight);
-
+        border-radius: 8px;
+        background: var(--gold);
+        transition: 0.3s;
         &:first-of-type {
           background: none;
           border: var(--borderLight);
+          &:hover{
+          background: var(--grayBgHover);
+        }
+        }
+        &:hover{
+          background: var(--goldDark);
         }
       }
     }
