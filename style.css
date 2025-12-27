@@ -267,6 +267,25 @@ header {
     cover no-repeat;
   height: 270px;
 }
+.Hero3 {
+  display: grid;
+  justify-content: start;
+  padding: 0 380px 30px 0;
+  align-items: end;
+  text-align: right;
+  background: var(--gold);
+  height: 320px;
+  p {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  span {
+    font-size: 18px;
+    opacity: 0.75;
+  }
+}
+
 /* ================= Travel Cards ================= */
 .TravelCards {
   width: 1200px;
@@ -346,7 +365,8 @@ header {
 }
 /* ================= ّForm ================= */
 .List,
-.List2 {
+.List2,
+.List3 {
   background-color: var(--bgWhite);
   border-radius: 12px;
   box-shadow: var(--boxShadow);
@@ -605,6 +625,64 @@ header {
     justify-self: center;
     gap: 5px;
     padding: 10px 24px;
+  }
+}
+.List3 {
+  width: 100%;
+  padding: 0 345px;
+  .AirportChooser {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-left: 20px;
+  }
+  select {
+    background-color: var(--grayBg);
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    color: var(--textGray);
+    font-family: var(--Font);
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      background-color: var(--grayBgHover);
+      box-shadow: 0 0 10px var(--grayBgHover);
+      color: var(--textDark);
+      cursor: text;
+    }
+    &:hover {
+      background-color: var(--grayBgHover);
+      box-shadow: 0 0 10px var(--grayBgHover);
+    }
+  }
+  input[type="Search"] {
+    background-color: var(--grayBg);
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 10px;
+    color: var(--textGray);
+    font-family: var(--Font);
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      background-color: var(--grayBgHover);
+      box-shadow: 0 0 10px var(--grayBgHover);
+      color: var(--textDark);
+      cursor: text;
+    }
+    &:hover {
+      background-color: var(--grayBgHover);
+      box-shadow: 0 0 10px var(--grayBgHover);
+    }
   }
 }
 /* ================= discription ================= */
@@ -4694,19 +4772,19 @@ i {
           font-family: var(--Font);
         }
       }
-        .Btn1 {
-          background-color: var(--gold);
-          font-family: var(--Font);
-          font-size: 15px;
-          font-weight: bold;
-          border-radius: 8px;
-          border: none;
-          cursor: pointer;
-          padding: 10px;
-          &:hover {
-            background: var(--goldDark);
-          }
+      .Btn1 {
+        background-color: var(--gold);
+        font-family: var(--Font);
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        &:hover {
+          background: var(--goldDark);
         }
+      }
       .PassengerFilter {
         margin-top: 15px;
         border-top: 1px solid #eee;
@@ -6488,6 +6566,61 @@ i {
   .stats {
     strong {
       font-size: 1.8rem;
+    }
+  }
+}
+/* ================= FlightInfo ================= */
+.FlightDeateils {
+  width: 1200px;
+  justify-self: center;
+  padding: 20px;
+  background: var(--bgWhite);
+  box-shadow: var(--boxShadow);
+  border-radius: 12px;
+  display: grid;
+
+  .FlightType {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    span {
+      display: flex;
+      align-items: center;
+      padding: 0 0 5px 0;
+      gap: 5px;
+      cursor: pointer;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      font-size: 15px;
+      i {
+        opacity: 1;
+        width: fit-content;
+        height: fit-content;
+      }
+      &.active {
+        border-bottom: 2px solid var(--goldDark);
+      }
+    }
+  }
+  .FlightAirport {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    a{
+    text-decoration: none;
+    color: var(--goldDark);
+    &.active{
+      color: var(--textGray);
+    }
+    &:hover{
+      text-decoration: underline;
+    }
+    }
+
+  }
+  .Stats {
+    padding-top: 20px;
+    p {
+      font-weight: bold;
     }
   }
 }
