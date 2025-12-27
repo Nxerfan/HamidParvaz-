@@ -2927,11 +2927,11 @@ Footer {
         &:first-of-type {
           background: none;
           border: var(--borderLight);
-          &:hover{
-          background: var(--grayBgHover);
+          &:hover {
+            background: var(--grayBgHover);
+          }
         }
-        }
-        &:hover{
+        &:hover {
           background: var(--goldDark);
         }
       }
@@ -3813,7 +3813,7 @@ i {
 .TourList {
   display: grid;
   gap: 25px;
-padding: 0 350px 40px;
+  padding: 0 350px 40px;
   .TourCard {
     background: var(--bgWhite);
     display: flex;
@@ -4062,24 +4062,34 @@ padding: 0 350px 40px;
     }
   }
 }
-/* ================= choosedHotel ================= */
+/* ================= choosedOne ================= */
 .container26 {
   padding: 40px 0 0 0;
   width: 1200px;
-  justify-self: center;
+  margin: 0 auto;
   display: flex;
   gap: 20px;
+
   p {
     font-size: 20px;
     font-weight: bold;
     color: var(--goldDark);
     padding: 0 0 30px 0;
   }
+
   .right {
-    width: calc(100% - 30%);
+    width: calc(100% - 350px);
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    h4 {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--goldDark);
+      margin-bottom: 15px;
+    }
+
     .Card {
       background-color: var(--bgWhite);
       padding: 20px;
@@ -4089,53 +4099,73 @@ padding: 0 350px 40px;
       height: max-content;
       display: grid;
       gap: 20px;
-      .MainImg {
+    }
+
+    .MainImg {
+      width: 100%;
+      max-height: 430px;
+      position: relative;
+      border-radius: 8px;
+
+      img {
+        object-fit: cover;
+        height: 100%;
         width: 100%;
-        max-height: 430px;
-        position: relative;
-        border-radius: 8px;
-        img {
-          object-fit: cover;
-          height: 100%;
-          width: 100%;
-          border-radius: 4px;
-        }
-      }
-      .MoreImg {
-        width: 100%;
-        display: flex;
-        gap: 10px;
-        max-height: 150px;
-        img {
-          width: 100%;
-          height: 100%;
-          border-radius: 8px;
-        }
+        border-radius: 4px;
       }
     }
+
+    .MoreImg {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      max-height: 150px;
+
+      img {
+        width: 20%;
+        height: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+
     .Options {
       display: flex;
       flex-direction: column;
       gap: 15px;
+      cursor: default;
       .Card {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
 
         p {
           font-size: 17px;
           font-weight: bold;
           color: var(--textDark);
         }
+
         .Option {
           display: flex;
           align-items: center;
           gap: 10px;
+          padding: 10px;
+          border: 1px solid #eee;
+          border-radius: 8px;
+          transition: 0.3s;
+
+          &:hover {
+            border-color: var(--gold);
+          }
+
           i {
-            color: var(--textDark);
+            color: var(--gold);
             opacity: 1;
             height: fit-content;
             font-size: 16px;
           }
+
           p {
             font-size: 14px;
             font-weight: normal;
@@ -4143,31 +4173,116 @@ padding: 0 350px 40px;
           }
         }
       }
+
+      &.Mini {
+        display: -webkit-box;
+        gap: 15px;
+        margin-bottom: 10px;
+        .Option {
+          border: none;
+          background: var(--grayBg);
+          padding: 5px;
+          border-radius: 8px;
+          font-size: 12px;
+        }
+      }
     }
+
+    .ItinerarySection {
+      .ItineraryCard {
+        position: relative;
+        padding-right: 20px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: 29px;
+          top: 30px;
+          bottom: 30px;
+          width: 2px;
+          background: #eee;
+        }
+      }
+
+      .DayItem {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        position: relative;
+
+        .DayMarker {
+          background: var(--gold);
+          color: white;
+          padding: 5px 15px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: bold;
+          height: fit-content;
+          z-index: 1;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            left: 0;
+            margin: auto;
+            bottom: -8px;
+            width: 10px;
+            height: 10px;
+            background: var(--goldDark);
+            border-radius: 50%;
+            border: 2px solid white;
+          }
+        }
+
+        .DayContent {
+          h5 {
+            color: var(--textDark);
+            margin-bottom: 5px;
+          }
+
+          p {
+            font-size: 14px;
+            color: var(--textGray);
+            padding: 0;
+            font-weight: normal;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+
     .Rooms {
       display: flex;
       flex-direction: column;
       gap: 15px;
+
       .Top {
         display: grid;
         gap: 20px;
+
         .Title {
           display: flex;
           justify-content: space-between;
+
           i {
             color: var(--gold);
             opacity: 1;
             font-size: 18px;
           }
+
           p {
             padding: 0;
             font-size: 17px;
           }
+
           span {
             color: var(--textGray);
             font-size: 14px;
           }
         }
+
         .AboutRoom {
           display: flex;
           gap: 10px;
@@ -4177,16 +4292,19 @@ padding: 0 350px 40px;
             justify-content: space-between;
             width: calc(100% - 230px);
             align-items: center;
+
             p {
               padding: 0;
               font-size: 15px;
               color: var(--textGray);
+
               span {
                 font-size: 20px;
                 color: var(--goldDark);
               }
             }
           }
+
           button {
             width: 220px;
             padding: 14px 8px;
@@ -4198,25 +4316,30 @@ padding: 0 350px 40px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
+
             i {
               color: var(--textDark);
               opacity: 1;
             }
+
             &:hover {
               background: var(--goldDark);
             }
           }
         }
       }
+
       .RoomOption {
         display: flex;
         align-items: flex-start;
         overflow: hidden;
+
         .content {
           display: flex;
           flex-wrap: wrap;
           max-height: 20px;
           transition: max-height 0.3s ease;
+
           p {
             font-size: 12px;
             color: var(--textGray);
@@ -4228,6 +4351,7 @@ padding: 0 350px 40px;
             max-height: 500px;
           }
         }
+
         .toggle-btn {
           background: none;
           border: none;
@@ -4239,7 +4363,33 @@ padding: 0 350px 40px;
           width: 30%;
         }
       }
+
+      .HotelListItem {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .Top {
+          .Title p {
+            font-size: 17px;
+            font-weight: bold;
+            color: var(--textDark);
+          }
+
+          .Title i {
+            color: var(--gold);
+          }
+        }
+
+        .HotelDetails {
+          .Desc {
+            font-size: 14px;
+            color: var(--textGray);
+          }
+        }
+      }
     }
+
     .HotelInfo {
       display: flex;
       flex-direction: column;
@@ -4249,21 +4399,25 @@ padding: 0 350px 40px;
         overflow: hidden;
         max-height: 125px;
         transition: max-height 0.3s ease;
+
         p {
           font-size: 14px;
           font-weight: normal;
           color: var(--textDark);
           padding: 0;
         }
+
         h4 {
           font-size: 20px;
           font-weight: bold;
           color: var(--goldDark);
         }
+
         &.expanded {
           max-height: 500px;
         }
       }
+
       .toggle-btn {
         background: none;
         border: none;
@@ -4281,6 +4435,7 @@ padding: 0 350px 40px;
       display: flex;
       flex-direction: column;
       gap: 15px;
+
       .Card {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -4290,17 +4445,20 @@ padding: 0 350px 40px;
           align-items: center;
           width: 100%;
           justify-content: space-between;
+
           i {
             color: var(--textDark);
             opacity: 1;
             height: fit-content;
             font-size: 16px;
           }
+
           p {
             font-size: 14px;
             font-weight: normal;
             color: var(--textDark);
             padding: 0;
+
             &:last-of-type {
               color: var(--goldDark);
             }
@@ -4308,29 +4466,40 @@ padding: 0 350px 40px;
         }
       }
     }
+
     .Rules {
       display: flex;
       flex-direction: column;
       gap: 15px;
+
       .Card {
-        display: flex;
+        display: block;
+
         .Time {
           display: flex;
           gap: 10px;
+          margin-bottom: 15px;
+
           .Value {
             display: grid;
             height: fit-content;
             gap: 10px;
+            background: var(--grayBg);
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
             p {
               padding: 0;
               font-size: 14px;
-              color: var(--textDark);
+              color: var(--textGray);
               height: fit-content;
             }
+
             span {
-              background: var(--grayBg);
-              padding: 10px;
-              border-radius: 12px;
+              font-size: 14px;
+              font-weight: bold;
+              color: var(--textDark);
+
               i {
                 opacity: 1;
                 color: var(--textDark);
@@ -4338,6 +4507,7 @@ padding: 0 350px 40px;
             }
           }
         }
+
         .rule {
           p {
             font-size: 14px;
@@ -4349,11 +4519,13 @@ padding: 0 350px 40px;
       }
     }
   }
+
   .left {
-    width: max-content;
+    width: 350px;
     display: grid;
     gap: 40px;
     height: max-content;
+
     .Card {
       background-color: var(--bgWhite);
       padding: 20px;
@@ -4363,14 +4535,17 @@ padding: 0 350px 40px;
       max-width: 350px;
       display: grid;
       gap: 20px;
+
       .rating {
         width: 100%;
         height: max-content;
         display: grid;
         gap: 10px;
+
         p {
           padding: 0;
         }
+
         .Stars {
           width: 100%;
           display: flex;
@@ -4383,6 +4558,22 @@ padding: 0 350px 40px;
             gap: 2px;
             font-size: 14px;
             color: var(--textDark);
+
+            .Badge {
+              font-size: 10px;
+              padding: 4px 8px;
+              border-radius: 4px;
+              color: white;
+              margin-left: 5px;
+            }
+
+            .TourBadge {
+              background: #ff4757;
+            }
+            .CharterBadge {
+              background: #2ed573;
+            }
+
             i {
               display: flex;
               align-items: center;
@@ -4391,6 +4582,7 @@ padding: 0 350px 40px;
               font-size: 18px;
             }
           }
+
           .Rate {
             p {
               display: flex;
@@ -4399,23 +4591,24 @@ padding: 0 350px 40px;
               align-items: center;
               font-size: 12px;
               color: green;
+
               i {
                 display: flex;
                 align-items: center;
                 color: var(--gold);
                 opacity: 1;
-                color: green;
-
                 height: fit-content;
               }
             }
           }
         }
+
         p {
           font-size: 17px;
           color: var(--textDark);
           font-weight: bold;
         }
+
         .titel {
           display: inline-flex;
           width: 100%;
@@ -4427,37 +4620,44 @@ padding: 0 350px 40px;
             font-weight: 100;
             color: var(--textGray);
             text-align: center;
+
             span {
               color: var(--goldText);
               font-size: 20px;
               padding: 0 8.5px;
             }
+
             &:last-of-type {
               font-size: 18px;
             }
           }
         }
       }
+
       .price {
         display: grid;
         padding-top: 20px;
         border-top: var(--borderLight);
         gap: 15px;
+
         .text {
           display: flex;
           align-items: center;
           gap: 10px;
+
           i {
             font-size: 20px;
             color: var(--textGray);
             opacity: 1;
           }
+
           p {
-            font-size: var(--fontSize);
+            font-size: 15px;
             color: var(--textGray);
-            line-height: 30px;
+            padding: 0;
           }
         }
+
         button {
           background: none;
           font-family: var(--Font);
@@ -4468,17 +4668,20 @@ padding: 0 350px 40px;
           border: 2px solid var(--gold);
           color: var(--goldDark);
           cursor: pointer;
+
           &:hover {
             background: var(--grayBgHover);
           }
         }
       }
+
       .filters {
         display: grid;
         width: 100%;
         p {
           padding: 0;
         }
+
         input[type="text"] {
           width: 100%;
           background: var(--grayBg);
@@ -4488,71 +4691,143 @@ padding: 0 350px 40px;
           border: none;
           border-radius: 8px;
           cursor: pointer;
+          font-family: var(--Font);
         }
-        #bd-root-dateIn,
-        #bd-root-dateOut {
-          font-family: var(--Font) !important;
-          color: var(--textDark);
-        }
-        #bd-root-dateIn *,
-        #bd-root-dateOut * {
-          font-family: var(--Font) !important;
-        }
-        button {
-          background: none;
+      }
+        .Btn1 {
+          background-color: var(--gold);
           font-family: var(--Font);
           font-size: 15px;
           font-weight: bold;
-          padding: 10px 0;
           border-radius: 8px;
           border: none;
-          color: var(--textDark);
           cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          padding: 10px;
           &:hover {
-            border: 1px solid black;
-            background: none;
+            background: var(--goldDark);
+          }
+        }
+      .PassengerFilter {
+        margin-top: 15px;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+
+        p {
+          margin-bottom: 10px;
+        }
+
+        .PassengerControl {
+          display: grid;
+          gap: 15px;
+
+          .ControlGroup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            label {
+              font-size: 14px;
+              color: var(--textDark);
+            }
+
+            .Counter {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              button {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                border: 1px solid var(--gold);
+                background: transparent;
+                color: var(--gold);
+                cursor: pointer;
+                font-size: 14px;
+                padding: 0;
+              }
+
+              span {
+                font-weight: bold;
+              }
+            }
           }
         }
       }
+
       button {
-        background: var(--gold);
         font-family: var(--Font);
         font-size: 15px;
         font-weight: bold;
-        padding: 10px 0;
         border-radius: 8px;
         border: none;
-        color: var(--textDark);
         cursor: pointer;
+
         &:hover {
-          background: var(--goldDark);
+          background: var(--grayBgHover);
         }
       }
     }
   }
-  .FAQSection {
-    width: 1200px;
-    justify-self: center;
-    display: grid;
-    gap: 20px;
-    font-family: var(--Font);
-    padding-top: 30px;
-    .top {
-      text-align: right;
-      span {
-        font-size: 1.5rem;
-        color: var(--textDark);
-      }
+}
+/* --- FAQ Section --- */
+.FAQSection {
+  width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  gap: 20px;
+  font-family: var(--Font);
+  padding-top: 30px;
+
+  .top {
+    text-align: right;
+
+    span {
+      font-size: 1.5rem;
+      color: var(--textDark);
     }
-    .bottom {
-      background: var(--bgWhite);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: var(--boxShadow);
-      display: grid;
+  }
+
+  .bottom {
+    background: var(--bgWhite);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--boxShadow);
+    display: grid;
+  }
+
+  .FAQ {
+    border-bottom: 1px solid #eee;
+    &:last-child {
+      border: none;
+    }
+
+    .Button {
+      width: 100%;
+      text-align: right;
+      padding: 15px;
+      background: none;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      color: var(--textDark);
+      font-family: var(--Font);
+    }
+
+    .ansure {
+      display: none; /* JS toggles this */
+      padding: 0 15px 15px 15px;
+      color: var(--textGray);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .Icon {
+      font-weight: bold;
+      color: var(--gold);
     }
   }
 }
@@ -4979,7 +5254,7 @@ padding: 0 350px 40px;
   margin: 40px auto;
   display: grid;
   gap: 40px;
-  i{
+  i {
     opacity: 1;
     color: var(--textDark);
   }
@@ -5419,16 +5694,15 @@ padding: 0 350px 40px;
   }
 }
 /* ================= Blog Card ================= */
-
 .article-container {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
-  i{
+  i {
     opacity: 1;
     color: var(--textDark);
   }
-   .breadcrumbs {
+  .breadcrumbs {
     display: flex;
     align-items: center;
     font-size: 0.9rem;
@@ -5934,5 +6208,286 @@ padding: 0 350px 40px;
 
   .sidebar-column {
     display: none;
+  }
+}
+/* ================= Company ================= */
+.countainer {
+  max-width: 1200px;
+  justify-self: center;
+  display: grid;
+  gap: 30px;
+  padding: 20px 0;
+  section {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .requestPanel {
+    text-align: center;
+    background: linear-gradient(to right, var(--gold), #a7880d);
+    display: grid;
+    gap: 20px;
+    h2 {
+      border: none;
+      font-size: 1.8rem;
+      color: var(--textDark);
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--textDark);
+    }
+    span {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--textDark);
+    }
+  }
+
+  .contact {
+    padding: 0;
+    height: fit-content;
+    a {
+      display: inline-flex;
+      color: var(--goldText);
+      text-decoration: none;
+      border: none;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      margin-top: 0 10px;
+      &:hover {
+        color: var(--textDark);
+      }
+    }
+  }
+  .benefits {
+    display: grid;
+    gap: 20px;
+    text-align: center;
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    li {
+      background: var(--bgLight);
+      padding: 1.5rem;
+      border-radius: var(--borderRadius);
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(35, 34, 27, 0.15) 0px 0px 0px 1px;
+      transition: transform 0.2s;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      align-items: center;
+      gap: 1rem;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      i {
+        font-size: 2.5rem;
+        color: var(--gold);
+        text-align: center;
+      }
+
+      span {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: var(--textDark);
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .partners {
+    display: grid;
+    gap: 40px;
+    text-align: center;
+    .partnerLogos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      img {
+        width: 140px;
+        height: auto;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: var(--transition);
+        &:hover {
+          filter: grayscale(0%);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .panelFeatures {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--grayBgHover);
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+      gap: 1rem;
+    }
+
+    li {
+      position: relative;
+      padding-right: 1.5rem;
+      color: var(--textDark);
+      text-align: right;
+      &::before {
+        content: "✔";
+        position: absolute;
+        right: 0;
+        top: 2px;
+        color: #28a745; /* سبز چک‌مارک */
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .requestForm {
+    background-color: var(--bgWhite);
+    box-shadow: var(--boxShadow);
+    display: grid;
+    gap: 20px;
+    text-align: center;
+    form {
+      text-align: right;
+      display: grid;
+      gap: 1rem;
+      width: 40%;
+      margin: 0 auto;
+      button {
+        background-color: var(--gold);
+        color: white;
+        border: none;
+        padding: 14px;
+        border-radius: var(--borderRadius);
+        font-size: 1.1rem;
+        cursor: pointer;
+        font-family: var(--Font);
+        margin-top: 1rem;
+        transition: var(--transition);
+
+        &:hover {
+          background-color: var(--goldDark);
+        }
+      }
+      input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: var(--borderRadius);
+        font-family: var(--Font);
+        font-size: 1rem;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: var(--gold);
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(255, 205, 17, 0.1);
+        }
+      }
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    justify-self: center;
+    background: #ddd;
+    width: 90%;
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--gold);
+    color: var(--textDark);
+    text-align: center;
+    strong {
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--textDark);
+      margin: 0;
+    }
+  }
+
+  .successMessage {
+    display: none;
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: var(--borderRadius);
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  section {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  header {
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+
+  .benefits {
+    ul {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .panelFeatures {
+    ul {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stats {
+    strong {
+      font-size: 1.8rem;
+    }
   }
 }

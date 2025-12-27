@@ -1,0 +1,90 @@
+/* --- Global Variables & Resets --- */
+:root {
+  --gold: #d4af37;
+  --goldDark: #b4932a;
+  --goldText: #c5a028;
+  --bgWhite: #ffffff;
+  --textDark: #333333;
+  --textGray: #777777;
+  --grayBg: #f9f9f9;
+  --grayBgHover: #f0f0f0;
+  --boxShadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --Font: 'Vazirmatn', Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--Font);
+  background-color: #f4f4f4;
+  color: var(--textDark);
+}
+
+/* --- Main Container Layout --- */
+
+
+/* --- FAQ Section --- */
+.FAQSection {
+  width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  gap: 20px;
+  font-family: var(--Font);
+  padding-top: 30px;
+
+  .top {
+    text-align: right;
+
+    span {
+      font-size: 1.5rem;
+      color: var(--textDark);
+    }
+  }
+
+  .bottom {
+    background: var(--bgWhite);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--boxShadow);
+    display: grid;
+  }
+
+  .FAQ {
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border: none;
+    }
+
+    .Button {
+      width: 100%;
+      text-align: right;
+      padding: 15px;
+      background: none;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      color: var(--textDark);
+    }
+
+    .ansure {
+      display: none; /* JS toggles this */
+      padding: 0 15px 15px 15px;
+      color: var(--textGray);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .Icon {
+      font-weight: bold;
+      color: var(--gold);
+    }
+  }
+}
