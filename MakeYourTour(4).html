@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ساخت تور | حمید پرواز</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="HeaderTop2">
+        <div class="Container">
+          <a href="#" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Niksa Logo" />
+          </a>
+
+          <div class="AuthButtons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M12 2.5a5.25 5.25 0 0 0-2.519 9.857 9.005 9.005 0 0 0-6.477 8.37.75.75 0 0 0 .727.773H20.27a.75.75 0 0 0 .727-.772 9.005 9.005 0 0 0-6.477-8.37A5.25 5.25 0 0 0 12 2.5Z"
+              ></path>
+            </svg>
+            <p>UserName</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="Hero4" style="padding: 0 350px;">
+      <div class="HeroContent">
+        <div class="stepper">
+          <div class="step active">
+            <i class="fa-solid fa-check"></i>
+            <span> انتخاب هتل</span>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="step">
+            <i class="fa-solid fa-user-group"></i>
+            <span> انتخاب اتاق </span>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="step">
+            <i class="fa-solid fa-filter"></i>
+            <span> انتخاب پرواز</span>
+          </div>
+          <div class="line"></div>
+
+          <div class="step">
+            <i class="fa-solid fa-filter"></i>
+            <span> اطلاعات مسافر</span>
+          </div>
+          <div class="line"></div>
+
+          <div class="step">
+            <i class="fa-solid fa-filter"></i>
+            <span> تایید اطلاعات و پرداخت </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Countainer">
+      <div class="Right">
+        <div class="sidebarFilters">
+          <div class="filterHeader">
+            <span>فیلترها</span>
+          </div>
+
+          <div class="filterContentArea">
+            <span class="resultsCount">نمایش ۵۰ از ۵۰ نتیجه</span>
+
+            <div class="filterDropdown">
+              <div class="dropdownTrigger" id="filterBtn">
+                <span>قیمت</span>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+
+              <div class="dropdownPanel" id="filterContent">
+                <div class="priceSliderBox">
+                  <div class="priceLabels">
+                    <div class="labelGroup">
+                      <span>از</span>
+                      <span class="displayMin">۰</span>
+                      <span>تومان</span>
+                    </div>
+                    <span class="labelSeparator">-</span>
+                    <div class="labelGroup">
+                      <span>تا</span>
+                      <span class="displayMax">۱,۰۰۰,۰۰۰</span>
+                      <span>تومان</span>
+                    </div>
+                  </div>
+
+                  <div class="rangeSliderContainer">
+                    <div class="sliderTrack"></div>
+                    <div class="sliderProgress"></div>
+                    <div class="rangeInputs">
+                      <input
+                        type="range"
+                        class="rangeMin"
+                        min="0"
+                        max="1000000"
+                        value="0"
+                        step="1000"
+                      />
+                      <input
+                        type="range"
+                        class="rangeMax"
+                        min="0"
+                        max="1000000"
+                        value="1000000"
+                        step="1000"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filterDropdown">
+              <div class="dropdownTrigger" id="classBtn">
+                <span>کلاس پروازی</span>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+
+              <div class="dropdownPanel" id="classContent">
+                <div class="checkboxGroup">
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="flightClass" value="economy" />
+                    <span>اکونومی</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input
+                      type="checkbox"
+                      name="flightClass"
+                      value="business"
+                    />
+                    <span>بیزنس</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="filterDropdown">
+              <div class="dropdownTrigger" id="timeBtn">
+                <span>زمان پرواز</span>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+
+              <div class="dropdownPanel" id="timeContent">
+                <div class="timeSubSection">
+                  <span class="subTitle">زمان حرکت از تهران</span>
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="depTime" value="0-8" />
+                      <span>۰۰:۰۰ تا ۰۸:۰۰</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="depTime" value="8-18" />
+                      <span>۰۸:۰۰ تا ۱۸:۰۰</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="depTime" value="18-24" />
+                      <span>۱۸:۰۰ تا ۰۰:۰۰</span>
+                    </label>
+                  </div>
+                </div>
+
+                <hr class="filterDivider" />
+
+                <div class="timeSubSection" style="padding-top: 10px">
+                  <span>زمان رسیدن به کیش</span>
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="arrTime" value="0-8" />
+                      <span>۰۰:۰۰ تا ۰۸:۰۰</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="arrTime" value="8-18" />
+                      <span>۰۸:۰۰ تا ۱۸:۰۰</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="arrTime" value="18-24" />
+                      <span>۱۸:۰۰ تا ۰۰:۰۰</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filterDropdown">
+              <div class="dropdownTrigger" id="airlineBtn">
+                <span>شرکت‌های هواپیمایی</span>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+
+              <div class="dropdownPanel" id="airlineContent">
+                <div class="checkboxGroup">
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="fly-kish" />
+                    <span>فلای کیش</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="fly-persia" />
+                    <span>فلای پرشیا</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="ava-air" />
+                    <span>آوا ایر</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="erwan" />
+                    <span>اروان</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="mehr" />
+                    <span>مهر</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="caspian" />
+                    <span>کاسپین</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="meraj" />
+                    <span>معراج</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="kish-air" />
+                    <span>کیش ایر</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="aseman" />
+                    <span>آسمان</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="qeshm-air" />
+                    <span>قشم ایر</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="zagros" />
+                    <span>زاگرس</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="ata" />
+                    <span>آتا</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="airline" value="atlas" />
+                    <span>اطلس اير</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="filterDropdown">
+              <div class="dropdownTrigger" id="baggageBtn">
+                <span>مقدار بار مجاز</span>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+
+              <div class="dropdownPanel" id="baggageContent">
+                <div class="checkboxGroup">
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="baggage" value="20kg" />
+                    <span>۲۰ کیلوگرم</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="baggage" value="25kg" />
+                    <span>۲۵ کیلوگرم</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="baggage" value="30kg" />
+                    <span>۳۰ کیلوگرم</span>
+                  </label>
+                  <label class="checkboxItem">
+                    <input type="checkbox" name="baggage" value="none" />
+                    <span>بدون بار رایگان</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="filterDropdown">
+              <div class="dropdownTrigger" id="tagsBtn">
+                <span>برچسب‌ها</span>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+
+              <div class="dropdownPanel" id="tagsContent">
+                <div class="checkboxGroup">
+                  <label class="checkboxItem">
+                    <input
+                      type="checkbox"
+                      name="tags"
+                      value="foreign-restriction"
+                    />
+                    <span>محدودیت خرید اتباع</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Left">
+        <div class="Titel">
+          <i class="fa fa-plane"></i>
+          <p>پرواز برگشت خود را انتخاب کنید</p>
+        </div>
+        <div class="Sorting">
+          <p>پرواز رفت و برگشت تهران به مشهد : (46 مورد)</p>
+          <div class="Card">
+            <p>مدت زمان پرواز</p>
+            <p>زمان پرواز</p>
+            <p>قیمت</p>
+            <p>تعداد توقف ها</p>
+          </div>
+        </div>
+        
+        <div class="Bottom">
+          <div class="Cards">
+            <div class="RightCard">
+              <div class="About">
+                <div class="Icon">
+                  <img
+                    src="https://mrbilit.com/_ipx/_/logo/flight%3FproviderCode=IRU"
+                    alt="Airline"
+                  />
+                  <span>چابهار</span>
+                </div>
+
+                <div class="Time">
+                  <div class="Form">
+                    <span>6:00</span>
+                    <p>تهران</p>
+                  </div>
+                  <div class="i">
+                    <i class="fa-regular fa-circle-dot"></i>
+                    <hr class="line-divider" />
+                    <i class="fas fa-plane fa-flip-horizontal"></i>
+                  </div>
+                  <div class="Form">
+                    <span>7:00</span>
+                    <p>مشهد</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="discriptions">
+                <div class="More">
+                  <span>جزئیات <i class="fa-solid fa-angle-down"></i></span>
+                </div>
+                <div class="Avablity">
+                  <span>اکونومی</span>
+                  <p>6 صندلی</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="LeftCard">
+              <div class="Bottom">
+                <p><span>1,802,400</span> تومان</p>
+                <button class="BtnPrimary" onclick="location.href='MakeYourTour(5).html'">انتخاب بلیط برگشت</button>
+              </div>
+            </div>
+
+            <div class="FlightDetails">
+              <div class="DetailsContent">
+                <div class="row">
+                  <div class="title">
+                    <p>
+                      سه‌شنبه 2 دی ← چهارشنبه 3 دی <span></span> کلاس نرخی Y
+                    </p>
+                  </div>
+                  <div class="contet">
+                    <div class="right">
+                      <p>ساعت ورود به فرودگاه:</p>
+                      <span
+                        >ساعت حرکت <i class="fa-regular fa-clock"></i>:</span
+                      >
+                      <p>ساعت رسیدن به مقصد:</p>
+                    </div>
+                    <div class="left">
+                      <p>تهران، فرودگاه مهرآباد (THR) - ترمینال 1</p>
+                      <span>هواپیمای شما</span>
+                      <p>کیش، فرودگاه کیش (KIH)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="orw">
+                  <div class="top">
+                    <p>بزرگسال × 1 <span>3,161,600 تومانء</span></p>
+                    <p>مجموع <span>3,161,600 تومانء</span></p>
+                  </div>
+                  <div class="bottom">
+                    <button>
+                      <i class="fa-solid fa-bell"></i>ارزان شد خبرم کن
+                    </button>
+                    <button>
+                      <i class="fas fa-bolt"></i> ارزان شد رزرو کن
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const currentStep = 3;
+
+      const steps = document.querySelectorAll(".step");
+      const lines = document.querySelectorAll(".line");
+
+      steps.forEach((step, index) => {
+        if (index < currentStep) {
+          step.classList.add("active");
+        }
+      });
+
+      lines.forEach((line, index) => {
+        if (index < currentStep - 1) {
+          line.classList.add("active");
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const options = document.querySelectorAll(".Card p");
+        options.forEach((option) => {
+          option.addEventListener("click", function () {
+            options.forEach((opt) => opt.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

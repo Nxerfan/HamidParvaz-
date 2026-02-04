@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نتیجه جستجوی تور | حمید پرواز</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="HeaderTop2">
+        <div
+          class="Container"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <a href="#" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt=" Logo" />
+          </a>
+
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/Hotel.Html">رزرو هتل</a>
+                <a class="DropdownItem" href="/Flight.html">رزرو پرواز</a>
+                <a class="DropdownItem" href="/Tour.html">تور مسافرتی</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/AboutUs.html">تماس با ما</a>
+                <a class="DropdownItem" href="./cooperation.html"
+                  >همکاری با ما</a
+                >
+              </div>
+            </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/FAQ.html">سوالات متداول</a>
+                <a class="DropdownItem" href="/HowToBuyTicket.html"
+                  >راهنمای رزرو</a
+                >
+                <a class="DropdownItem" href="/rules.html">قوانین و مقررات</a>
+                <a class="DropdownItem" href="/cancellation.html"
+                  >پیگیری خرید و کنسلی</a
+                >
+              </div>
+            </div>
+
+            <a href="#" class="NavItem">بلاگ</a>
+            <a href="/AboutUs.html" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <a href="/singIn.html">
+              <button class="Btn BtnOutline">ورود</button>
+            </a>
+            <a href="/SingUp.html">
+              <button class="Btn BtnPrimary">ثبت نام</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="List2">
+        <div class="Form">
+          <div class="Top">
+            <input type="radio" name="Selected1" id="internal" value="داخلی" />
+            <label for="html">داخلی</label>
+            <input type="radio" name="Selected1" id="foreigner" value="خارجی" />
+            <label for="html">خارجی</label>
+          </div>
+
+          <div class="BottomHotel">
+            <div class="LocationPicker">
+              <input type="text" placeholder="مقصد تور (مثال: کیش، استانبول)" />
+            </div>
+
+            <div class="DatePicker">
+              <input type="text" placeholder="تاریخ رفت" />
+              <input type="text" placeholder="تعداد نفرات" />
+            </div>
+            <div class="Submit">
+              <button>جستجوی تور</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="Countainer">
+        <div class="Right">
+          <div class="Title">
+            <img
+              src="/Media/istockphoto-1306235331-612x612.jpg"
+              alt=""
+              class="cover"
+            />
+            <a href="#" class="ExperienceTrigger">
+              <div class="ContentWrapper">
+                <div class="IconBadge">
+                  <i class="fa-solid fa-vr-cardboard"></i>
+                </div>
+                <div class="TextBlock"  onclick="location.href='GetTour.html'">
+                  <span class="TitleText">تور مجازی و گالری تصاویر</span>
+                  <span class="DescText">قبل از خرید، مقصد را ببینید</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="NotifMe">
+            <div class="Bell">
+              <i class="fa-solid fa-bell"></i>
+              <span>ارزان شد خبرم کن</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="Sort">
+            <span>مرتب‌سازی بر اساس</span>
+            <div class="Choosen">
+              <label>
+                <input type="radio" name="Radio" /> ارزان‌ترین قیمت
+              </label>
+              <label> <input type="radio" name="Radio" /> زودترین تاریخ </label>
+            </div>
+          </div>
+
+          <div class="sidebarFilters">
+            <div class="filterHeader">
+              <span>فیلترها</span>
+            </div>
+
+            <div class="filterContentArea">
+              <span class="resultsCount">نمایش ۵۰ از ۵۰ نتیجه</span>
+
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="filterBtn">
+                  <span>قیمت</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="filterContent">
+                  <div class="priceSliderBox">
+                    <div class="priceLabels">
+                      <div class="labelGroup">
+                        <span>از</span>
+                        <span class="displayMin">۰</span>
+                        <span>تومان</span>
+                      </div>
+                      <span class="labelSeparator">-</span>
+                      <div class="labelGroup">
+                        <span>تا</span>
+                        <span class="displayMax">۱,۰۰۰,۰۰۰</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+
+                    <div class="rangeSliderContainer">
+                      <div class="sliderTrack"></div>
+                      <div class="sliderProgress"></div>
+                      <div class="rangeInputs">
+                        <input
+                          type="range"
+                          class="rangeMin"
+                          min="0"
+                          max="1000000"
+                          value="0"
+                          step="1000"
+                        />
+                        <input
+                          type="range"
+                          class="rangeMax"
+                          min="0"
+                          max="1000000"
+                          value="1000000"
+                          step="1000"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="classBtn">
+                  <span>مدت تور</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="classContent">
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input
+                        type="checkbox"
+                        name="flightClass"
+                        value="economy"
+                      />
+                      <span>1 تا 3 شب</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input
+                        type="checkbox"
+                        name="flightClass"
+                        value="business"
+                      />
+                      <span>4 تا 7 شب</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input
+                        type="checkbox"
+                        name="flightClass"
+                        value="business"
+                      />
+                      <span> بیش از 7 شب</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="HotelStarBtn">
+                  <span>ستاره هتل</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="HotelStarContent">
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input
+                        type="checkbox"
+                        name="HotelStar"
+                        value="fly-kish"
+                      />
+                      <span>3 ستاره</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input
+                        type="checkbox"
+                        name="HotelStar"
+                        value="fly-kish"
+                      />
+                      <span>4 ستاره</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input
+                        type="checkbox"
+                        name="HotelStar"
+                        value="fly-kish"
+                      />
+                      <span>5 ستاره</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="baggageBtn">
+                  <span>خدمات ویژه تور</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="baggageContent">
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="baggage" value="20kg" />
+                      <span>ویزا در تور</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="baggage" value="25kg" />
+                      <span>ترانسفر فرودگاهی</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="baggage" value="30kg" />
+                      <span>لیدر فارسی زبان</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Left">
+          <div class="SortBar">
+            <span>نتایج یافت شده: ۱۲ تور</span>
+            <div>
+              <span class="SortLabel">مرتب‌سازی:</span>
+              <select
+                style="
+                  border: 1px solid #ddd;
+                  padding: 5px;
+                  border-radius: 4px;
+                  font-family: var(--font);
+                "
+              >
+                <option>ارزان‌ترین</option>
+                <option>گران‌ترین</option>
+                <option>زودترین تاریخ</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="TourCard">
+            <div class="TourImage">
+              <span class="Badge Special">ویژه</span>
+              <img
+                src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="تور کیش"
+              />
+            </div>
+            <div class="TourContent">
+              <div>
+                <div class="TourHeader">
+                  <div>
+                    <h3 class="TourTitle">تور کیش - هتل ترنج درخشان</h3>
+                    <div class="TourAgency">
+                      <i class="fa-solid fa-plane-departure"></i> پرواز از تهران
+                      | آژانس آسمان آبی
+                    </div>
+                  </div>
+                </div>
+                <div class="TourMeta">
+                  <div class="MetaItem">
+                    <i class="fa-regular fa-clock"></i> ۳ شب و ۴ روز
+                  </div>
+                  <div class="MetaItem">
+                    <i class="fa-solid fa-utensils"></i> صبحانه
+                  </div>
+                  <div class="MetaItem">
+                    <i class="fa-solid fa-hotel"></i> ۵ ستاره
+                  </div>
+                </div>
+              </div>
+              <div class="TourFooter">
+                <div class="Capacity"><span>۲</span> صندلی باقی‌مانده</div>
+                <div style="display: flex; align-items: center">
+                  <div class="PriceBox">
+                    <span class="PriceLabel">۶,۵۰۰,۰۰۰</span>
+                    <span class="PriceValue"
+                      >۴,۸۵۰,۰۰۰ <span class="Currency">تومان</span></span
+                    >
+                  </div>
+                  <button class="BtnBook" onclick="location.href='choosedTour.html'">رزرو تور</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="TourCard">
+            <div class="TourImage">
+              <span class="Badge">حرکت زود هنگام</span>
+              <img
+                src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="تور استانبول"
+              />
+            </div>
+            <div class="TourContent">
+              <div>
+                <div class="TourHeader">
+                  <div>
+                    <h3 class="TourTitle">
+                      تور ترکیه استانبول - هتل گرانت هیوت
+                    </h3>
+                    <div class="TourAgency">
+                      <i class="fa-solid fa-plane"></i> ترکیش ایرلاینز | آژانس
+                      پرواز الکترا
+                    </div>
+                  </div>
+                </div>
+                <div class="TourMeta">
+                  <div class="MetaItem">
+                    <i class="fa-regular fa-clock"></i> ۵ شب و ۶ روز
+                  </div>
+                  <div class="MetaItem">
+                    <i class="fa-solid fa-utensils"></i> صبحانه و ناهار
+                  </div>
+                  <div class="MetaItem">
+                    <i class="fa-solid fa-hotel"></i> ۴ ستاره
+                  </div>
+                </div>
+              </div>
+              <div class="TourFooter">
+                <div class="Capacity">ظرفیت مناسب</div>
+                <div style="display: flex; align-items: center">
+                  <div class="PriceBox">
+                    <span class="PriceValue"
+                      >۲۸,۰۰۰,۰۰۰ <span class="Currency">تومان</span></span
+                    >
+                  </div>
+                  <button class="BtnBook">رزرو تور</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="TourCard">
+            <div class="TourImage">
+              <img
+                src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="تور دبی"
+              />
+            </div>
+            <div class="TourContent">
+              <div>
+                <div class="TourHeader">
+                  <div>
+                    <h3 class="TourTitle">تور دبی - هتل ریمز</h3>
+                    <div class="TourAgency">
+                      <i class="fa-solid fa-plane"></i> فلای دبی | آژانس سفرهای
+                      ناب
+                    </div>
+                  </div>
+                </div>
+                <div class="TourMeta">
+                  <div class="MetaItem">
+                    <i class="fa-regular fa-clock"></i> ۴ شب و ۵ روز
+                  </div>
+                  <div class="MetaItem">
+                    <i class="fa-solid fa-utensils"></i> بدون صبحانه
+                  </div>
+                  <div class="MetaItem">
+                    <i class="fa-solid fa-hotel"></i> ۴ ستاره
+                  </div>
+                </div>
+              </div>
+              <div class="TourFooter">
+                <div class="Capacity"><span>۵</span> صندلی باقی‌مانده</div>
+                <div style="display: flex; align-items: center">
+                  <div class="PriceBox">
+                    <span class="PriceValue"
+                      >۱۸,۵۰۰,۰۰۰ <span class="Currency">تومان</span></span
+                    >
+                  </div>
+                  <button class="BtnBook">رزرو تور</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="TourCard">
+            <div class="TourImage">
+              <span class="Badge Special">ارزان</span>
+              <img
+                src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="تور مشهد"
+              />
+            </div>
+            <div class="TourContent">
+              <div>
+                <div class="TourHeader">
+                  <div>
+                    <h3 class="TourTitle">تور مشهد - هتل درویشی</h3>
+                    <div class="TourAgency">
+                      <i class="fa-solid fa-bus"></i> اتوبوس VIP | آژانس زیارت
+                    </div>
+                  </div>
+                </div>
+                <div class="TourMeta">
+                  <div class="MetaItem">
+                    <i class="fa-regular fa-clock"></i> ۲ شب و ۳ روز
+                  </div>
+                  <div class="MetaItem">
+                    <i class="fa-solid fa-utensils"></i> یک وعده
+                  </div>
+                  <div class="MetaItem">
+                    <i class="fa-solid fa-hotel"></i> ۳ ستاره
+                  </div>
+                </div>
+              </div>
+              <div class="TourFooter">
+                <div class="Capacity">ظرفیت مناسب</div>
+                <div style="display: flex; align-items: center">
+                  <div class="PriceBox">
+                    <span class="PriceValue"
+                      >۲,۴۰۰,۰۰۰ <span class="Currency">تومان</span></span
+                    >
+                  </div>
+                  <button class="BtnBook">رزرو تور</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="Container">
+        <div class="TopRow">
+          <div class="Contact">
+            <div class="Top">
+              <span>تلفن پشتیبانی 24 ساعته: 2911321-021</span>
+              <span>ایمیل پشتیبانی: salam@example.com</span>
+            </div>
+
+            <div class="buttom">
+              <a href="/Flight.html"><p>بلیط هواپیما</p></a>
+              <a href="/Hotel.Html"><p>رزرو هتل</p></a>
+              <a href=""><p>مشاهده ی تورها</p></a>
+            </div>
+
+            <div class="canccel">
+              <a href=""><p>پیگیری و کنسلی بلیط</p></a>
+            </div>
+          </div>
+
+          <div class="OrgBox">
+            <h3>راهکارهای سازمانی</h3>
+            <p>
+              خدمات اختصاصی برای سازمان‌ها و شرکت‌ها جهت مدیریت سفرهای کاری.
+            </p>
+            <button>فعال‌سازی پنل سازمانی</button>
+          </div>
+        </div>
+
+        <div class="LinksRow">
+          <div class="Links">
+            <h4>راهنمایی و پشتیبانی</h4>
+            <ul>
+              <a href=""><li>پرسش‌های متداول</li></a>
+              <a href=""><li>پیشنهادها و شکایات</li></a>
+              <a href=""><li>شرایط و مقررات</li></a>
+              <a href=""><li>مجله مستر بلیط</li></a>
+              <a href=""><li>مجله مستر بلیط</li></a>
+            </ul>
+          </div>
+
+          <div class="Description">
+            <div class="Text">
+              <h4>لبخند بزن و سفر کن!</h4>
+              <p>
+                حمید پرواز سامانه آنلاین خرید بلیط هواپیما، چارتری و رزرو هتل و
+                تور است؛ راهی سریع و آسان برای برنامه‌ریزی سفرهایتان! تنها با
+                چند کلیک می‌توانید بلیط خود را به هر مقصدی که بخواهید تهیه کرده،
+                صورتحسابتان را آنلاین پرداخت کنید و بی‌دغدغه آماده سفر خود
+                باشید.
+              </p>
+            </div>
+            <div class="Logos">
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+            </div>
+          </div>
+        </div>
+
+        <div class="Bottom">
+          <p>تمامی حقوق این وب‌سایت محفوظ است.</p>
+          <div class="Social">
+            <img src="/Media/instagram-svgrepo-com.svg" alt="لوگو های شما" />
+            <img src="/Media/telegram-svgrepo-com.svg" alt="لوگو های شما" />
+            <img src="/Media/gmail-svgrepo-com.svg" alt="لوگو های شما" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll(".More").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          const card = this.closest(".Cards");
+          const details = card.querySelector(".FlightDetails");
+
+          details.classList.toggle("active");
+          this.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <script src="/Header.js"></script>
+    <script src="/Result.js"></script>
+  </body>
+</html>

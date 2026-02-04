@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نمایش نتایج هتل</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="HeaderTop2">
+        <div class="Container">
+          <a href="#" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Niksa Logo" />
+          </a>
+
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/Hotel.Html">رزرو هتل</a>
+                <a class="DropdownItem" href="/Flight.html">رزرو پرواز</a>
+                <a class="DropdownItem" href="#">تور مسافرتی</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/AboutUs.html">تماس با ما</a>
+                <a class="DropdownItem" href="./cooperation.html"
+                  >همکاری با ما</a
+                >
+              </div>
+            </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/FAQ.html">سوالات متداول</a>
+                <a class="DropdownItem" href="/HowToBuyTicket.html"
+                  >راهنمای رزرو</a
+                >
+                <a class="DropdownItem" href="/rules.html">قوانین و مقررات</a>
+                <a class="DropdownItem" href="/cancellation.html">
+                  پیگیری خرید و کنسلی</a
+                >
+              </div>
+            </div>
+
+            <a href="#" class="NavItem">بلاگ</a>
+            <a href="/AboutUs.html" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <a href="/singIn.html">
+              <button class="Btn BtnOutline">ورود</button>
+            </a>
+            <a href="/SingUp.html">
+              <button class="Btn BtnPrimary">ثبت نام</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="List2">
+        <div class="Form">
+          <div class="Top">
+            <input type="radio" name="Selected1" id="internal" value="داخلی" />
+            <label for="html">داخلی</label>
+            <input type="radio" name="Selected1" id="foreigner" value="خارجی" />
+            <label for="html">خارجی</label>
+          </div>
+
+          <div class="BottomHotel">
+            <div class="LocationPicker">
+              <input type="text" placeholder="هتل یا شهر مقصد" />
+            </div>
+
+            <div class="DatePicker">
+              <input type="text" placeholder="ورود" />
+              <input type="text" placeholder="خروج" />
+            </div>
+            <div class="Submit">
+              <button>جستجو</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="Countainer">
+        <div class="Right">
+          <div class="Title">
+            <img
+              src="/Media/istockphoto-1306235331-612x612.jpg"
+              alt=""
+              class="cover"
+            />
+            <a href="hotelOnMap.html"
+              ><span
+                ><i class="fa-solid fa-map"></i> مشاهده هتل‌ها روی نقشه
+              </span></a
+            >
+          </div>
+
+          <div class="NotifMe">
+            <div class="Bell">
+              <i class="fa-solid fa-bell"></i>
+              <span>ارزان شد خبرم کن</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="Sort">
+            <span>مرتب‌سازی بر اساس</span>
+            <div class="Choosen">
+              <label> <input type="radio" name="Radio" /> زود‌ترین زمان </label>
+              <label> <input type="radio" name="Radio" /> کمترین قیمت </label>
+            </div>
+          </div>
+
+          <div class="sidebarFilters">
+            <div class="filterHeader">
+              <span>فیلترها</span>
+            </div>
+
+            <div class="filterContentArea">
+              <span class="resultsCount">نمایش ۵۰ از ۵۰ نتیجه</span>
+
+              <!-- Price -->
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="filterBtn">
+                  <span>قیمت هر شب</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="filterContent">
+                  <div class="priceSliderBox">
+                    <div class="priceLabels">
+                      <div class="labelGroup">
+                        <span>از</span>
+                        <span class="displayMin">۰</span>
+                        <span>تومان</span>
+                      </div>
+                      <span class="labelSeparator">-</span>
+                      <div class="labelGroup">
+                        <span>تا</span>
+                        <span class="displayMax">۱,۰۰۰,۰۰۰</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+
+                    <div class="rangeSliderContainer">
+                      <div class="sliderTrack"></div>
+                      <div class="sliderProgress"></div>
+                      <div class="rangeInputs">
+                        <input type="range" class="rangeMin" min="0" max="1000000" value="0" step="1000" />
+                        <input type="range" class="rangeMax" min="0" max="1000000" value="1000000" step="1000" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Room Type (was flight class) -->
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="classBtn">
+                  <span>نوع اتاق</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="classContent">
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="flightClass" value="economy" />
+                      <span>استاندارد</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="flightClass" value="business" />
+                      <span>لوکس</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Check-in / Check-out Time (was flight time) -->
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="timeBtn">
+                  <span>زمان ورود و خروج</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="timeContent">
+                  <div class="timeSubSection">
+                    <span class="subTitle">زمان ورود (Check-in)</span>
+                    <div class="checkboxGroup">
+                      <label class="checkboxItem">
+                        <input type="checkbox" name="depTime" value="0-8" />
+                        <span>۰۰:۰۰ تا ۰۸:۰۰</span>
+                      </label>
+                      <label class="checkboxItem">
+                        <input type="checkbox" name="depTime" value="8-18" />
+                        <span>۰۸:۰۰ تا ۱۸:۰۰</span>
+                      </label>
+                      <label class="checkboxItem">
+                        <input type="checkbox" name="depTime" value="18-24" />
+                        <span>۱۸:۰۰ تا ۰۰:۰۰</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <hr class="filterDivider" />
+
+                  <div class="timeSubSection" style="padding-top: 10px">
+                    <span>زمان خروج (Check-out)</span>
+                    <div class="checkboxGroup">
+                      <label class="checkboxItem">
+                        <input type="checkbox" name="arrTime" value="0-8" />
+                        <span>۰۰:۰۰ تا ۰۸:۰۰</span>
+                      </label>
+                      <label class="checkboxItem">
+                        <input type="checkbox" name="arrTime" value="8-18" />
+                        <span>۰۸:۰۰ تا ۱۸:۰۰</span>
+                      </label>
+                      <label class="checkboxItem">
+                        <input type="checkbox" name="arrTime" value="18-24" />
+                        <span>۱۸:۰۰ تا ۰۰:۰۰</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hotel Brand (was airline) -->
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="airlineBtn">
+                  <span>برند هتل</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="airlineContent">
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="airline" value="fly-kish" />
+                      <span>هتل داریوش</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="airline" value="fly-persia" />
+                      <span>هتل شایان</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="airline" value="ava-air" />
+                      <span>هتل ارم</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Facilities (was baggage) -->
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="baggageBtn">
+                  <span>امکانات</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="baggageContent">
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="baggage" value="20kg" />
+                      <span>صبحانه رایگان</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="baggage" value="25kg" />
+                      <span>استخر</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="baggage" value="30kg" />
+                      <span>پارکینگ</span>
+                    </label>
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="baggage" value="none" />
+                      <span>اینترنت رایگان</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="filterDropdown">
+                <div class="dropdownTrigger" id="tagsBtn">
+                  <span>برچسب‌ها</span>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="dropdownPanel" id="tagsContent">
+                  <div class="checkboxGroup">
+                    <label class="checkboxItem">
+                      <input type="checkbox" name="tags" value="foreign-restriction" />
+                      <span>قابل کنسلی</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="Left">
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button onclick="location.href='choosedHotel.html'">انتخاب اتاق</button>
+
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+
+              </div>
+              
+            </div>
+          </div>
+          <div class="MediaElementHotel">
+            <img
+              src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+              alt="هتل پارسیان استقلال"
+            />
+            <div class="Down">
+              <p>هتل پارسیان استقلال</p>
+              <div class="rating">
+                <div class="Stars">
+                  <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                  ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                  <span>5ستاره</span>
+                  <p>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                    آرارات
+                  </p>
+                </div>
+                <div class="AdditionalOptions">
+                  <span>ترانسفر رایگان</span>
+                </div>
+                <div class="SmilyFace">
+                  <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              <div class="titel">
+                <p>قیمت 1 شب اتاق 1 تخته</p>
+              </div>
+              <div class="Choose">
+                <p><span>9,215,000</span>تومانء</p>
+              <button>انتخاب اتاق</button>
+              </div>
+              
+            </div>
+          </div>
+            <div class="MediaElementHotel">
+                <img
+                src="https://img.mstatic.ir/KxN0ytL9WwJPugzyoXEDDpysgZVOuu1lfo_DNH95seY/gravity:nowe:177:70/crop:1650:923/resize:fill/width:790/height:443/gravity:nowe/enlarge:0/czM6Ly9tcmhvdGVsLzFjYjg4NWJiYTFmMjRlNzFiM2Q4YTliYmE5YmY0Mzhl.jpg"
+                alt="هتل پارسیان استقلال"
+                />
+                <div class="Down">
+                <p>هتل پارسیان استقلال</p>
+                <div class="rating">
+                    <div class="Stars">
+                    <i class="fa-solid fa-star" style="color: #ffcd11"></i
+                    ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                    ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                    ><i class="fa-solid fa-star" style="color: #ffcd11"></i
+                    ><i class="fa-solid fa-star" style="color: #ffcd11"></i>
+                    <span>5ستاره</span>
+                    <p>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i> محله
+                        آرارات
+                    </p>
+                    </div>
+                    <div class="AdditionalOptions">
+                    <span>ترانسفر رایگان</span>
+                    </div>
+                    <div class="SmilyFace">
+                    <p>6.8/10 <i class="fa-regular fa-face-smile"></i></p>
+                    </div>
+                </div>
+                </div>
+                <div class="price">
+                <div class="titel">
+                    <p>قیمت 1 شب اتاق 1 تخته</p>
+                </div>
+                <div class="Choose">
+                    <p><span>9,215,000</span>تومانء</p>
+                <button>انتخاب اتاق</button>
+
+                </div>
+                
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="Container">
+        <div class="TopRow">
+          <div class="Contact">
+            <div class="Top">
+              <span>تلفن پشتیبانی 24 ساعته: 2911321-021</span>
+              <span>ایمیل پشتیبانی: salam@example.com</span>
+            </div>
+
+            <div class="buttom">
+              <a href="/Flight.html"><p>بلیط هواپیما</p></a>
+              <a href="/Hotel.Html"><p>رزرو هتل</p></a>
+              <a href=""><p>مشاهده ی تورها</p></a>
+            </div>
+
+            <div class="canccel">
+              <a href="cancellationHotel.html"><p>پیگیری و کنسلی بلیط</p></a>
+            </div>
+          </div>
+
+          <div class="OrgBox">
+            <h3>راهکارهای سازمانی</h3>
+            <p>
+              خدمات اختصاصی برای سازمان‌ها و شرکت‌ها جهت مدیریت سفرهای کاری.
+            </p>
+            <button>فعال‌سازی پنل سازمانی</button>
+          </div>
+        </div>
+
+        <div class="LinksRow">
+          <div class="Links">
+            <h4>راهنمایی و پشتیبانی</h4>
+            <ul>
+              <a href=""><li>پرسش‌های متداول</li></a>
+              <a href=""><li>پیشنهادها و شکایات</li></a>
+              <a href=""><li>شرایط و مقررات</li></a>
+              <a href=""><li>مجله مستر بلیط</li></a>
+              <a href=""><li>مجله مستر بلیط</li></a>
+            </ul>
+          </div>
+
+          <div class="Description">
+            <div class="Text">
+              <h4>لبخند بزن و سفر کن!</h4>
+              <p>
+                حمید پرواز سامانه آنلاین خرید بلیط هواپیما، چارتری و رزرو هتل و
+                تور است؛ راهی سریع و آسان برای برنامه‌ریزی سفرهایتان! تنها با
+                چند کلیک می‌توانید بلیط خود را به هر مقصدی که بخواهید تهیه کرده،
+                صورتحسابتان را آنلاین پرداخت کنید و بی‌دغدغه آماده سفر خود
+                باشید.
+              </p>
+            </div>
+            <div class="Logos">
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+            </div>
+          </div>
+        </div>
+
+        <div class="Bottom">
+          <p>تمامی حقوق این وب‌سایت محفوظ است.</p>
+          <div class="Social">
+            <img src="/Media/instagram-svgrepo-com.svg" alt="لوگو های شما" />
+            <img src="/Media/telegram-svgrepo-com.svg" alt="لوگو های شما" />
+            <img src="/Media/gmail-svgrepo-com.svg" alt="لوگو های شما" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".More").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          const card = this.closest(".Cards");
+          const details = card.querySelector(".FlightDetails");
+
+          details.classList.toggle("active");
+          this.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <script src="/Header.js"></script>
+    <script src="/Result.js"></script>
+  </body>
+</html>

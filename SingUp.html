@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فرم ثبت نام</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  />
+</head>
+<body>
+
+<div class="LoginContainer">
+  <div class="LoginCard">
+
+    <div class="LoginHeader">
+      <h2>ایجاد حساب کاربری</h2>
+      <p>اطلاعات خود را وارد کنید</p>
+    </div>
+
+    <form class="LoginForm" novalidate>
+
+      <div class="FormGroup">
+        <div class="InputWrapper">
+          <input type="text" required />
+          <label>نام کاربری</label>
+        </div>
+      </div>
+
+      <div class="FormGroup">
+        <div class="InputWrapper">
+          <input type="email" required />
+          <label>ایمیل</label>
+        </div>
+      </div>
+
+      <div class="FormGroup">
+        <div class="InputWrapper PasswordWrapper">
+          <input type="password" class="PasswordInput" required />
+          <label>رمز عبور</label>
+
+          <button type="button" class="PasswordToggle">
+            <i class="fa-solid fa-eye EyeIcon"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="FormGroup">
+        <div class="InputWrapper PasswordWrapper">
+          <input type="password" class="PasswordInputConfirm" required />
+          <label>تکرار رمز عبور</label>
+
+          <button type="button" class="PasswordToggle ConfirmToggle">
+            <i class="fa-solid fa-eye EyeIcon"></i>
+          </button>
+        </div>
+      </div>
+
+      <button class="Btn">ثبت نام</button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  const toggles = document.querySelectorAll(".PasswordToggle");
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const input = toggle.previousElementSibling.previousElementSibling;
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      toggle.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فرم ورود</title>
+  <link rel="stylesheet" href="style.css" />
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+</head>
+<body>
+
+<div class="LoginContainer">
+  <div class="LoginCard">
+
+    <div class="LoginHeader">
+      <h2>خوش آمدید</h2>
+      <p>وارد حساب کاربری خود شوید</p>
+    </div>
+
+    <form class="LoginForm" novalidate>
+
+      <div class="FormGroup">
+        <div class="InputWrapper">
+          <input type="email" required />
+          <label>ایمیل</label>
+        </div>
+      </div>
+
+      <div class="FormGroup">
+        <div class="InputWrapper PasswordWrapper">
+          <input type="password" class="PasswordInput" required />
+          <label>رمز عبور</label>
+
+          <button type="button" class="PasswordToggle">
+            <i class="fa-solid fa-eye EyeIcon" ></i>
+          </button>
+        </div>
+      </div>
+
+      <button class="Btn">ورود به حساب</button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.querySelector(".PasswordToggle");
+  const passwordInput = document.querySelector(".PasswordInput");
+
+  toggleBtn.addEventListener("click", () => {
+    const isPassword = passwordInput.type === "password";
+    passwordInput.type = isPassword ? "text" : "password";
+    toggleBtn.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
