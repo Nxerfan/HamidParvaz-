@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تقویم شمسی اصلاح شده</title>
+    <style>
+      /* --- متغیرهای رنگی --- */
+      :root {
+        --grayBg: #f3f4f6;
+        --grayBgHover: #e5e7eb;
+        --textGray: #6b7280;
+        --textDark: #1f2937;
+        --primaryColor: #3b82f6;
+        --primaryBg: #eff6ff;
+        --hoverRangeBg: #dbeafe; /* رنگ هاور برای بازه */
+        --Font: "Tahoma", "Segoe UI", sans-serif;
+      }
+
+      body {
+        font-family: var(--Font);
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        direction: rtl;
+      }
+
+      /* --- استایل‌های اصلی --- */
+      .R {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .R p {
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .DatePicker {
+        width: 400px;
+        align-items: center;
+        display: flex;
+        gap: 8px;
+        position: relative;
+      }
+
+      .DatePicker input {
+        background-color: var(--grayBg);
+        height: 45px;
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        padding: 0 10px;
+        color: var(--textGray);
+        font-weight: bold;
+        font-family: var(--Font);
+        cursor: pointer;
+        transition: 0.3s;
+        box-sizing: border-box;
+        text-align: right;
+        direction: rtl;
+      }
+
+      .DatePicker input:focus,
+      .DatePicker input:hover,
+      .DatePicker input.active {
+        outline: none;
+        background-color: var(--grayBgHover);
+        box-shadow: 0 0 10px var(--grayBgHover);
+        color: var(--textDark);
+      }
+
+      /* --- استایل‌های تقویم --- */
+      .calendar-popup {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        width: 100%;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        z-index: 1000;
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        animation: fadeIn 0.2s ease-out;
+      }
+
+      .calendar-popup.show {
+        display: flex;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* هدر تقویم */
+      .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        cursor: default;
+      }
+
+      .calendar-nav-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: var(--textDark);
+        transition: 0.2s;
+      }
+
+      .calendar-nav-btn:hover {
+        background-color: var(--grayBg);
+      }
+
+      .calendar-title {
+        font-weight: bold;
+        font-size: 16px;
+        color: var(--textDark);
+        cursor: pointer;
+        padding: 2px 8px;
+        border-radius: 4px;
+        transition: 0.2s;
+        user-select: none;
+      }
+
+      .calendar-title:hover {
+        background-color: var(--grayBg);
+      }
+
+      /* روزهای هفته */
+      .calendar-weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        text-align: center;
+        font-size: 12px;
+        color: var(--textGray);
+        margin-bottom: 5px;
+      }
+
+      /* شبکه روزها */
+      .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+      }
+
+      .calendar-day {
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: 0.2s;
+        color: var(--textDark);
+      }
+
+      .calendar-day:hover:not(.empty) {
+        background-color: var(--grayBgHover);
+      }
+
+      .calendar-day.empty {
+        cursor: default;
+      }
+
+      .calendar-day.today {
+        border: 1px solid var(--primaryColor);
+        color: var(--primaryColor);
+      }
+
+      .calendar-day.selected {
+        background-color: var(--primaryColor) !important;
+        color: white !important;
+        box-shadow: 0 2px 5px rgba(59, 130, 246, 0.4);
+      }
+
+      .calendar-day.in-range {
+        background-color: var(--primaryBg);
+        color: var(--primaryColor);
+      }
+
+      /* استایل جدید برای هاور رنج */
+      .calendar-day.hover-range {
+        background-color: var(--hoverRangeBg);
+        color: var(--primaryColor);
+      }
+
+      /* فوتر */
+      .calendar-footer {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 10px;
+        border-top: 1px solid var(--grayBg);
+        margin-top: 5px;
+      }
+
+      .btn-close {
+        background-color: var(--textDark);
+        color: white;
+        border: none;
+        padding: 6px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        font-family: var(--Font);
+      }
+
+      .btn-close:hover {
+        opacity: 0.9;
+      }
+
+      /* --- استایل‌های سال و ماه --- */
+      .calendar-view {
+        display: none;
+        width: 100%;
+        animation: fadeIn 0.2s ease-out;
+      }
+
+      .calendar-view.active {
+        display: block;
+      }
+
+      .months-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .month-item {
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.2s;
+      }
+
+      .month-item:hover {
+        background-color: var(--grayBgHover);
+        color: var(--primaryColor);
+      }
+
+      .month-item.selected {
+        background-color: var(--primaryColor);
+        color: white;
+      }
+
+      .years-wrapper {
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 5px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--textGray) var(--grayBg);
+      }
+
+      .years-wrapper::-webkit-scrollbar {
+        width: 6px;
+      }
+      .years-wrapper::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 4px;
+      }
+
+      .years-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        text-align: center;
+      }
+
+      .year-item {
+        padding: 8px 0;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: 0.2s;
+      }
+
+      .year-item:hover {
+        background-color: var(--grayBgHover);
+        color: var(--primaryColor);
+      }
+
+      .year-item.selected {
+        background-color: var(--primaryColor);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="R">
+      <p>تاریخ دریافت:</p>
+      <div class="DatePicker">
+        <input
+          type="text"
+          id="start-date-input"
+          placeholder="تاریخ رفت"
+          readonly
+        />
+        <input
+          type="text"
+          id="end-date-input"
+          placeholder="تاریخ برگشت"
+          readonly
+        />
+
+        <div id="calendar-container" class="calendar-popup">
+          <!-- هدر -->
+          <div class="calendar-header" id="calendar-header-row">
+            <button class="calendar-nav-btn" id="next-month">&gt;</button>
+            <span
+              class="calendar-title"
+              id="calendar-title"
+              title="برای تغییر سال و ماه کلیک کنید"
+              >۱۴۰۳ فروردین</span
+            >
+            <button class="calendar-nav-btn" id="prev-month">&lt;</button>
+          </div>
+
+          <!-- نمای روزها -->
+          <div id="view-days" class="calendar-view active">
+            <div class="calendar-weekdays">
+              <div>ش</div>
+              <div>ی</div>
+              <div>د</div>
+              <div>س</div>
+              <div>چ</div>
+              <div>پ</div>
+              <div>ج</div>
+            </div>
+            <div class="calendar-days" id="calendar-days">
+              <!-- روزها اینجا ساخته می‌شوند -->
+            </div>
+          </div>
+
+          <!-- نمای ماه‌ها -->
+          <div id="view-months" class="calendar-view">
+            <div class="months-grid" id="months-grid"></div>
+          </div>
+
+          <!-- نمای سال‌ها -->
+          <div id="view-years" class="calendar-view">
+            <div class="years-wrapper">
+              <div class="years-grid" id="years-grid"></div>
+            </div>
+          </div>
+
+          <!-- فوتر -->
+          <div class="calendar-footer">
+            <button class="btn-close" id="close-calendar">بستن</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // --- ۱. موتور تبدیل تاریخ جلالی ---
+      const jalaali = {
+        toJalaali: function (gy, gm, gd) {
+          var g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+          var jy = gy <= 1600 ? 0 : 979;
+          gy -= gy <= 1600 ? 621 : 1600;
+          var gy2 = gm > 2 ? gy + 1 : gy;
+          var days =
+            365 * gy +
+            Math.floor((gy2 + 3) / 4) -
+            Math.floor((gy2 + 99) / 100) +
+            Math.floor((gy2 + 399) / 400) -
+            80 +
+            gd +
+            g_d_m[gm - 1];
+          jy += 33 * Math.floor(days / 12053);
+          days %= 12053;
+          jy += 4 * Math.floor(days / 1461);
+          days %= 1461;
+          jy += Math.floor((days - 1) / 365);
+          if (days > 365) days = (days - 1) % 365;
+          var jm =
+            days < 186
+              ? 1 + Math.floor(days / 31)
+              : 7 + Math.floor((days - 186) / 30);
+          var jd = 1 + (days < 186 ? days % 31 : (days - 186) % 30);
+          return { jy: jy, jm: jm, jd: jd };
+        },
+        toGregorian: function (jy, jm, jd) {
+          var gy = jy <= 979 ? 621 : 1600;
+          jy -= jy <= 979 ? 0 : 979;
+          var days =
+            365 * jy +
+            Math.floor(jy / 33) * 8 +
+            Math.floor(((jy % 33) + 3) / 4) +
+            78 +
+            jd +
+            (jm < 7 ? (jm - 1) * 31 : (jm - 7) * 30 + 186);
+          gy += 400 * Math.floor(days / 146097);
+          days %= 146097;
+          if (days > 36524) {
+            gy += 100 * Math.floor(--days / 36524);
+            days %= 36524;
+            if (days >= 365) days++;
+          }
+          gy += 4 * Math.floor(days / 1461);
+          days %= 1461;
+          gy += Math.floor((days - 1) / 365);
+          if (days > 365) days = (days - 1) % 365;
+          var gd = days + 1;
+          var gm = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+          for (var i = 0; i < 13; i++) {
+            var v =
+              gm[i] +
+              (i === 2 && ((gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0)
+                ? 1
+                : 0);
+            if (gd <= v) break;
+            gd -= v;
+          }
+          return { gy: gy, gm: i, gd: gd };
+        },
+        isValidJalaaliDate: function (jy, jm, jd) {
+          return (
+            jy >= -61 &&
+            jy <= 3177 &&
+            jm >= 1 &&
+            jm <= 12 &&
+            jd >= 1 &&
+            jd <=
+              (jm <= 6
+                ? 31
+                : jm <= 11
+                  ? 30
+                  : jalaali.isLeapJalaaliYear(jy)
+                    ? 30
+                    : 29)
+          );
+        },
+        isLeapJalaaliYear: function (jy) {
+          return jalaali.jalCal(jy).leap === 0;
+        },
+        jalCal: function (jy) {
+          var breaks = [
+            -61, 9, 38, 199, 426, 686, 756, 818, 1111, 1181, 1210, 1635, 2060,
+            2097, 2192, 2262, 2324, 2394, 2456, 3178,
+          ];
+          var bl = breaks.length;
+          var gy = jy + 621;
+          var leapJ = -14;
+          var jp = breaks[0];
+          var jump;
+          if (jy < jp || jy >= breaks[bl - 1])
+            throw new Error("Invalid Jalaali year " + jy);
+          for (var i = 1; i < bl; i += 1) {
+            var jm = breaks[i];
+            jump = jm - jp;
+            if (jy < jm) break;
+            leapJ =
+              leapJ + Math.floor(jump / 33) * 8 + Math.floor((jump % 33) / 4);
+            jp = jm;
+          }
+          var n = jy - jp;
+          leapJ =
+            leapJ + Math.floor(n / 33) * 8 + Math.floor(((n % 33) + 3) / 4);
+          if (jump % 33 === 4 && jump - n === 4) leapJ += 1;
+          var leapG =
+            Math.floor(gy / 4) -
+            Math.floor(gy / 100 + 1) +
+            Math.floor(gy / 400);
+          var march = 20 + (leapJ - leapG);
+          if (jump - n < 6) n = n - jump + Math.floor((jump + 4) / 33) * 33;
+          var leap = (((n + 1) % 33) - 1) % 4;
+          if (leap === -1) leap = 4;
+          return { leap: leap, gy: gy, march: march };
+        },
+        jMonthLength: function (jy, jm) {
+          if (jm <= 6) return 31;
+          if (jm <= 11) return 30;
+          if (jalaali.isLeapJalaaliYear(jy)) return 30;
+          return 29;
+        },
+      };
+
+      // --- ۲. متغیرها و عناصر ---
+      const monthNames = [
+        "فروردین",
+        "اردیبهشت",
+        "خرداد",
+        "تیر",
+        "مرداد",
+        "شهریور",
+        "مهر",
+        "آبان",
+        "آذر",
+        "دی",
+        "بهمن",
+        "اسفند",
+      ];
+
+      const startDateInput = document.getElementById("start-date-input");
+      const endDateInput = document.getElementById("end-date-input");
+      const calendarContainer = document.getElementById("calendar-container");
+      const calendarTitle = document.getElementById("calendar-title");
+      const calendarDays = document.getElementById("calendar-days");
+      const prevMonthBtn = document.getElementById("prev-month");
+      const nextMonthBtn = document.getElementById("next-month");
+      const closeCalendarBtn = document.getElementById("close-calendar");
+      const calendarHeaderRow = document.getElementById("calendar-header-row");
+
+      const viewDays = document.getElementById("view-days");
+      const viewMonths = document.getElementById("view-months");
+      const viewYears = document.getElementById("view-years");
+      const monthsGrid = document.getElementById("months-grid");
+      const yearsGrid = document.getElementById("years-grid");
+
+      let currentJy = 1403;
+      let currentJm = 1;
+      let currentView = "days";
+      let activeInput = null;
+
+      let selectedStartDate = null;
+      let selectedEndDate = null;
+      let hoverDate = null;
+
+      const today = new Date();
+      const jToday = jalaali.toJalaali(
+        today.getFullYear(),
+        today.getMonth() + 1,
+        today.getDate(),
+      );
+
+      // --- ۳. توابع کمکی ---
+      function jDateToString(jy, jm, jd) {
+        return `${jy}/${String(jm).padStart(2, "0")}/${String(jd).padStart(2, "0")}`;
+      }
+
+      function stringToJDate(str) {
+        if (!str) return null;
+        const parts = str.split("/");
+        if (parts.length !== 3) return null;
+        return {
+          jy: parseInt(parts[0]),
+          jm: parseInt(parts[1]),
+          jd: parseInt(parts[2]),
+        };
+      }
+
+      function getDateValue(jy, jm, jd) {
+        return jy * 10000 + jm * 100 + jd;
+      }
+
+      function isDateInRange(jy, jm, jd) {
+        if (!selectedStartDate || !selectedEndDate) return false;
+        const start = stringToJDate(selectedStartDate);
+        const end = stringToJDate(selectedEndDate);
+        const val = getDateValue(jy, jm, jd);
+        const startVal = getDateValue(start.jy, start.jm, start.jd);
+        const endVal = getDateValue(end.jy, end.jm, end.jd);
+        return val > startVal && val < endVal;
+      }
+
+      // بررسی بازه هاور
+      function isDateInHoverRange(jy, jm, jd) {
+        if (!selectedStartDate || selectedEndDate || !hoverDate) return false;
+        const start = stringToJDate(selectedStartDate);
+        const end = hoverDate;
+
+        const val = getDateValue(jy, jm, jd);
+        const startVal = getDateValue(start.jy, start.jm, start.jd);
+        const endVal = getDateValue(end.jy, end.jm, end.jd);
+
+        return val > startVal && val < endVal;
+      }
+
+      // تابع جدید: به‌روزرسانی ویژوال هاور بدون رندر مجدد کل صفحه
+      function updateHoverVisuals() {
+        const dayCells = document.querySelectorAll(".calendar-day:not(.empty)");
+        dayCells.forEach((cell) => {
+          cell.classList.remove("hover-range");
+
+          // خواندن اطلاعات تاریخ از دیتا-اتریبیوت
+          const dateParts = cell.dataset.date.split("-").map(Number); // [year, month, day]
+          if (dateParts.length === 3) {
+            if (isDateInHoverRange(dateParts[0], dateParts[1], dateParts[2])) {
+              cell.classList.add("hover-range");
+            }
+          }
+        });
+      }
+
+      function switchView(view) {
+        currentView = view;
+        viewDays.classList.remove("active");
+        viewMonths.classList.remove("active");
+        viewYears.classList.remove("active");
+
+        if (view === "days") {
+          viewDays.classList.add("active");
+          calendarHeaderRow.style.visibility = "visible";
+          renderCalendar(currentJy, currentJm);
+        } else if (view === "months") {
+          viewMonths.classList.add("active");
+          calendarHeaderRow.style.visibility = "hidden";
+          renderMonths(currentJy);
+        } else if (view === "years") {
+          viewYears.classList.add("active");
+          calendarHeaderRow.style.visibility = "hidden";
+          renderYears();
+        }
+      }
+
+      // --- ۴. رندر تقویم (روزها) ---
+      function renderCalendar(jy, jm) {
+        calendarDays.innerHTML = "";
+        calendarTitle.textContent = `${jy} ${monthNames[jm - 1]}`;
+
+        const daysInMonth = jalaali.jMonthLength(jy, jm);
+        const gDate = jalaali.toGregorian(jy, jm, 1);
+        const dateObj = new Date(gDate.gy, gDate.gm - 1, gDate.gd);
+        let startDayOfWeek = (dateObj.getDay() + 1) % 7;
+
+        // خانه‌های خالی
+        for (let i = 0; i < startDayOfWeek; i++) {
+          const emptyCell = document.createElement("div");
+          emptyCell.className = "calendar-day empty";
+          calendarDays.appendChild(emptyCell);
+        }
+
+        // روزهای ماه
+        for (let day = 1; day <= daysInMonth; day++) {
+          const dayEl = document.createElement("div");
+          dayEl.className = "calendar-day";
+          dayEl.textContent = day;
+          // ذخیره تاریخ در المنت برای استفاده آینده در هاور
+          dayEl.dataset.date = `${jy}-${jm}-${day}`;
+
+          const dateStr = jDateToString(jy, jm, day);
+
+          if (jy === jToday.jy && jm === jToday.jm && day === jToday.jd) {
+            dayEl.classList.add("today");
+          }
+
+          if (dateStr === selectedStartDate || dateStr === selectedEndDate) {
+            dayEl.classList.add("selected");
+          }
+
+          if (isDateInRange(jy, jm, day)) {
+            dayEl.classList.add("in-range");
+          }
+
+          // رویداد کلیک
+          dayEl.addEventListener("click", () => selectDate(jy, jm, day));
+
+          // رویداد هاور (اصلاح شده: بدون رندر مجدد)
+          dayEl.addEventListener("mouseenter", () => {
+            if (selectedStartDate && !selectedEndDate) {
+              hoverDate = { jy, jm, jd: day };
+              updateHoverVisuals(); // فقط کلاس‌ها را عوض می‌کند
+            }
+          });
+
+          calendarDays.appendChild(dayEl);
+        }
+
+        // اگر موس از کادر تقویم خارج شود، هاور را پاک کن
+        calendarContainer.onmouseleave = () => {
+          if (hoverDate) {
+            hoverDate = null;
+            updateHoverVisuals();
+          }
+        };
+      }
+
+      // --- ۵. رندر ماه‌ها ---
+      function renderMonths(year) {
+        monthsGrid.innerHTML = "";
+        calendarTitle.textContent = `${year} - انتخاب ماه`;
+
+        monthNames.forEach((name, index) => {
+          const monthEl = document.createElement("div");
+          monthEl.className = "month-item";
+          monthEl.textContent = name;
+
+          if (year === currentJy && index + 1 === currentJm) {
+            monthEl.classList.add("selected");
+          }
+
+          monthEl.addEventListener("click", () => {
+            currentJm = index + 1;
+            switchView("days");
+          });
+
+          monthsGrid.appendChild(monthEl);
+        });
+      }
+
+      // --- ۶. رندر سال‌ها ---
+      function renderYears() {
+        yearsGrid.innerHTML = "";
+        calendarTitle.textContent = "انتخاب سال";
+
+        const startYear = 1300;
+        const endYear = jToday.jy;
+
+        for (let y = endYear; y >= startYear; y--) {
+          const yearEl = document.createElement("div");
+          yearEl.className = "year-item";
+          yearEl.textContent = y;
+
+          if (y === currentJy) {
+            yearEl.classList.add("selected");
+          }
+
+          yearEl.addEventListener("click", () => {
+            currentJy = y;
+            switchView("months"); // رفتن به ماه بعد از انتخاب سال
+          });
+
+          yearsGrid.appendChild(yearEl);
+        }
+
+        setTimeout(() => {
+          const selectedYear = yearsGrid.querySelector(".year-item.selected");
+          if (selectedYear) {
+            selectedYear.scrollIntoView({ block: "center" });
+          }
+        }, 10);
+      }
+
+      // --- ۷. مدیریت انتخاب تاریخ ---
+      function selectDate(jy, jm, jd) {
+        const dateStr = jDateToString(jy, jm, jd);
+
+        if (!selectedStartDate || (selectedStartDate && selectedEndDate)) {
+          // شروع بازه جدید
+          selectedStartDate = dateStr;
+          selectedEndDate = null;
+          startDateInput.value = dateStr;
+          endDateInput.value = "";
+
+          // باز کردن تقویم برای تاریخ برگشت
+          activeInput = "end";
+          // پاک کردن افکت هاور قبلی
+          hoverDate = null;
+          // باز نگه داشتن تقویم
+          openCalendar("end");
+        } else {
+          // انتخاب پایان بازه
+          const start = stringToJDate(selectedStartDate);
+          const currentVal = getDateValue(jy, jm, jd);
+          const startVal = getDateValue(start.jy, start.jm, start.jd);
+
+          if (currentVal < startVal) {
+            // جابجایی اگر تاریخ کوچکتر انتخاب شد
+            selectedEndDate = selectedStartDate;
+            selectedStartDate = dateStr;
+            startDateInput.value = dateStr;
+            endDateInput.value = selectedEndDate;
+          } else {
+            selectedEndDate = dateStr;
+            endDateInput.value = dateStr;
+          }
+          closeCalendar();
+        }
+        updateActiveInputStyles();
+        renderCalendar(currentJy, currentJm);
+      }
+
+      // --- ۸. مدیریت باز و بسته شدن ---
+      function openCalendar(inputType) {
+        activeInput = inputType;
+
+        let targetDate = stringToJDate(
+          document.getElementById(
+            inputType === "start" ? "start-date-input" : "end-date-input",
+          ).value,
+        );
+
+        if (!targetDate && inputType === "end") {
+          targetDate = stringToJDate(startDateInput.value);
+        }
+
+        if (!targetDate) {
+          targetDate = jToday;
+        }
+
+        currentJy = targetDate.jy;
+        currentJm = targetDate.jm;
+
+        // مطمئن شویم به نمای روز برمی‌گردیم اگر در نمای سال یا ماه بودیم
+        if (currentView !== "days") {
+          switchView("days");
+        } else {
+          renderCalendar(currentJy, currentJm);
+        }
+
+        calendarContainer.classList.add("show");
+        updateActiveInputStyles();
+      }
+
+      function closeCalendar() {
+        calendarContainer.classList.remove("show");
+        activeInput = null;
+        hoverDate = null;
+        updateActiveInputStyles();
+      }
+
+      function updateActiveInputStyles() {
+        startDateInput.classList.remove("active");
+        endDateInput.classList.remove("active");
+        if (activeInput === "start") startDateInput.classList.add("active");
+        if (activeInput === "end") endDateInput.classList.add("active");
+      }
+
+      // --- ۹. ایونت لیستنرها ---
+
+      startDateInput.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openCalendar("start");
+      });
+
+      endDateInput.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (!selectedStartDate) {
+          openCalendar("start");
+        } else {
+          openCalendar("end");
+        }
+      });
+
+      // کلیک روی هدر: روزها -> سال‌ها -> ماه‌ها -> روزها
+      calendarTitle.addEventListener("click", () => {
+        if (currentView === "days") {
+          switchView("years"); // رفتن مستقیم به سال‌ها
+        } else if (currentView === "years") {
+          switchView("months"); // بعد از سال، برو به ماه
+        } else if (currentView === "months") {
+          switchView("days"); // بعد از ماه، برگرد به روز
+        }
+      });
+
+      prevMonthBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (currentView !== "days") return;
+        currentJm--;
+        if (currentJm < 1) {
+          currentJm = 12;
+          currentJy--;
+        }
+        renderCalendar(currentJy, currentJm);
+      });
+
+      nextMonthBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (currentView !== "days") return;
+        currentJm++;
+        if (currentJm > 12) {
+          currentJm = 1;
+          currentJy++;
+        }
+        renderCalendar(currentJy, currentJm);
+      });
+
+      closeCalendarBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeCalendar();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !calendarContainer.contains(e.target) &&
+          e.target !== startDateInput &&
+          e.target !== endDateInput
+        ) {
+          closeCalendar();
+        }
+      });
+
+      calendarContainer.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

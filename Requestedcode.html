@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فرم ورود</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="LoginContainer">
+      <div class="LoginCard">
+        <div class="LoginHeader">
+          <h2>بازیابی رمز عبور</h2>
+          <p>کد ارسال شده به شماره ی همراه091203482488 را وارد کنید</p>
+        </div>
+
+        <div class="FormGroup">
+          <div class="InputWrapper">
+            <input type="number" required />
+            <label>مثال 1234</label>
+          </div>
+        </div>
+        <a href="NewPassword.html">
+          <button class="Btn">برسی کد بازیابی</button>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      const toggleBtn = document.querySelector(".PasswordToggle");
+      const passwordInput = document.querySelector(".PasswordInput");
+
+      toggleBtn.addEventListener("click", () => {
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        toggleBtn.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

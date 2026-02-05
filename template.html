@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بازیابی رمز عبور</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v5.0.0/dist/font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style>
+      :root {
+        --gold: #ffcd11;
+        --gold-dark: #cea500;
+        --gold-text: #5c4b00;
+        --bg-light: #f5f5f5;
+        --bg-white: #ffffff;
+        --text-dark: #333333;
+        --text-gray: #727272;
+        --error-color: #ef4444;
+        --error-bg: #fef2f2;
+
+        --font-main: "Sahel", sans-serif;
+        --radius-lg: 16px;
+        --radius-md: 8px;
+        --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-btn: 0 4px 6px rgba(255, 205, 17, 0.25);
+        --transition-speed: 0.3s;
+        --border-color: #e5e5e5;
+      }
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <main class="ForgetPasswordContainer">
+      <header class="ForgetPasswordContainer__header">
+        <div class="ForgetPasswordContainer__header-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6-9h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zM9 6a3 3 0 1 1 6 0v2H9V6zm9 14H6V10h12v10z"
+            />
+          </svg>
+        </div>
+        <h1>فراموشی رمز عبور؟</h1>
+        <p>
+          نگران نباشید! لطفاً آدرس ایمیل خود را وارد کنید تا ما لینک بازیابی رمز
+          عبور را برای شما ارسال کنیم.
+        </p>
+      </header>
+
+      <form class="ForgetPasswordContainer__form" id="forgotForm" novalidate>
+        <div class="input-group" id="emailGroup">
+          <label for="email">آدرس ایمیل</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="example@mail.com"
+            autocomplete="email"
+            aria-label="آدرس ایمیل"
+          />
+          <span class="input-icon">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </span>
+          <span class="error-msg">فرمت ایمیل وارد شده صحیح نیست.</span>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <div class="spinner"></div>
+          <span>ارسال لینک بازیابی</span>
+        </button>
+      </form>
+
+      <div class="ForgetPasswordContainer__footer">
+        <a href="#">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          بازگشت به صفحه ورود
+        </a>
+      </div>
+    </main>
+
+    <div class="toast" id="toast" role="alert" aria-live="assertive">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.25 17.25L5.75 12l1.85-1.85 3.15 3.15 6.65-6.65 1.85 1.85-8.5 8.5z"
+        />
+      </svg>
+      <span>لینک بازیابی با موفقیت ارسال شد!</span>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("forgotForm");
+        const emailInput = document.getElementById("email");
+        const submitBtn = document.getElementById("submitBtn");
+        const emailGroup = document.getElementById("emailGroup");
+        const toast = document.getElementById("toast");
+
+        const validateEmail = (email) => {
+          return String(email)
+            .toLowerCase()
+            .match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            );
+        };
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const emailValue = emailInput.value.trim();
+
+          if (!emailValue || !validateEmail(emailValue)) {
+            showError();
+            return;
+          }
+
+          clearError();
+          startLoading();
+
+          setTimeout(() => {
+            stopLoading();
+            showToast();
+            emailInput.value = "";
+          }, 2000);
+        });
+
+        emailInput.addEventListener("input", () => {
+          if (emailGroup.classList.contains("has-error")) {
+            clearError();
+          }
+        });
+
+        function showError() {
+          emailGroup.classList.add("has-error");
+          emailInput.classList.add("error");
+
+          emailInput.classList.remove("error");
+          void emailInput.offsetWidth;
+          emailInput.classList.add("error");
+
+          emailInput.focus();
+        }
+
+        function clearError() {
+          emailGroup.classList.remove("has-error");
+          emailInput.classList.remove("error");
+        }
+
+        function startLoading() {
+          submitBtn.classList.add("loading");
+          submitBtn.disabled = true;
+        }
+
+        function stopLoading() {
+          submitBtn.classList.remove("loading");
+          submitBtn.disabled = false;
+        }
+
+        function showToast() {
+          toast.classList.add("visible");
+
+          setTimeout(() => {
+            toast.classList.remove("visible");
+          }, 4000);
+        }
+      });
+    </script>
+  </body>
+</html>

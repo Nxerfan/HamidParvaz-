@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="HeaderTop">
+        <div class="Container">
+          <a href="/index.html" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Niksa Logo" />
+          </a>
+
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/Hotel.Html">رزرو هتل</a>
+                <a class="DropdownItem" href="/Flight.html">رزرو پرواز</a>
+                <a class="DropdownItem" href="/Tour.html">تور مسافرتی</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="AboutUs.html">تماس با ما</a>
+                <a class="DropdownItem" href="/cooperation.html"
+                  >همکاری با ما</a
+                >
+              </div>
+            </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/FAQ.html">سوالات متداول</a>
+                <a class="DropdownItem" href="/HowToBuyTicket.html"
+                  >راهنمای رزرو</a
+                >
+                <a class="DropdownItem" href="./rules.html">قوانین و مقررات</a>
+                <a class="DropdownItem" href="/cancellation.html">
+                  پیگیری خرید و کنسلی</a
+                >
+              </div>
+            </div>
+
+            <a href="/BLog.html" class="NavItem">بلاگ</a>
+            <a href="/AboutUs.html" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <a href="/singIn.html">
+              <button class="Btn BtnOutline">ورود</button>
+            </a>
+            <a href="/SingUp.html">
+              <button class="Btn BtnPrimary">ثبت نام</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="Hero2"></div>
+    </header>
+
+    <div class="containerr">
+      <div class="right">
+        <div class="MenuHeader">
+          <button class="EditBtn" aria-label="Edit profile">✎</button>
+          <span class="Username">عرفان صادقی</span>
+        </div>
+
+        <div class="MenuBody">
+          <nav class="Nav">
+            <a href="/cancellation.html" class="Item">
+              <i class="Icon">🎫</i>
+              پیگیری خرید و کنسلی
+            </a>
+
+            <details class="Dropdown">
+              <summary class="Item">
+                <i class="Icon">📞</i>
+                پشتیبانی ۲۴/۷
+              </summary>
+
+              <div class="Content">
+                <a href="/AboutUs.html">تماس با ما</a>
+                <a href="/FAQ.html">سوالات متداول</a>
+              </div>
+            </details>
+
+            <details class="Dropdown">
+              <summary class="Item">
+                <i class="Icon">🧳</i>
+                خدمات سفر
+              </summary>
+
+              <div class="Content">
+                <a href="/Flight.html">بلیط هواپیما</a>
+                <a href="/Hotel.Html">رزرو هتل</a>
+                <a href="/Tour.html">رزرو تور</a>
+              </div>
+            </details>
+
+            <a href="/AboutUs.html" class="Item">
+              <i class="Icon">ⓘ</i>
+              درباره ما
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="left">
+        <div class="Card">
+          <div class="UserPanelParts" id="autoReserveCard"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const card = document.getElementById("autoReserveCard");
+
+      function renderAutoReserveCard() {
+        const hasDiv = card.querySelector("div");
+
+        if (!hasDiv) {
+          card.innerHTML = `
+        <div id="content">
+          <div class="empty">
+            <div class="empty-icon">⚡</div>
+            <p>هنوز موردی برای رزرو خودکار اضافه نکرده‌اید.</p>
+            <small>
+              شما می‌توانید به‌ازای سفرهای تکمیل‌شده، برای خرید آتی از ظرفیت رزرو خودکار استفاده کنید.
+            </small>
+          </div>
+        </div>
+      `;
+        }
+
+      }
+
+      renderAutoReserveCard();
+    </script>
+  </body>
+</html>

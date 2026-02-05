@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بلاگ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="HeaderTop2">
+        <div
+          class="Container"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <a href="/index.html" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Niksa Logo" />
+          </a>
+
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/Hotel.Html">رزرو هتل</a>
+                <a class="DropdownItem" href="/Flight.html">رزرو پرواز</a>
+                <a class="DropdownItem" href="/Tour.html">تور مسافرتی</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/AboutUs.html">تماس با ما</a>
+                <a class="DropdownItem" href="./cooperation.html"
+                  >همکاری با ما</a
+                >
+              </div>
+            </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="/FAQ.html">سوالات متداول</a>
+                <a class="DropdownItem" href="/HowToBuyTicket.html"
+                  >راهنمای رزرو</a
+                >
+                <a class="DropdownItem" href="/rules.html">قوانین و مقررات</a>
+                <a class="DropdownItem" href="/cancellation.html"
+                  >پیگیری خرید و کنسلی</a
+                >
+              </div>
+            </div>
+
+            <a href="/BLog.html" class="NavItem">بلاگ</a>
+            <a href="/AboutUs.html" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <a href="/singIn.html">
+              <button class="Btn BtnOutline">ورود</button>
+            </a>
+            <a href="/SingUp.html">
+              <button class="Btn BtnPrimary">ثبت نام</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="blog-container">
+      <!-- بخش هیرو (فرزند کانتینر اصلی) -->
+      <section class="blog-hero">
+        <img
+          src="https://picsum.photos/seed/travelhero/1200/600"
+          alt="سفر به ترکیه"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="hero-tag">پیشنهاد ویژه</span>
+          <h1 class="hero-title">
+            راهنمای کامل سفر به استانبول؛ شهری که در دو قاره زندگی می‌کند
+          </h1>
+          <div class="hero-meta">
+            <span><i class="far fa-calendar-alt"></i> ۲۵ آبان ۱۴۰۲</span>
+            <span><i class="far fa-clock"></i> ۱۰ دقیقه مطالعه</span>
+            <span><i class="far fa-user"></i> سارا احمدی</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- نوار ابزار (فرزند کانتینر اصلی) -->
+      <section class="blog-toolbar">
+        <h2 class="toolbar-title">آخرین مقالات مسافرتی</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" onclick="filterPosts('all', this)">
+            همه
+          </button>
+          <button class="filter-btn" onclick="filterPosts('flight', this)">
+            پرواز
+          </button>
+          <button class="filter-btn" onclick="filterPosts('hotel', this)">
+            هتل
+          </button>
+          <button class="filter-btn" onclick="filterPosts('tour', this)">
+            تور
+          </button>
+        </div>
+      </section>
+
+      <!-- شبکه مقالات (فرزند کانتینر اصلی) -->
+      <section class="articles-grid" id="articlesGrid">
+        <!-- کارت 1 -->
+        <article class="article-card" data-category="tour">
+          <div class="card-image-wrapper">
+            <span class="card-category">تور</span>
+            <img src="https://picsum.photos/seed/kish/400/300" alt="تور کیش" />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">
+              چرا تور کیش بهترین گزینه برای تعطیلات آخر هفته است؟
+            </h3>
+            <p class="card-excerpt">
+              جزیره زیبای کیش با تفریحات متنوع و هتل‌های لوکس، مقصدی محبوب برای
+              مسافران ایرانی است...
+            </p>
+            <div class="card-footer">
+              <span><i class="far fa-clock"></i> ۵ دقیقه</span>
+              <a href="/BlogChoosed.html" class="read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت 2 -->
+        <article class="article-card" data-category="hotel">
+          <div class="card-image-wrapper">
+            <span class="card-category">هتل</span>
+            <img
+              src="https://picsum.photos/seed/dubaihotel/400/300"
+              alt="هتل‌های دبی"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">معرفی ۵ هتل ۷ ستاره مجلل در دبی</h3>
+            <p class="card-excerpt">
+              اگر قصد سفر لوکس به دبی را دارید، اقامت در این هتل‌ها تجربه‌ای
+              فراموش‌نشدنی برایتان خواهد بود...
+            </p>
+            <div class="card-footer">
+              <span><i class="far fa-clock"></i> ۷ دقیقه</span>
+              <a href="/BlogChoosed.html" class="read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت 3 -->
+        <article class="article-card" data-category="flight">
+          <div class="card-image-wrapper">
+            <span class="card-category">پرواز</span>
+            <img
+              src="https://picsum.photos/seed/flighttips/400/300"
+              alt="چمدان سفر"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">
+              تکنیک‌های بستن چمدان جهت جلوگیری از اضافه بار
+            </h3>
+            <p class="card-excerpt">
+              چگونه وسایل بیشتری را در فضای کمتر بگنجانیم و از پرداخت هزینه
+              اضافه بار پرواز جلوگیری کنیم...
+            </p>
+            <div class="card-footer">
+              <span><i class="far fa-clock"></i> ۴ دقیقه</span>
+              <a href="/BlogChoosed.html" class="read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت 4 -->
+        <article class="article-card" data-category="tour">
+          <div class="card-image-wrapper">
+            <span class="card-category">تور</span>
+            <img
+              src="https://picsum.photos/seed/isfahan/400/300"
+              alt="سفر به اصفهان"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">
+              اصفهان، نصف جهان؛ معرفی جاذبه‌های پنهان این شهر تاریخی
+            </h3>
+            <p class="card-excerpt">
+              فراتر از میدان نقش جهان، اصفهان جاهای دیدنی زیادی دارد که شاید
+              کمتر به آن‌ها اشاره شده باشد...
+            </p>
+            <div class="card-footer">
+              <span><i class="far fa-clock"></i> ۸ دقیقه</span>
+              <a href="/BlogChoosed.html" class="read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت 5 -->
+        <article class="article-card" data-category="hotel">
+          <div class="card-image-wrapper">
+            <span class="card-category">هتل</span>
+            <img
+              src="https://picsum.photos/seed/yazdhotel/400/300"
+              alt="هتل‌های سنتی یزد"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">
+              تجربه اقامت در بوم‌گردی‌های یزد؛ کویر و تاریخ
+            </h3>
+            <p class="card-excerpt">
+              برای بازدید از کویر و آجرهای سرخ یزد، بهترین انتخاب اقامت در
+              هتل‌های سنتی و بوم‌گردی هاست...
+            </p>
+            <div class="card-footer">
+              <span><i class="far fa-clock"></i> ۶ دقیقه</span>
+              <a href="/BlogChoosed.html" class="read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- کارت 6 -->
+        <article class="article-card" data-category="flight">
+          <div class="card-image-wrapper">
+            <span class="card-category">پرواز</span>
+            <img
+              src="https://picsum.photos/seed/charter/400/300"
+              alt="بلیط چارتر"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">
+              تفاوت بلیط سیستمی و چارتر چیست؟ کدام ارزان‌تر است؟
+            </h3>
+            <p class="card-excerpt">
+              قبل از خرید بلیط هواپیما، تفاوت‌های این دو نوع بلیط را به خوبی
+              بشناسید تا انتخابی بهتر داشته باشید...
+            </p>
+            <div class="card-footer">
+              <span><i class="far fa-clock"></i> ۵ دقیقه</span>
+              <a href="/BlogChoosed.html" class="read-more"
+                >ادامه مطلب <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- دکمه لود بیشتر (فرزند کانتینر اصلی) -->
+      <div class="load-more-container">
+        <button class="btn-load-more" onclick="loadMorePosts()">
+          مشاهده مطالب بیشتر
+        </button>
+      </div>
+
+      <!-- سایدبار (فرزند کانتینر اصلی) -->
+      <aside class="sidebar">
+        <!-- ویجت جستجو -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">جستجو در بلاگ</h3>
+          <div class="newsletter-form">
+            <input
+              type="text"
+              placeholder="موضوع مورد نظر..."
+              class="newsletter-input"
+            />
+            <button class="btn-newsletter">جستجو</button>
+          </div>
+        </div>
+
+        <!-- ویجت دسته‌بندی -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">دسته‌بندی‌ها</h3>
+          <ul class="category-list">
+            <li>
+              <a href=""
+                >تورهای مسافرتی <span class="category-count">۱۲</span></a
+              >
+            </li>
+            <li>
+              <a href="/HowToBuyTicket.html"
+                >راهنمای پرواز <span class="category-count">۸</span></a
+              >
+            </li>
+            <li>
+              <a href="#">معرفی هتل <span class="category-count">۱۵</span></a>
+            </li>
+            <li>
+              <a href="#">نامه‌های سفر <span class="category-count">۵</span></a>
+            </li>
+            <li>
+              <a href="#"
+                >ویزا و مجوزها <span class="category-count">۳</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- ویجت پست‌های محبوب -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">محبوب‌ترین مطالب</h3>
+          <div class="popular-post">
+            <img
+              src="https://picsum.photos/seed/popular1/100/100"
+              alt="مقاله"
+            />
+            <div class="popular-post-info">
+              <h4>بهترین زمان سفر به شیراز چه فصلی است؟</h4>
+              <span><i class="far fa-eye"></i> ۲,۵۰۰ بازدید</span>
+            </div>
+          </div>
+          <div class="popular-post">
+            <img
+              src="https://picsum.photos/seed/popular2/100/100"
+              alt="مقاله"
+            />
+            <div class="popular-post-info">
+              <h4>راهنمای دریافت ویزای شینگن</h4>
+              <span><i class="far fa-eye"></i> ۱,۸۰۰ بازدید</span>
+            </div>
+          </div>
+          <div class="popular-post">
+            <img
+              src="https://picsum.photos/seed/popular3/100/100"
+              alt="مقاله"
+            />
+            <div class="popular-post-info">
+              <h4>۱۰ سوغاتی خاص از ترکیه</h4>
+              <span><i class="far fa-eye"></i> ۱,۴۰۰ بازدید</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ویجت خبرنامه -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">عضویت در خبرنامه</h3>
+          <p class="newsletter-text">
+            برترین مقالات سفر و تخفیف‌های ویژه را مستقیما در ایمیل خود دریافت
+            کنید.
+          </p>
+          <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input
+              type="email"
+              placeholder="ایمیل خود را وارد کنید"
+              class="newsletter-input"
+              required
+            />
+            <button type="submit" class="btn-newsletter">عضویت</button>
+          </form>
+        </div>
+
+        <!-- ویجت تگ‌ها -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">برچسب‌ها</h3>
+          <div class="tags-cloud">
+            <span class="tag">سفر نوروزی</span>
+            <span class="tag">تور ارزان</span>
+            <span class="tag">سفر خارجی</span>
+            <span class="tag">بلیط هواپیما</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="Container">
+        <div class="TopRow">
+          <div class="Contact">
+            <div class="Top">
+              <span>تلفن پشتیبانی 24 ساعته: 2911321-021</span>
+              <span>ایمیل پشتیبانی: salam@example.com</span>
+            </div>
+
+            <div class="buttom">
+              <a href="/Flight.html"><p>بلیط هواپیما</p></a>
+              <a href="/Hotel.Html"><p>رزرو هتل</p></a>
+              <a href="/Tour.html"><p>مشاهده ی تورها</p></a>
+            </div>
+
+            <div class="canccel">
+              <a href="/cancellation.html"><p>پیگیری و کنسلی بلیط</p></a>
+            </div>
+          </div>
+
+          <div class="OrgBox">
+            <h3>راهکارهای سازمانی</h3>
+            <p>
+              خدمات اختصاصی برای سازمان‌ها و شرکت‌ها جهت مدیریت سفرهای کاری.
+            </p>
+            <button>فعال‌سازی پنل سازمانی</button>
+          </div>
+        </div>
+
+        <div class="LinksRow">
+          <div class="Links">
+            <h4>راهنمایی و پشتیبانی</h4>
+            <ul>
+              <a href="/FAQ.html"><li>پرسش‌های متداول</li></a>
+              <a href="/AboutUs.html"><li>تماس با ما</li></a>
+              <a href="/rules.html"><li>شرایط و مقررات</li></a>
+              <a href="/BLog.html"><li>مجله مستر بلیط</li></a>
+            </ul>
+          </div>
+
+          <div class="Description">
+            <div class="Text">
+              <h4>لبخند بزن و سفر کن!</h4>
+              <p>
+                حمید پرواز سامانه آنلاین خرید بلیط هواپیما، چارتری و رزرو هتل و
+                تور است؛ راهی سریع و آسان برای برنامه‌ریزی سفرهایتان! تنها با
+                چند کلیک می‌توانید بلیط خود را به هر مقصدی که بخواهید تهیه کرده،
+                صورتحسابتان را آنلاین پرداخت کنید و بی‌دغدغه آماده سفر خود
+                باشید.
+              </p>
+            </div>
+            <div class="Logos">
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+              <img src="" alt="لوگو های شما" />
+            </div>
+          </div>
+        </div>
+
+        <div class="Bottom">
+          <p>تمامی حقوق این وب‌سایت محفوظ است.</p>
+          <div class="Social">
+            <img src="/Media/instagram-svgrepo-com.svg" alt="لوگو های شما" />
+            <img src="/Media/telegram-svgrepo-com.svg" alt="لوگو های شما" />
+            <img src="/Media/gmail-svgrepo-com.svg" alt="لوگو های شما" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function filterPosts(category, btnElement) {
+        const buttons = document.querySelectorAll(".filter-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        btnElement.classList.add("active");
+
+        const posts = document.querySelectorAll(".article-card");
+        posts.forEach((post) => {
+          if (
+            category === "all" ||
+            post.getAttribute("data-category") === category
+          ) {
+            post.style.display = "flex";
+            post.style.animation = "none";
+            post.offsetHeight;
+            post.style.animation = "fadeIn 0.6s ease forwards";
+          } else {
+            post.style.display = "none";
+          }
+        });
+      }
+
+      function loadMorePosts() {
+        const grid = document.getElementById("articlesGrid");
+        const btn = document.querySelector(".btn-load-more");
+        btn.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> در حال بارگذاری...';
+
+        setTimeout(() => {
+          const newPost1 = document.createElement("article");
+          newPost1.className = "article-card";
+          newPost1.setAttribute("data-category", "tour");
+          newPost1.innerHTML = `
+            <div class="card-image-wrapper"><span class="card-category">تور</span><img src="https://picsum.photos/seed/newpost1/400/300" alt="سفر جدید"></div>
+            <div class="card-content"><h3 class="card-title">تور گردشگری تبریز در فصل پاییز</h3><p class="card-excerpt">تبریز در فصل پاییز هوا بسیار تمیزی دارد...</p><div class="card-footer"><span><i class="far fa-clock"></i> ۶ دقیقه</span><a href="/BlogChoosed.html" class="read-more">ادامه مطلب <i class="fas fa-arrow-left"></i></a></div></div>
+          `;
+          const newPost2 = document.createElement("article");
+          newPost2.className = "article-card";
+          newPost2.setAttribute("data-category", "flight");
+          newPost2.innerHTML = `
+            <div class="card-image-wrapper"><span class="card-category">پرواز</span><img src="https://picsum.photos/seed/newpost2/400/300" alt="تکنیک پرواز"></div>
+            <div class="card-content"><h3 class="card-title">چگونه پرواز طولانی را راحت بگذرانیم؟</h3><p class="card-excerpt">نکات مهمی که در پروازهای طولانی باید رعایت کنید...</p><div class="card-footer"><span><i class="far fa-clock"></i> ۴ دقیقه</span><a href="/BlogChoosed.html" class="read-more">ادامه مطلب <i class="fas fa-arrow-left"></i></a></div></div>
+          `;
+
+          grid.appendChild(newPost1);
+          grid.appendChild(newPost2);
+          btn.textContent = "مشاهده مطالب بیشتر";
+          newPost1.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 1000);
+      }
+
+      function handleSubscribe(e) {
+        e.preventDefault();
+        const input = e.target.querySelector("input");
+        if (input.value) {
+          alert("با تشکر! ایمیل شما با موفقیت در خبرنامه ثبت شد.");
+          input.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

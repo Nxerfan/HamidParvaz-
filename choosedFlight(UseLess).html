@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="HeaderTop2">
+        <div class="Container">
+          <a href="#" class="Logo">
+            <img src="Media/لوگو حمید پرواز (2).png" alt="Logo" />
+          </a>
+
+          <nav>
+            <div class="NavItem">
+              خدمات مسافرتی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="#">رزرو هتل</a>
+                <a class="DropdownItem" href="#">رزرو پرواز</a>
+                <a class="DropdownItem" href="#">رزرو اتوبوس</a>
+                <a class="DropdownItem" href="#">تور مسافرتی</a>
+                <a class="DropdownItem" href="#">ویزا</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              درباره ما <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="#">تماس با ما</a>
+                <a class="DropdownItem" href="#">همکاری با ما</a>
+              </div>
+            </div>
+
+            <div class="NavItem">
+              پشتیبانی <span class="Arrow">▾</span>
+              <div class="Dropdown">
+                <a class="DropdownItem" href="#">سوالات متداول</a>
+                <a class="DropdownItem" href="#">راهنمای رزرو</a>
+                <a class="DropdownItem" href="#">قوانین و مقررات</a>
+              </div>
+            </div>
+
+            <a href="#" class="NavItem">بلاگ</a>
+            <a href="#" class="NavItem">تماس با ما</a>
+          </nav>
+
+          <div class="AuthButtons">
+            <button class="Btn BtnPrimary">ورود</button>
+            <button class="Btn BtnPrimary">ثبت نام</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="Right">
+          <div class="Card">
+            <div class="TopCard">
+              <p>ورود اطلاعات مسافران</p>
+              <div class="Clock">
+                <p>00:56</p>
+                <i class="fa-solid fa-clock"></i>
+              </div>
+            </div>
+            <div class="bottomCard">
+              <div class="gender">
+                <div class="nationality">
+                  <p>1. بزرگسال</p>
+                  <label for="gender1">
+                    <label for="radio">
+                      <input type="radio" name="gender1" id="r1" /> آقا</label
+                    >
+                    <label for="radio">
+                      <input type="radio" name="gender1" id="r2" /> خانوم</label
+                    >
+                    <select name="nationality" id="nationality">
+                      <option value="iranian" selected>ایرانی</option>
+                      <option value="foreign">خارجی</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="addNew">
+                  <i class="fa-solid fa-user-clock"></i>
+                  <p>مسافران قبلی</p>
+                </div>
+              </div>
+
+              <div class="OtherInoformation">
+                <div class="top">
+                  <label for="gender">
+                    نام به انگلیسی
+                    <input type="text" placeholder="نام به انگلیسی" />
+                  </label>
+                  <label for="gender">
+                    نام خانوادگی به انگلیسی
+                    <input type="text" placeholder="نام خانوادگی به انگلیسی" />
+                  </label>
+                </div>
+                <div class="bottom">
+                  <label for="gender">
+                    شماره ملی <input type="text" placeholder="شماره ملی" />
+                  </label>
+                  <label for="dateSelectors">
+                    تاریخ تولد
+                    <div class="dateSelectors">
+                      <select name="birthDay">
+                        <option value="" disabled selected>روز</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                      </select>
+
+                      <select name="birthMonth">
+                        <option value="" disabled selected>ماه</option>
+                        <option value="1">فروردین</option>
+                        <option value="2">اردیبهشت</option>
+                        <option value="3">خرداد</option>
+                        <option value="4">تیر</option>
+                        <option value="5">مرداد</option>
+                        <option value="6">شهریور</option>
+                        <option value="7">مهر</option>
+                        <option value="8">آبان</option>
+                        <option value="9">آذر</option>
+                        <option value="10">دی</option>
+                        <option value="11">بهمن</option>
+                        <option value="12">اسفند</option>
+                      </select>
+                      <input
+                        type="number"
+                        name="year"
+                        min="1300"
+                        max="1402"
+                        placeholder="سال"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="AddMember">
+            <p>افزودن مسافر</p>
+            <div class="AddOptions">
+              <button type="button" data-type="adult">
+                <i class="fa-solid fa-plus"></i> بزرگسال
+              </button>
+              <button type="button" data-type="child">
+                <i class="fa-solid fa-plus"></i> کودک
+              </button>
+              <button type="button" data-type="infant">
+                <i class="fa-solid fa-plus"></i> نوزاد
+              </button>
+            </div>
+          </div>
+          <div class="Card">
+            <div class="TopCard">
+              <p>اطلاعات تماس</p>
+              <div class="Clock"></div>
+            </div>
+            <div class="bottomCard">
+              <div class="OtherInoformation">
+                <div class="top">
+                  <label for="gender">
+                    تلفن همراه <input type="text" placeholder=" تلفن همراه" />
+                  </label>
+                  <label for="gender">
+                    تلفن ثابت (اختیاری)
+                    <input type="text" placeholder="تلفن ثابت" />
+                  </label>
+                </div>
+                <div class="bottom">
+                  <label for="gender">
+                    ایمیل (اختیاری) <input type="text" placeholder="ایمیل" />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="left">
+          <div class="card1">
+            <div class="top">
+              <div class="Time">
+                <div class="Form">
+                  <span>6:00</span>
+                  <p>تهران</p>
+                </div>
+                <div class="i">
+                  <i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i
+                  ><i class="fa-regular fa-circle-dot"></i>
+                  <i class="fas fa-plane fa-flip-horizontal"></i>
+                </div>
+                <div class="Form">
+                  <span>7:00</span>
+                  <p>تهران</p>
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <p>قوانین جریمه و استرداد</p>
+              <div class="Avablity">
+                <span>چارتری</span>
+              </div>
+            </div>
+          </div>
+          <div class="card2">
+            <span>صورتحاسب صفر</span>
+          </div>
+          <button>تایید و ادامه <i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const addMemberButtons = document.querySelectorAll(".AddMember button");
+      const rightContainer = document.querySelector(".Right");
+
+      // تابعی برای ساخت یک Card جدید
+      function createPassengerCard(type, index) {
+        const card = document.createElement("div");
+        card.classList.add("Card");
+        card.innerHTML = `
+        <div class="TopCard">
+            <p>ورود اطلاعات مسافر ${index + 1} - ${type === "adult" ? "بزرگسال" : type === "child" ? "کودک" : "نوزاد"}</p>
+            <div class="Clock">
+                <p>00:00</p> <i class="fa-solid fa-clock"></i>
+            </div>
+        </div>
+        <div class="bottomCard">
+            <div class="gender">
+                <div class="nationality">
+                    <p>${index + 1}. ${type === "adult" ? "بزرگسال" : type === "child" ? "کودک" : "نوزاد"}</p>
+                    <label> 
+                        <input type="radio" name="gender${index}" /> آقا
+                    </label>
+                    <label>
+                        <input type="radio" name="gender${index}" /> خانوم
+                    </label>
+                    <select name="nationality${index}">
+                        <option value="iranian" selected>ایرانی</option>
+                        <option value="foreign">خارجی</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="OtherInoformation">
+                <div class="top">
+                    <label> نام به انگلیسی <input type="text" placeholder="نام به انگلیسی" /> </label>
+                    <label> نام خانوادگی به انگلیسی <input type="text" placeholder="نام خانوادگی به انگلیسی" /> </label>
+                </div>
+                <div class="bottom">
+                    <label> شماره ملی <input type="text" placeholder="شماره ملی" /> </label>
+                    <label>
+                        تاریخ تولد
+                        <div class="dateSelectors">
+                            <select name="birthDay${index}">
+                                <option value="" disabled selected>روز</option>
+                                ${Array.from({ length: 31 }, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join("")}
+                            </select>
+                            <select name="birthMonth${index}">
+                                <option value="" disabled selected>ماه</option>
+                                <option value="1">فروردین</option>
+                                <option value="2">اردیبهشت</option>
+                                <option value="3">خرداد</option>
+                                <option value="4">تیر</option>
+                                <option value="5">مرداد</option>
+                                <option value="6">شهریور</option>
+                                <option value="7">مهر</option>
+                                <option value="8">آبان</option>
+                                <option value="9">آذر</option>
+                                <option value="10">دی</option>
+                                <option value="11">بهمن</option>
+                                <option value="12">اسفند</option>
+                            </select>
+                            <input type="number" name="year${index}" min="1300" max="1402" placeholder="سال">
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    `;
+        return card;
+      }
+
+      // شمارنده مسافر
+      let passengerCount = 1;
+
+      // Event Listener برای افزودن مسافر
+      addMemberButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const type = btn.dataset.type;
+          const newCard = createPassengerCard(type, passengerCount);
+          // اضافه کردن Card قبل از AddMember
+          rightContainer.insertBefore(
+            newCard,
+            document.querySelector(".AddMember"),
+          );
+          passengerCount++;
+        });
+      });
+    </script>
+  </body>
+</html>
