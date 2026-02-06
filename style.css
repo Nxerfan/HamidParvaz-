@@ -3644,6 +3644,7 @@ Footer {
           width: 100%;
           display: flex;
           justify-content: space-between;
+          cursor: pointer;
           background: linear-gradient(
             279.9deg,
             var(--gold) -0.06%,
